@@ -60,10 +60,7 @@
     align-items: center;
     font-size: 1.7rem;
     position: sticky;
-<<<<<<< HEAD
     min-width: 100%;
-=======
->>>>>>> 88c81e92785c2ed08f96d805211629e2647d63d4
     top: 0;
     z-index: 999;
 }
@@ -381,6 +378,15 @@ background-color: rgb(103, 164, 103);
 .rubbish_links:hover:before
 {
 width: 100%;
+}
+
+.campus
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: "100%";
+  width: "50%"
 }
 
 footer 
