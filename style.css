@@ -290,11 +290,13 @@ width: 100%;
 
 .rubbishButtons
 {
-    color: white;
-    display: block;
-    text-align: left;
-    padding: 10px 20px 0 20px;
-    width: 100px;
-    height: 100%;
-    font-family:'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    z-index: 1; 
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
 }
+
