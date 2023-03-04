@@ -10,8 +10,6 @@ import {
   MapContainer,
   TileLayer,
   useMap,
-  Marker,
-  Popup
 } from 'https://cdn.esm.sh/react-leaflet'
 
 function App() {
@@ -64,29 +62,24 @@ function App() {
   }, [coords]);
 
   const drawMap = (mapSrc) => {
-    const cPosition = [55.9447956,-3.1875313]
-    const cDestination = [55.944433, -3.187893]
-
     return(
       <div>
-        render(
-          <MapContainer center={cPosition} zoom={13} scrollWheelZoom={true}>
+        <MapContainer center={position} zoom={13} scrollWheelZoom={true}>
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <Marker position={cPosition}>
+            <Marker position={position}>
               <Popup>
                 Current Location.
               </Popup>
             </Marker>
-            <Marker position={cDestination}>
+            <Marker position={destination}>
               <Popup>
                 Nearest bin.
               </Popup>
             </Marker>
-          </MapContainer>
-        )
+        </MapContainer>
       </div>
     );
   }
@@ -105,8 +98,8 @@ function App() {
 
   const goToMap = () => {
     setHomePage(false);
-    setFilterPage(false);
     setMapPage(true);
+    setFilterPage(false);
   }
 
  
@@ -127,8 +120,8 @@ function App() {
         <div>
             <nav className="navbar">
 
-            <img src = {title} alt = "Find a Bin" />
-            <img src = {binLogo} alt = "Web Logo" height = '60vh' width = 'height'/>
+            <img src = {title} alt = "Find a Bin" height = "100%" width = "height"/>
+            <img src = {binLogo} alt = "Web Logo" height = "100%" width = "height"/>
 
             <div className="navbar_container">
                 <div className="navbar_toggle" id="mobile-menu">
@@ -138,13 +131,10 @@ function App() {
                 </div>
                     <ul className="navbar_menu">
                       <li className="navbar_item">
-                          <div onClick={goToHome} className="navbar_links">Home</div>
+                          <div onClick={goToHome} class="navbar_links">Home</div>
                       </li>
                       <li className="navbar_item">
-                          <div onClick={goToFilter} className="navbar_links">Find a Bin</div>
-                      </li>
-                      <li className="navbar_item">
-                          <div onClick={goToMap} className="navbar_links">Go to Map</div>
+                          <div onClick={goToFilter} class="navbar_links">Find a Bin</div>
                       </li>
                     </ul>
             </div>
@@ -222,9 +212,11 @@ function App() {
 
       {mapPage && (
         <div style={{'width': '100%', 'overflow': 'hidden'}}>
+
           <div style={{"width": "100vw", 'height': '84.5vh', 'float': 'left'}}>
             {drawMap(map)}
           </div>
+          
         </div>
       )}
 
