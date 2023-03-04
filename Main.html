@@ -6,7 +6,8 @@
 <body>
 
 <h2>Find your bin</h2>
-<iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-3.2060337066650395%2C55.93855329531538%2C-3.1777095794677734%2C55.94984861420047&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/>
+
+<iframe id='theMap' width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src= "https://www.openstreetmap.org/export/embed.html?bbox=-3.2060337066650395%2C55.93855329531538%2C-3.1777095794677734%2C55.94984861420047&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/>
 <p>Click the button to get your coordinates.</p>
 
 <button onclick="getLocation()">Try It</button>
@@ -14,20 +15,42 @@
 <p id="demo"></p>
 
 <script>
+Math.PI
 const x = document.getElementById("demo");
 
 function getLocation() {
   try {
     navigator.geolocation.getCurrentPosition(showPosition);
+    document.getElementById('theMap').contentWindow.location.reload();
   } catch {
     x.innerHTML = err;
   }
 }
 
+
 function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
+   const currentLat = position.coords.latitude;
+   const currentLong = position.coords.longitude
+   const new_upper_latitude  = currentLatitude  + (dy / 6378) * (180 / Math.PI);
+   const new_upper_longitude = currentLongitude + (dx / 6378) * (180 / Math.PI) / cos(latitude * Math.PI)/180;
+   const new_lower_latitude = currentLatitude  - (dy / 6378) * (180 / Math.PI);
+   const new_lower_longitude = currentLongitude - (dx / 6378) * (180 / Math.PI) / cos(latitude * Math.PI)/180;
+   const link = 'https://www.openstreetmap.org/export/embed.html?bbox='+ new_lower_longitude +'%2C'+ new_lower_latitude + '%2C' + new_upper_longitude + '%2C' + new_upper_latitude+'&amp;layer=mapnik'
+   changeIframe(link)
 }
+
+function changeIframe(change) {
+  document.getElementById('theMap').src = change;
+
+}
+
+// 1 degree of longitude = 54.6 miles 
+//-3.2060337066650395
+// distance between 2 coords in miles =acos(sin(lat1)*sin(lat2)+cos(lat1)*cos(lat2)*cos(lon2-lon1))*6371
+//-----In km:----------
+
 </script>
 
 </body>
