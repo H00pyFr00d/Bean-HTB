@@ -1,4 +1,4 @@
-import './App.css'; 
+import './App.css';
 import React, { useState, useEffect } from 'react';
 
 import Navbar from './components/Navbar';
@@ -15,7 +15,7 @@ function App() {
       if (navigator.geolocation) {
         return navigator.geolocation.getCurrentPosition(navigatorHelper);
       } else {alert("Geolocation is not supported by this browser.");}
-    } 
+    }
     catch {
     }
   }
@@ -25,27 +25,32 @@ function App() {
       latitude: position.coords.latitude,
       longitude: position.coords.longitude
     });
-
-    getSetMapLink();
   }
-  
+
   const getSetMapLink = () => {
     const new_upper_latitude  = coords.latitude  + (1 / 6378) * (180 / Math.PI);
     const new_upper_longitude = coords.longitude + (1 / 6378) * (180 / Math.PI) / Math.cos(coords.latitude * Math.PI)/180;
     const new_lower_latitude = coords.latitude  - (1 / 6378) * (180 / Math.PI);
     const new_lower_longitude = coords.longitude - (1 / 6378) * (180 / Math.PI) / Math.cos(coords.longitude * Math.PI)/180;
-    
+
     const link = 'https://www.openstreetmap.org/export/embed.html?bbox=' + new_lower_longitude +'%2C'+ new_lower_latitude + '%2C' + new_upper_longitude + '%2C' + new_upper_latitude+'&amp;layer=mapnik'
 
     setMap(link)
   }
-// const distanceBetweenPoints = (lat1, lat2) => {
-  // distance between 2 coords in miles =acos(sin(lat1)*sin(lat2)+cos(lat1)*cos(lat2)*cos(lon2-lon1))*6371
-//}
+
+  // const distanceBetweenPoints = (lat1, lat2) => {
+  //   distance between 2 coords in miles =acos(sin(lat1)*sin(lat2)+cos(lat1)*cos(lat2)*cos(lon2-lon1))*6371
+  // }
+
+  // This runs on initialisation
   useEffect(() => {
     getLocation();
+  }, []);
+
+  useEffect(() => {
+    if (coords) getSetMapLink();
   }, [coords]);
-  
+
   const drawMap = (mapSrc) => {
     return(
       <div>
@@ -59,16 +64,16 @@ function App() {
       <header className="App-header">
         {Navbar()}
       </header>
-      
-      
+
+
 
       <div style={{'width': '100%', 'overflow': 'hidden'}}>
-        
+
         <div style={{"width": "50%", 'height': '84.5vh', 'float': 'left'}}>
           {drawMap(map)}
         </div>
 
-        <div style={{"marginLeft": "50%", 'margin': '2%'}}>  
+        <div style={{"marginLeft": "50%", 'margin': '2%'}}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis in neque eu blandit. Phasellus non dui ac ex pellentesque rhoncus. Pellentesque leo est, venenatis at odio a, pellentesque pharetra sapien. Morbi libero arcu, rhoncus vehicula eros et, elementum malesuada enim. Etiam mollis diam sed iaculis mollis. Proin ornare sem nec elementum vehicula. Phasellus vel scelerisque turpis, eu finibus odio. Cras sit amet nunc id sem maximus efficitur sit amet sit amet arcu. Proin in pharetra risus. Mauris vitae arcu vel urna dapibus pretium sit amet ac mauris.<br/>
 
           Fusce sit amet mauris tellus. Quisque lobortis mi non purus tristique, sit amet tempus odio semper. Aenean enim tellus, malesuada at lobortis eget, aliquam sit amet diam. Sed interdum consectetur turpis eu suscipit. Duis consequat, sapien eu luctus porta, ligula diam mattis tortor, varius dapibus dui justo eu mauris. Donec eget tempor justo, nec hendrerit ligula. Fusce id interdum magna.<br/>
@@ -81,12 +86,12 @@ function App() {
           <button onClick={getLocation()}>Reset Coordinates</button>
         </div>
       </div>
-      
+
       <footer className="App-footer">
         {Footer()}
       </footer>
     </div>
   );
-} 
+}
 
 export default App;
