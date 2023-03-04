@@ -158,9 +158,9 @@ function App() {
         <h2>Please select the campus you are closest to:</h2>
 
         <div className = "areaButtons">
-          <input type="checkbox" id="areaButton" name="central" value="Central"/>
+          <input type="radio" id="areaButton" name="central" value="Central"/>
           <label for="central"> Central Campus</label>
-          <input type="checkbox" id="areaButton" name="kings" value="Kings"/>
+          <input type="radio" id="areaButton" name="kings" value="Kings"/>
           <label for="kings"> Kings Campus</label>
         </div>
       
