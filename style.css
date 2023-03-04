@@ -25,14 +25,13 @@
 
 .navbar h1
 {
-    color: white;
+    color: rgb(107, 181, 102);
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    padding: 50px 0px 50px 50px;
+    padding: 50px 0px 50px 70px;
     font-family:'Times New Roman', Times, serif;
-   
 }
 
 .navbar_container 
@@ -53,7 +52,7 @@
     align-items: center;
     list-style: none;
     text-align: center;
-    padding-right: 600px;
+    padding-left: 00px;
 }
 
 .navbar_item
@@ -63,7 +62,7 @@
 
 .navbar_links
 {
-    color: white;
+    color: rgb(107, 181, 102);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,7 +78,7 @@
 {
     content: "";
     position: absolute;
-    background-color: white;
+    background-color: rgb(107, 181, 102);
     height: 3px;
     width: 0;
     transition: 0.4s;
@@ -88,13 +87,13 @@
 .navbar_links:after 
 {
     left: 0;
-    bottom: 14px;
+    bottom: 20px;
 }
 
 .navbar_links:before
 {
     left: 0;
-    top: 16px;
+    top: 20px;
 }
 
 .navbar_links:hover:after,
@@ -213,4 +212,60 @@ width: 100%;
     {
         transform: translateY(-8px) rotate(-45deg);
     }
+}
+
+.homeMainBody
+{
+    display: block;
+    justify-content: space-between;
+    border-radius: 25px;
+    margin: 20px 20px 20px 20px;;
+    background-color: #282c34;
+    height: 100%;
+    z-index: 1; 
+    width: 100%;
+    max-width: 1300px;
+}
+
+.homeMainBody h1
+{
+    color: rgb(107, 181, 102);
+    display: block;
+    text-align: left;
+    padding: 30px 20px 10px 20px;
+    height: 100%;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.homeMainBody p
+{
+    color: rgb(107, 181, 102);
+    display: block;
+    text-align: left;
+    padding: 10px 20px 30px 20px;
+    height: 100%;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.filterMainBody
+{
+    display: block;
+    justify-content: space-between;
+    border-radius: 25px;
+    margin: 20px 20px 20px 20px;;
+    background-color: #282c34;
+    height: 100%;
+    z-index: 1; 
+    width: 100%;
+    max-width: 1300px;
+}
+
+.filterMainBody h2
+{
+    color: rgb(107, 181, 102);
+    display: block;
+    text-align: left;
+    padding: 30px 20px 10px 20px;
+    height: 100%;
+    font-family:'Times New Roman', Times, serif;
 }
