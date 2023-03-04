@@ -135,7 +135,7 @@ width: 100%;
 
     .navbar_menu.active
     {
-        background-image: linear-gradient(to top, #48beda, #5fccde);
+        background-image: linear-gradient(to top, #393a3c, #282c34);
         top: 100%;
         opacity: 1;
         transition: all 0.5s ease;
