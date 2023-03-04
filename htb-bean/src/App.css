@@ -380,6 +380,15 @@ background-color: rgb(103, 164, 103);
 width: 100%;
 }
 
+.campus
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: "100%";
+  width: "50%"
+}
+
 footer 
 {
     position: absolute;
