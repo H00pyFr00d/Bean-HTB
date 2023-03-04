@@ -384,4 +384,9 @@ background-color: rgb(103, 164, 103);
 width: 100%;
 }
 
+footer
+{
+    position: absolute;
+    bottom: 0;
+}
 
