@@ -53,7 +53,7 @@
 .navbar 
 {
     background-color: #282c34;
-    height: 85px;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,11 +80,10 @@
 {
     display: flex;
     justify-content: space-between;
-    height: 100px;
+    height: 100%;
     z-index: 1; 
     width: 100%;
-    max-width: 1300px;
-    margin: 20px auto;
+    margin: 0 auto;
     padding: 0 50px;
 }
 
@@ -99,7 +98,7 @@
 
 .navbar_item
 {
-    height: 100px;
+    height: 100%;
 }
 
 .navbar_links
@@ -250,11 +249,11 @@ background-color: rgb(103, 164, 103);
     display: block;
     border-radius: 25px;
     margin: 40px 20px;
-    padding: 20px 20px 20px 20px;
+    padding: 20px 20px 20px 20px;;
     background-color: #282c34;
     height: 100%;
-    width: auto;
     z-index: 1; 
+    max-width: 1300px;
 }
 
 .homeMainBody h1
