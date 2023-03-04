@@ -121,7 +121,7 @@ function App() {
   };
   //export default Checkbox;
   const Footer = () => {
-    return ( <p style={{'float': 'right', 'paddingTop': '0.5%', 'font-size': '2vh'}}> Data sourced from <a href = "https://data.edinburghcouncilmaps.info/datasets/ddb5fcb791634729b4b4d3d1e5b8aa05/explore"> Edinburgh City Council </a> , May 2021. </p>
+    return ( <p style={{'float': 'right', 'paddingTop': '0.5%', 'font-size': '2vh', 'font-family': 'Verdana'}}> Data sourced from <a href = "https://data.edinburghcouncilmaps.info/datasets/ddb5fcb791634729b4b4d3d1e5b8aa05/explore"> Edinburgh City Council </a> , May 2021. </p>
     )
   }
 
