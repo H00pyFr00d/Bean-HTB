@@ -114,6 +114,7 @@
     font-family:'Verdana','Arial', sans-serif;
     font-size: 3vh;
     position: relative;
+    cursor: pointer;
 }
 
 .navbar_links:before,
@@ -271,8 +272,9 @@ background-color: rgb(103, 164, 103);
     color: rgb(107, 181, 102);
     display: flex;
     text-align: center;
-    padding: 10px 20px 50px 10px;
+    padding: 20px 20px 40px 10px;
     height: 100%;
+    font-size: 0.9rem;
     font-family:'Verdana','Arial', sans-serif;
 }
 
