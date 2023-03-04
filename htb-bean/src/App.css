@@ -23,7 +23,7 @@
   color: #61dafb;
 }
 
-.Map-Iframe {
+#Map-Iframe {
   width: 40vw;
   height: 70vh; 
   display: block;
