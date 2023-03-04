@@ -52,7 +52,6 @@
     align-items: center;
     list-style: none;
     text-align: center;
-    padding-right: 700px;
 }
 
 .navbar_item
@@ -87,13 +86,13 @@
 .navbar_links:after 
 {
     left: 0;
-    bottom: 14px;
+    bottom: 20px;
 }
 
 .navbar_links:before
 {
     left: 0;
-    top: 16px;
+    top: 20px;
 }
 
 .navbar_links:hover:after,
