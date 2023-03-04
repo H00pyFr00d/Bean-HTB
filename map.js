@@ -5,21 +5,21 @@ import {
   useMap,
 } from 'https://cdn.esm.sh/react-leaflet'
 
-const position = [55.9447956,-3.1875313]
-const destination = [55.944433, -3.187893]
+const cPosition = [55.9447956,-3.1875313]
+const cDestination = [55.944433, -3.187893]
 
 render(
-  <MapContainer center={position} zoom={13} scrollWheelZoom={true}>
+  <MapContainer center={cPosition} zoom={13} scrollWheelZoom={true}>
     <TileLayer
       attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     />
-    <Marker position={position}>
+    <Marker position={cPosition}>
       <Popup>
         Current Location.
       </Popup>
     </Marker>
-    <Marker position={destination}>
+    <Marker position={cDestination}>
       <Popup>
         Nearest bin.
       </Popup>
