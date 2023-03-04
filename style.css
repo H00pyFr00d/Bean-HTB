@@ -25,7 +25,7 @@
 
 .navbar h1
 {
-    color: rgb(128, 224, 121);
+    color: rgb(107, 181, 102);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,7 +62,7 @@
 
 .navbar_links
 {
-    color: rgb(130, 202, 125);
+    color: rgb(107, 181, 102);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,7 +78,7 @@
 {
     content: "";
     position: absolute;
-    background-color: rgb(130, 202, 125);
+    background-color: rgb(107, 181, 102);
     height: 3px;
     width: 0;
     transition: 0.4s;
