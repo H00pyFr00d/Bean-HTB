@@ -1,63 +1,79 @@
 
 <html>
 
-<head>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-crossorigin=""/>
-<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-crossorigin=""></script>
-<title>bin</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
 
-<h2>Find your bin</h2>
-<div id="like_button_container"></div>
+        <!--<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+        crossorigin=""></script>-->
 
-<iframe id='theMap' width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src= "https://www.openstreetmap.org/export/embed.html?bbox=-3.2060337066650395%2C55.93855329531538%2C-3.1777095794677734%2C55.94984861420047&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/>
-<p>Click the button to get your coordinates.</p>
+        <title>bin</title>
+    </head>
+    <body>
 
-<!--<button onclick="getLocation()">Get location</button>-->
-<button onclick="updateLocate()">Update location</button>
-<button onclick="showCurrent()">Show current location</button>
+        <h2>Find your bin</h2>
+        <p>
+        <!--<iframe id='theMap' width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src= "https://www.openstreetmap.org/export/embed.html?bbox=-3.2060337066650395%2C55.93855329531538%2C-3.1777095794677734%2C55.94984861420047&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/>-->
+        <div class="map_container" data-commentid="1">
+<!--        <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>-->
+<!--            <TileLayer-->
+<!--                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'-->
+<!--                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"-->
+<!--            />-->
+<!--            <Marker position={[51.505, -0.09]}>-->
+<!--                <Popup>-->
+<!--                    A pretty CSS3 popup. <br /> Easily customizable.-->
+<!--                </Popup>-->
+<!--            </Marker>-->
+<!--        </MapContainer>-->
+        </div>
+        </p>
+        <p>Click the button to get your coordinates.</p>
 
-<p id="demo"></p>
+        <!--<button onclick="getLocation()">Get location</button>-->
+        <button onclick="updateLocate()">Update location</button>
+        <button onclick="showCurrent()">Show current location</button>
 
-<script>
-Math.PI
-const x = document.getElementById("demo");
-var locateCurrent = [0.0,0.0]
+        <p id="demo"></p>
 
-function showCurrent() {
-    alert(locateCurrent);
-}
+        <script>
+            Math.PI
+            const x = document.getElementById("demo");
+            var locateCurrent = [0.0,0.0]
 
-// 1 degree of longitude = 54.6 miles 
-//-3.2060337066650395
-// distance between 2 coords in miles =acos(sin(lat1)*sin(lat2)+cos(lat1)*cos(lat2)*cos(lon2-lon1))*6371
-//-----In km:----------
+            function showCurrent() {
+                alert(locateCurrent);
+            }
 
-
-function updateLocate() {
-  try {
-    navigator.geolocation.getCurrentPosition(changeLocate);
-  } catch {
-    x.innerHTML = err;
-  }
-}
-
-function changeLocate(position) {
-  locateCurrent = [position.coords.latitude, position.coords.longitude];
-}
+            // 1 degree of longitude = 54.6 miles
+            //-3.2060337066650395
+            // distance between 2 coords in miles =acos(sin(lat1)*sin(lat2)+cos(lat1)*cos(lat2)*cos(lon2-lon1))*6371
+            //-----In km:----------
 
 
-</script>
+            function updateLocate() {
+              try {
+                navigator.geolocation.getCurrentPosition(changeLocate);
+              } catch {
+                x.innerHTML = err;
+              }
+            }
 
-<!--[[55.944788, -3.1875118],[55.943426, -3.185818]]-->
+            function changeLocate(position) {
+              locateCurrent = [position.coords.latitude, position.coords.longitude];
+            }
+        </script>
 
-<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-<script src="like_button.js"></script>
-</body>
+        <!--[[55.944788, -3.1875118],[55.943426, -3.185818]]-->
+
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+        <!-- Load our React component. -->
+        <script src="map.js"></script>
+    </body>
 </html>
