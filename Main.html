@@ -9,44 +9,39 @@
 <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-3.2060337066650395%2C55.93855329531538%2C-3.1777095794677734%2C55.94984861420047&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/>
 <p>Click the button to get your coordinates.</p>
 
-<button onclick="getLocation()">Get location</button>
-<button onclick="showRoute([[55.944788, -3.1875118],[55.943426, -3.185818]])">Try route</button>
+<!--<button onclick="getLocation()">Get location</button>-->
+<button onclick="updateLocate()">Update location</button>
+<button onclick="showCurrent()">Show current location</button>
 
 <p id="demo"></p>
 
 <script>
 const x = document.getElementById("demo");
 
-function getLocation() {
+var locateTest = [0.0,0.0];
+
+function showCurrent()
+{
+    alert(locateTest)
+}
+
+function updateLocate() {
   try {
-    navigator.geolocation.getCurrentPosition(showPosition);
+    navigator.geolocation.getCurrentPosition(changeLocate);
   } catch {
     x.innerHTML = err;
   }
 }
 
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
+function changeLocate(position) {
+  locateTest = [position.coords.latitude, position.coords.longitude];
 }
 
-function showRoute() {
-  try {
-    navigator.geolocation.getCurrentPosition(showArray);
-  } catch {
-    x.innerHTML = err;
-  }
-}
-
-function showArray(position) {
-  x.innerHTML = "[" + position.coords.latitude +
-  "],[" + position.coords.longitude + "]";
-}
 </script>
 
 <!--<script src="https://cdn.jsdelivr.net/npm/graphhopper-js-api-client/dist/graphhopper-client.js">-->
 <!--const x = document.getElementById("demo")-->
-
+<!--[[55.944788, -3.1875118],[55.943426, -3.185818]]-->
 <!--function showRoute(posArray){-->
 <!--    pos1Array = [55.944788, -3.1875118];-->
 <!--    pos2Array = [55.943426, -3.185818];-->
@@ -63,6 +58,26 @@ function showArray(position) {
 <!--        x.innerHTML = "NO RAN";-->
 <!--    });-->
 <!--    };-->
+<!--<script src="http://www.openlayers.org/api/OpenLayers.js"></script>-->
+<!--<script>-->
+<!--map = new OpenLayers.Map("mapdiv");-->
+<!--map.addLayer(new OpenLayers.Layer.OSM());-->
+
+<!--var lonLat = new OpenLayers.LonLat( -0.1279688 ,51.5077286 )-->
+<!--      .transform(-->
+<!--        new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984-->
+<!--        map.getProjectionObject() // to Spherical Mercator Projection-->
+<!--      );-->
+<!--      -->
+<!--var zoom=16;-->
+
+<!--var markers = new OpenLayers.Layer.Markers( "Markers" );-->
+<!--map.addLayer(markers);-->
+
+<!--markers.addMarker(new OpenLayers.Marker(lonLat));-->
+
+<!--map.setCenter (lonLat, zoom);-->
+<!--</script>-->
 <!--</script>-->
 
 </body>
