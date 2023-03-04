@@ -19,6 +19,7 @@
     align-items: center;
     font-size: 1.7rem;
     position: sticky;
+    width: 100%;
     top: 0;
     z-index: 999;
 }
@@ -215,15 +216,22 @@ width: 100%;
     }
 }
 
+/** Home **/
+
+body 
+{
+background-color: rgb(103, 164, 103);
+}
+
 .homeMainBody
 {
     display: block;
     border-radius: 25px;
-    margin: 20px 20px 20px 20px;;
+    margin: 40px 20px;
+    padding: 20px 20px 20px 20px;;
     background-color: #282c34;
     height: 100%;
     z-index: 1; 
-    width: 100%;
     max-width: 1300px;
 }
 
@@ -242,7 +250,7 @@ width: 100%;
     color: rgb(107, 181, 102);
     display: block;
     text-align: center;
-    padding: 10px 20px 30px 20px;
+    padding: 10px 20px 50px 10px;
     height: 100%;
     font-family:'Times New Roman', Times, serif;
 }
@@ -256,7 +264,6 @@ width: 100%;
     background-color: #282c34;
     height: 100%;
     z-index: 1; 
-    width: 100%;
     max-width: 1300px;
 }
 
@@ -272,7 +279,7 @@ width: 100%;
 
 .areaButtons
 {
-    color: white;
+    color: rgb(107, 181, 102);
     display: block;
     text-align: left;
     padding: 10px 20px 0 20px;
@@ -283,7 +290,7 @@ width: 100%;
 
 #areaButton
 {
-    color: white;
+    color: rgb(107, 181, 102);
     height: 100%;
     font-family:'Times New Roman', Times, serif;
 }
@@ -296,8 +303,7 @@ width: 100%;
     z-index: 1; 
     width: 100%;
     max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 0 0 20px;
 }
 
 .rubbish_menu
