@@ -137,10 +137,10 @@ function App() {
                 </div>
                     <ul className="navbar_menu">
                       <li className="navbar_item">
-                          <div onClick={goToHome} class="navbar_links">Home</div>
+                          <div onClick={goToHome} className="navbar_links">Home</div>
                       </li>
                       <li className="navbar_item">
-                          <div onClick={goToFilter} class="navbar_links">Find a Bin</div>
+                          <div onClick={goToFilter} className="navbar_links">Find a Bin</div>
                       </li>
                       <li className="navbar_item">
                           <div onClick={goToMap} className="navbar_links">Go to Map</div>
