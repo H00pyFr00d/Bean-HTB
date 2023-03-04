@@ -53,13 +53,12 @@
 .navbar 
 {
     background-color: #282c34;
-    height: 85px;
+    height: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.7rem;
     position: sticky;
-    width: 100%;
     top: 0;
     z-index: 999;
 }
@@ -82,8 +81,6 @@
     justify-content: space-between;
     height: 100px;
     z-index: 1; 
-    width: 100%;
-    max-width: 1300px;
     margin: 20px auto;
     padding: 0 50px;
 }
