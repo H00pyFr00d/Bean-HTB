@@ -10,10 +10,9 @@
 <p>Click the button to get your coordinates.</p>
 
 <button onclick="getLocation()">Get location</button>
+<button onclick="showRoute([[55.944788, -3.1875118],[55.943426, -3.185818]])">Try route</button>
 
 <p id="demo"></p>
-
-<script src="https://cdn.jsdelivr.net/npm/graphhopper-js-api-client/dist/graphhopper-client.js"></script>
 
 <script>
 const x = document.getElementById("demo");
@@ -30,26 +29,40 @@ function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
 }
+
+function showRoute() {
+  try {
+    navigator.geolocation.getCurrentPosition(showArray);
+  } catch {
+    x.innerHTML = err;
+  }
+}
+
+function showArray(position) {
+  x.innerHTML = "[" + position.coords.latitude +
+  "],[" + position.coords.longitude + "]";
+}
 </script>
 
-<!--<script>-->
-<!--  window.onload = function() {-->
+<!--<script src="https://cdn.jsdelivr.net/npm/graphhopper-js-api-client/dist/graphhopper-client.js">-->
+<!--const x = document.getElementById("demo")-->
+
+<!--function showRoute(posArray){-->
+<!--    pos1Array = [55.944788, -3.1875118];-->
+<!--    pos2Array = [55.943426, -3.185818];-->
 
 <!--    let ghRouting = new GraphHopper.Routing(-->
-<!--      { key: "28add460-25f0-49ac-9f54-f332080d6b6b"},-->
-<!--      { profile: "walking", elevation: false });-->
+<!--    { key: "28add460-25f0-49ac-9f54-f332080d6b6b"},-->
+<!--    { profile: "foot", elevation: false });-->
 
-<!--    ghRouting.doRequest({points:[[55.944788, -3.1875118], [55.943426, -3.185818]]})-->
-<!--      .then(function(json) {-->
-<!--        // Add your own result handling here-->
-<!--        console.log(json);-->
-<!--      })-->
-<!--      .catch(function(err) {-->
-<!--        console.error(err.message);-->
-<!--      });-->
-
-
-<!--  };-->
+<!--    ghRouting.doRequest({points:[pos1Array, pos2Array]})-->
+<!--    .then(function(json) {-->
+<!--    x.innerHTML = "RAN";-->
+<!--    })-->
+<!--    .catch(function(err) {-->
+<!--        x.innerHTML = "NO RAN";-->
+<!--    });-->
+<!--    };-->
 <!--</script>-->
 
 </body>
