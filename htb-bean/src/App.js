@@ -142,6 +142,9 @@ function App() {
                       <li className="navbar_item">
                           <div onClick={goToFilter} class="navbar_links">Find a Bin</div>
                       </li>
+                      <li className="navbar_item">
+                          <div onClick={goToMap} className="navbar_links">Go to Map</div>
+                      </li>
                     </ul>
             </div>
             </nav>

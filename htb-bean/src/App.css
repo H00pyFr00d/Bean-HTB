@@ -60,10 +60,7 @@
     align-items: center;
     font-size: 1.7rem;
     position: sticky;
-<<<<<<< HEAD
     min-width: 100%;
-=======
->>>>>>> 88c81e92785c2ed08f96d805211629e2647d63d4
     top: 0;
     z-index: 999;
 }
