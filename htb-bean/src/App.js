@@ -72,7 +72,19 @@ function App() {
     setHomePage(false);
     setMapPage(true);
   }
-
+ 
+  const Checkbox = ({ label }) => {
+    const [isChecked, setIsChecked] = useState(false);
+    return (
+      <div className="checkbox-wrapper">
+        <label>
+          <input type="checkbox" checked={isChecked} />
+          <span>{label}</span>
+        </label>
+      </div>
+    );
+  };
+  //export default Checkbox;
   const Navbar = () => {
     return (
         <div>
@@ -107,7 +119,14 @@ function App() {
         {Navbar()}
       </header>
 
-
+      <checkBoxes className = "Check Boxes">
+      {Checkbox("Central Campus") }
+      </checkBoxes>
+      
+      <checkBoxes className = "Check Boxes">
+      {Checkbox("Kings Buildings") }
+      </checkBoxes>
+      
 
       {homePage && (
         <div style={{'width': '100%', 'overflow': 'hidden'}}>
