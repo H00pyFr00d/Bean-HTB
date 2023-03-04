@@ -114,6 +114,7 @@
     font-family:'Verdana','Arial', sans-serif;
     font-size: 3vh;
     position: relative;
+    cursor: pointer;
 }
 
 .navbar_links:before,
