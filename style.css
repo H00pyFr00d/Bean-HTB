@@ -217,6 +217,7 @@ width: 100%;
 }
 
 /** Home **/
+
 body 
 {
 background-color: rgb(103, 164, 103);
@@ -231,7 +232,6 @@ background-color: rgb(103, 164, 103);
     background-color: #282c34;
     height: 100%;
     z-index: 1; 
-    width: 100%;
     max-width: 1300px;
 }
 
