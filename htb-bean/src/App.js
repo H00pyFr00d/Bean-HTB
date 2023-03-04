@@ -201,7 +201,7 @@ function App() {
         </div>
 
         
-        <button style={{'margin':'0 auto', 'display':'block'}}>Apply</button>
+        <button>Apply</button>
 
       </div>
     )
