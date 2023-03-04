@@ -164,8 +164,8 @@ function App() {
         <div className = "areaButtons">
           <input type="radio" id="areaButton" name="central" value="Central"/>
           <label for="central"> Central Campus</label>
-          <input type="radio" id="areaButton" name="kings" value="Kings"/>
-          <label for="kings"> Kings Campus</label>
+          <p><input type="radio" id="areaButton" name="kings" value="Kings"/>
+          <label for="kings"> Kings Campus</label></p>
         </div>
       
 

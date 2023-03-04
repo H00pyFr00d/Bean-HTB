@@ -315,6 +315,10 @@ background-color: rgb(103, 164, 103);
     font-family:'Verdana','Arial', sans-serif;
 }
 
+#areaButton:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+
 .rubbishButtons
 {
     display: flex;
@@ -397,5 +401,10 @@ footer {
 
 a {
   color: white;
-  font-family:'Verdana','Arial', sans-serif;}
+  font-family:'Verdana','Arial', sans-serif;
+}
+
+label { 
+  font-family:'Verdana','Arial', sans-serif;
+}
   
