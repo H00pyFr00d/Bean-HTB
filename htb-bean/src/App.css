@@ -25,7 +25,7 @@
 
 #Map-Iframe {
   width: 40vw;
-  height: 70vh; 
+  height: 70vh;
   display: block;
   margin: 2.5vw !important;
   border: none;
@@ -50,7 +50,7 @@
 
 /* Webpage Navbar */
 
-.navbar 
+.navbar
 {
     background-color: #282c34;
     height: 100%;
@@ -76,13 +76,13 @@
     cursor: default;
 }
 
-.navbar_container 
+.navbar_container
 {
     display: flex;
     justify-content: space-between;
     height: 100%;
     position: sticky;
-    z-index: 1; 
+    z-index: 1;
     padding: 0 50px;
 }
 
@@ -117,7 +117,7 @@
 }
 
 .navbar_links:before,
-.navbar_links:after 
+.navbar_links:after
 {
     content: "";
     position: absolute;
@@ -127,7 +127,7 @@
     transition: 0.4s;
 }
 
-.navbar_links:after 
+.navbar_links:after
 {
     left: 0;
     bottom: 20%;
@@ -147,13 +147,13 @@
 
 /* Mobile navbar */
 
-@media screen and (max-width: 960px) 
+@media screen and (max-width: 960px)
 {
     .navbar_container
     {
         display: flex;
         justify-content: space-between;
-       
+
         z-index: 1;
         width: 100%;
     }
@@ -239,7 +239,7 @@
 
 /** Home **/
 
-body 
+body
 {
 background-color: rgb(103, 164, 103);
 }
@@ -252,7 +252,7 @@ background-color: rgb(103, 164, 103);
     padding: 20px 20px 20px 20px;;
     background-color: #282c34;
     height: 100%;
-    z-index: 1; 
+    z-index: 1;
     font-size: 1vw;
 }
 
@@ -284,7 +284,7 @@ background-color: rgb(103, 164, 103);
     padding: 20px 20px 20px 20px;;
     background-color: #282c34;
     height: 100%;
-    z-index: 1; 
+    z-index: 1;
 }
 
 .filterMainBody h2
@@ -320,7 +320,7 @@ background-color: rgb(103, 164, 103);
     display: flex;
     justify-content: space-between;
     height: 100%;
-    z-index: 1; 
+    z-index: 1;
     width: 100%;
     padding: 0 0 10px 20px;
 }
@@ -353,7 +353,7 @@ background-color: rgb(103, 164, 103);
 }
 
 .rubbish_links:before,
-.rubbish_links:after 
+.rubbish_links:after
 {
     content: "";
     position: absolute;
@@ -363,7 +363,7 @@ background-color: rgb(103, 164, 103);
     transition: 0.4s;
 }
 
-.rubbish_links:after 
+.rubbish_links:after
 {
     left: 0;
     bottom: 20px;
@@ -395,3 +395,6 @@ footer {
   width: 100%;
 }
 
+.map {
+  height: 90vh;
+}
