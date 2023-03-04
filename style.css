@@ -229,7 +229,7 @@ width: 100%;
 
 .homeMainBody h1
 {
-    color: white;
+    color: rgb(107, 181, 102);
     display: block;
     text-align: left;
     padding: 30px 20px 10px 20px;
@@ -239,7 +239,7 @@ width: 100%;
 
 .homeMainBody p
 {
-    color: white;
+    color: rgb(107, 181, 102);
     display: block;
     text-align: left;
     padding: 10px 20px 30px 20px;
@@ -262,7 +262,7 @@ width: 100%;
 
 .filterMainBody h2
 {
-    color: white;
+    color: rgb(107, 181, 102);
     display: block;
     text-align: left;
     padding: 30px 20px 10px 20px;
