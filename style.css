@@ -214,3 +214,31 @@ width: 100%;
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
+.homeMainBody
+{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    z-index: 1; 
+    width: 100%;
+    max-width: 1300px;
+}
+
+.homeMainBody h1
+{
+    color: #282c34;
+    text-align: left;
+    padding: 30px 20px;
+    height: 100%;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.homeMainBody p
+{
+    color: #282c34;
+    text-align: left;
+    padding: 30px 20px;
+    height: 100%;
+    font-family:'Times New Roman', Times, serif;
+}
