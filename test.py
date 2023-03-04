@@ -39,3 +39,5 @@ b = int(input("How many bullets (6 chamber gun)"))
 p = int(input("How many pulls of trigger"))
 dead = russianRoulette(b, p)
 print(dead)
+
+
