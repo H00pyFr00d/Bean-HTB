@@ -3,6 +3,6 @@
 
 lol got u bitch
 
-if name == chris {
+if (name == chris) {
   this.neek = True;
 }
