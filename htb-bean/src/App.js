@@ -35,11 +35,13 @@ function App() {
     const new_lower_latitude = coords.latitude  - (1 / 6378) * (180 / Math.PI);
     const new_lower_longitude = coords.longitude - (1 / 6378) * (180 / Math.PI) / Math.cos(coords.longitude * Math.PI)/180;
     
-    const link = 'https://www.openstreetmap.org/export/embed.html?bbox=%27' + new_lower_longitude +'%2C'+ new_lower_latitude + '%2C' + new_upper_longitude + '%2C' + new_upper_latitude+'&amp;layer=mapnik'
+    const link = 'https://www.openstreetmap.org/export/embed.html?bbox=' + new_lower_longitude +'%2C'+ new_lower_latitude + '%2C' + new_upper_longitude + '%2C' + new_upper_latitude+'&amp;layer=mapnik'
 
     setMap(link)
   }
-
+// const distanceBetweenPoints = (lat1, lat2) => {
+  // distance between 2 coords in miles =acos(sin(lat1)*sin(lat2)+cos(lat1)*cos(lat2)*cos(lon2-lon1))*6371
+//}
   useEffect(() => {
     getLocation();
   }, [coords]);
