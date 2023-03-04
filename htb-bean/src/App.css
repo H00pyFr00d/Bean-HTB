@@ -1,0 +1,41 @@
+.App {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.App-header {
+  background-color: #282c34;
+  height: 10vh;
+  display: flex;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-footer {
+  background-color: #282c34;
+  height: 5vh;
+  bottom: 0;
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.Map-Iframe {
+  width: 40vw;
+  height: 70vh; 
+  display: block;
+  margin: 2.5vw !important;
+  border: none;
+  position: absolute;
+}
+
+.logo {
+  margin-left: 97.5vw;
+  width: 5vh;
+  height: width;
+}
+
+
