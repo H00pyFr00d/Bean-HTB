@@ -151,21 +151,18 @@ width: 100%;
     {
         display: flex;
         justify-content: space-between;
-        height: 80px;
+       
         z-index: 1;
         width: 100%;
         max-width: 1300px;
-        padding: 0;
     }
 
     .navbar_menu
     {
         display: grid;
         grid-template-columns: auto;
-        margin: 0;
         width: 100%;
         position: absolute;
-        top: -1000px;
         opacity: 0;
         transition: all 0.5s ease;
         height: 50vh;
@@ -174,7 +171,7 @@ width: 100%;
 
     .navbar_menu.active
     {
-        background-image: linear-gradient(to top, #48beda, #5fccde);
+        background-image: linear-gradient(to top, #424345, #282c34);
         top: 100%;
         opacity: 1;
         transition: all 0.5s ease;
@@ -183,18 +180,13 @@ width: 100%;
         font-size: 1.6rem;
     }
 
-    #navbar_logo
-    {
-        padding-left: 25px;
-    }
-
     .navbar_toggle .bar
     {
         width: 25px;
         height: 3px;
         margin: 5px auto;
         transition: all 0.3s ease-in-out;
-        background: white;
+        background: rgb(107, 181, 102);
     }
 
     .navbar_item
@@ -213,16 +205,6 @@ width: 100%;
     .navbar_btn
     {
         padding-bottom: 2rem;
-    }
-
-    .button
-    {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 80%;
-        height: 80px;
-        margin: 0;
     }
 
     #mobile-menu
@@ -280,7 +262,7 @@ width: 100%;
 .homeMainBody p
 {
     color: rgb(107, 181, 102);
-    display: block;
+    display: flex;
     text-align: center;
     padding: 10px 20px 30px 20px;
     height: 100%;
