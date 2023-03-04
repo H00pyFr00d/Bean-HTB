@@ -318,10 +318,9 @@ background-color: rgb(103, 164, 103);
 {
     display: flex;
     justify-content: space-between;
-    height: 70px;
+    height: 100%;
     z-index: 1; 
     width: 100%;
-    max-width: 1300px;
     padding: 0 0 10px 20px;
 }
 
@@ -336,7 +335,7 @@ background-color: rgb(103, 164, 103);
 
 .rubbish_item
 {
-    height: 100px;
+    height: 100%;
 }
 
 .rubbish_links
