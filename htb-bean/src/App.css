@@ -352,6 +352,7 @@ background-color: rgb(103, 164, 103);
     height: 100%;
     font-family:'Verdana','Arial', sans-serif;
     position: relative;
+    cursor: pointer;
 }
 
 .rubbish_links:before,
