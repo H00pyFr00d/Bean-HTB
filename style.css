@@ -64,7 +64,7 @@
 
 .navbar_links
 {
-    color: rgb(107, 181, 102);
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,7 +80,7 @@
 {
     content: "";
     position: absolute;
-    background-color: rgb(107, 181, 102);
+    background-color: white;
     height: 3px;
     width: 0;
     transition: 0.4s;
