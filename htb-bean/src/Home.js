@@ -2,7 +2,7 @@ import './App.css';
 
 export default function Home() {
     return (
-        <div class = "homeMainBody" style={{"width": "95vw", 'height': '80.5vh'}}>
+        <div className = "homeMainBody" style={{"width": "95vw", 'height': '80.5vh'}}>
             <h1>About our Product</h1>
             <br/>
             <p>

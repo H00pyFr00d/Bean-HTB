@@ -2,8 +2,10 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 
 import Home from './Home.js'
-import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import binLogo from "./images/binLogo.png";
+
+
 
 function App() {
   const [homePage, setHomePage] = useState(true)
@@ -12,7 +14,6 @@ function App() {
   const [coords, setCoords] = useState(null);
   const [map, setMap] = useState("https://www.openstreetmap.org/export/embed.html?bbox=-3.2060337066650395%2C55.93855329531538%2C-3.1777095794677734%2C55.94984861420047&amp;layer=mapnik");
 
-  // Doesn't Work
   const getLocation = () => {
     try {
       if (navigator.geolocation) {
@@ -61,6 +62,44 @@ function App() {
       </div>
     );
   }
+
+  const goToHome = () => {
+    setHomePage(true);
+    setMapPage(false);
+  }
+
+  const goToMap = () => {
+    setHomePage(false);
+    setMapPage(true);
+  }
+
+  const Navbar = () => {
+    return (
+        <div>
+            <nav className="navbar">
+
+            <h1>Bin Finder</h1>
+            <img src = {binLogo} alt = "Web Logo" height = "100%" width = "height"/>
+
+            <div className="navbar_container">
+                <div className="navbar_toggle" id="mobile-menu">
+                    <span className="bar"></span>
+                    <span className="bar"></span>
+                    <span className="bar"></span>
+                </div>
+                    <ul className="navbar_menu">
+                      <li className="navbar_item">
+                          <div onClick={goToHome}>Home</div>
+                      </li>
+                      <li className="navbar_item">
+                          <div onClick={goToMap}>Find a Bin</div>
+                      </li>
+                    </ul>
+            </div>
+            </nav>
+        </div>
+    )
+}
 
   return (
     <div>
