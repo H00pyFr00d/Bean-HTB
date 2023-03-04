@@ -64,7 +64,7 @@ function App() {
     if (coords) getSetMapLink();
   }, [coords]);
 
-  const drawMap = (mapSrc) => {
+  const drawMap = () => {
     const cPosition = [55.9447956,-3.1875313]
     const cDestination = [55.944433, -3.187893]
     return(
@@ -227,7 +227,7 @@ function App() {
         <div style={{'width': '100%', 'overflow': 'hidden'}}>
 
           <div style={{"width": "100vw", 'height': '84.5vh', 'float': 'left'}}>
-            {drawMap(map)}
+            {drawMap()}
           </div>
           
         </div>

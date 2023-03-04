@@ -8,7 +8,6 @@
   background-color: #282c34;
   height: 10vh;
   display: flex;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
@@ -113,6 +112,7 @@
     padding: 0px 20px;
     height: 100%;
     font-family:'Verdana','Arial', sans-serif;
+    font-size: 5vh;
     position: relative;
 }
 
@@ -253,6 +253,7 @@ background-color: rgb(103, 164, 103);
     background-color: #282c34;
     height: 100%;
     z-index: 1; 
+    font-size: 1vw;
 }
 
 .homeMainBody h1
