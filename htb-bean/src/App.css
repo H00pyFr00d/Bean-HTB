@@ -112,8 +112,9 @@
     padding: 0px 20px;
     height: 100%;
     font-family:'Verdana','Arial', sans-serif;
-    font-size: 5vh;
+    font-size: 3vh;
     position: relative;
+    cursor: pointer;
 }
 
 .navbar_links:before,
@@ -273,6 +274,7 @@ background-color: rgb(103, 164, 103);
     text-align: center;
     padding: 10px 20px 50px 10px;
     height: 100%;
+    font-size: 0.9rem;
     font-family:'Verdana','Arial', sans-serif;
 }
 
@@ -386,7 +388,7 @@ width: 100%;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  max-width: 100% !important;
+  width: 80% !important;
 }
 
 footer {
@@ -394,6 +396,10 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+a {
+  color: white;
+  font-family:'Verdana','Arial', sans-serif;}
 
 .map {
   height: 90vh;
