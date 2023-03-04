@@ -32,6 +32,7 @@
     text-decoration: none;
     padding: 50px 0px 50px 70px;
     font-family:'Times New Roman', Times, serif;
+    cursor: default;
 }
 
 .navbar_container 
@@ -217,7 +218,6 @@ width: 100%;
 .homeMainBody
 {
     display: block;
-    justify-content: space-between;
     border-radius: 25px;
     margin: 20px 20px 20px 20px;;
     background-color: #282c34;
@@ -231,7 +231,7 @@ width: 100%;
 {
     color: rgb(107, 181, 102);
     display: block;
-    text-align: left;
+    text-align: center;
     padding: 30px 20px 10px 20px;
     height: 100%;
     font-family:'Times New Roman', Times, serif;
@@ -241,7 +241,7 @@ width: 100%;
 {
     color: rgb(107, 181, 102);
     display: block;
-    text-align: left;
+    text-align: center;
     padding: 10px 20px 30px 20px;
     height: 100%;
     font-family:'Times New Roman', Times, serif;
