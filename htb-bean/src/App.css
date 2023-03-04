@@ -53,12 +53,13 @@
 .navbar 
 {
     background-color: #282c34;
-    height: 70%;
+    height: 85px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.7rem;
     position: sticky;
+    width: 100%;
     top: 0;
     z-index: 999;
 }
@@ -81,6 +82,8 @@
     justify-content: space-between;
     height: 100px;
     z-index: 1; 
+    width: 100%;
+    max-width: 1300px;
     margin: 20px auto;
     padding: 0 50px;
 }
@@ -283,6 +286,7 @@ background-color: rgb(103, 164, 103);
     background-color: #282c34;
     height: 100%;
     z-index: 1; 
+    max-width: 1300px;
 }
 
 .filterMainBody h2
