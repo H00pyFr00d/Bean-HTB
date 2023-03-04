@@ -227,6 +227,7 @@ width: 100%;
 .homeMainBody h1
 {
     color: #282c34;
+    display: block;
     text-align: left;
     padding: 30px 20px;
     height: 100%;
@@ -236,6 +237,7 @@ width: 100%;
 .homeMainBody p
 {
     color: #282c34;
+    display: block;
     text-align: left;
     padding: 30px 20px;
     height: 100%;
