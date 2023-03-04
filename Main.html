@@ -48,6 +48,40 @@ function changeLocate(position) {
   locateTest = [position.coords.latitude, position.coords.longitude];
 }
 
+const query = new URLSearchParams({
+  profile: 'foot',
+  point: 'string',
+  point_hint: 'string',
+  snap_prevention: 'string',
+  curbside: 'any',
+  locale: 'en',
+  elevation: 'false',
+  details: 'string',
+  optimize: 'false',
+  instructions: 'true',
+  calc_points: 'true',
+  debug: 'false',
+  points_encoded: 'true',
+  'ch.disable': 'false',
+  heading: '0',
+  heading_penalty: '120',
+  pass_through: 'false',
+  algorithm: 'round_trip',
+  'round_trip.distance': '10000',
+  'round_trip.seed': '0',
+  'alternative_route.max_paths': '2',
+  'alternative_route.max_weight_factor': '1.4',
+  'alternative_route.max_share_factor': '0.6',
+  key: 'YOUR_API_KEY_HERE'
+}).toString();
+
+const resp = await fetch(
+  `https://graphhopper.com/api/1/route?${query}`,
+  {method: 'GET'}
+);
+
+const data = await resp.text();
+console.log(data);
 </script>
 
 <!--<script src="https://cdn.jsdelivr.net/npm/graphhopper-js-api-client/dist/graphhopper-client.js">-->
