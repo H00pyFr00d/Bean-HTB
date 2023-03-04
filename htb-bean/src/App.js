@@ -128,7 +128,7 @@ function App() {
             <nav className="navbar">
 
             <img src = {title} alt = "Find a Bin" />
-            <img src = {binLogo} alt = "Web Logo" />
+            <img src = {binLogo} alt = "Web Logo" height = '60vh' width = 'height'/>
 
             <div className="navbar_container">
                 <div className="navbar_toggle" id="mobile-menu">
