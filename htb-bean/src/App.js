@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Home from './Home.js'
 import Footer from './components/Footer';
 import binLogo from "./images/binLogo.png";
+import title from "./images/title.png";
 
 
 
@@ -90,7 +91,7 @@ function App() {
         <div>
             <nav className="navbar">
 
-            <h1>Bin Finder</h1>
+            <img src = {title} alt = "Find a Bin" height = "100%" width = "height"/>
             <img src = {binLogo} alt = "Web Logo" height = "100%" width = "height"/>
 
             <div className="navbar_container">
