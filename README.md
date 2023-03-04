@@ -10,7 +10,7 @@ else if (name == lyle) {
   this.smelly = veryTrue;
 }
 else if (name == adam) {
-  this.underpainNHSWorker = True;
+  this.underpaidNHSWorker = True;
   print("Rishi sends his regards");
 }  
   
