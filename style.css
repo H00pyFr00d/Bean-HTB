@@ -30,9 +30,8 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    padding: 50px 0px 50px 50px;
+    padding: 50px 0px 50px 100px;
     font-family:'Times New Roman', Times, serif;
-   
 }
 
 .navbar_container 
@@ -53,7 +52,7 @@
     align-items: center;
     list-style: none;
     text-align: center;
-    padding-right: 600px;
+    padding-right: 700px;
 }
 
 .navbar_item
