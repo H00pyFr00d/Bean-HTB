@@ -20,7 +20,7 @@ function App() {
   const [mapPage, setMapPage] = useState(false);
   const [filterPage, setFilterPage] = useState(false);
 
-  const [coords, setCoords] = useState(null);
+  const [coords, setCoords] = useState({[55.944788, -3.1875118]});
   const [map, setMap] = useState("https://www.openstreetmap.org/export/embed.html?bbox=-3.2060337066650395%2C55.93855329531538%2C-3.1777095794677734%2C55.94984861420047&amp;layer=mapnik");
 
   const getLocation = () => {
