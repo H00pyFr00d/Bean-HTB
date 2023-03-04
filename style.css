@@ -218,6 +218,7 @@ width: 100%;
 {
     display: block;
     justify-content: space-between;
+    border-radius: 25px;
     margin: 20px 20px 20px 20px;;
     background-color: #282c34;
     height: 100%;
