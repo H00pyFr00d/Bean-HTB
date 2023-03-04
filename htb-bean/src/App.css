@@ -54,7 +54,7 @@
 .navbar 
 {
     background-color: #282c34;
-    height: 85px;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,11 +88,11 @@
 
 .navbar_menu
 {
+    height: 100%;
     display: flex;
     align-items: center;
     list-style: none;
     text-align: center;
-    padding-left: 00px;
 }
 
 .navbar_item
