@@ -216,7 +216,7 @@ width: 100%;
 
 .homeMainBody
 {
-    display: flex;
+    display: block;
     justify-content: space-between;
     height: 100%;
     z-index: 1; 
@@ -224,12 +224,13 @@ width: 100%;
     max-width: 1300px;
 }
 
+
 .homeMainBody h1
 {
     color: #282c34;
     display: block;
     text-align: left;
-    padding: 30px 20px;
+    padding: 30px 20px 10px 20px;
     height: 100%;
     font-family:'Times New Roman', Times, serif;
 }
@@ -239,7 +240,7 @@ width: 100%;
     color: #282c34;
     display: block;
     text-align: left;
-    padding: 30px 20px;
+    padding: 10px 20px;
     height: 100%;
     font-family:'Times New Roman', Times, serif;
 }
