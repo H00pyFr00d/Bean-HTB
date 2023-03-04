@@ -6,14 +6,13 @@ import Footer from './components/Footer';
 import binLogo from "./images/binLogo.png";
 import title from "./images/title.png";
 
-
 import {
   MapContainer,
   TileLayer,
   useMap,
   Marker,
   Popup
-} from 'https://cdn.esm.sh/react-leaflet'
+} from "react-leaflet";
 
 function App() {
   const [homePage, setHomePage] = useState(true);
@@ -67,23 +66,24 @@ function App() {
   const drawMap = () => {
     const cPosition = [55.9447956,-3.1875313]
     const cDestination = [55.944433, -3.187893]
+
     return(
       <div>
-        <MapContainer center={cPosition} zoom={13} scrollWheelZoom={true}>
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            <Marker position={cPosition}>
-              <Popup>
-                Current Location.
-              </Popup>
-            </Marker>
-            <Marker position={cDestination}>
-              <Popup>
-                Nearest bin.
-              </Popup>
-            </Marker>
+        <MapContainer className="map" center={cPosition} zoom={13} scrollWheelZoom={true}>
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker position={cPosition}>
+            <Popup>
+              Current Location.
+            </Popup>
+          </Marker>
+          <Marker position={cDestination}>
+            <Popup>
+              Nearest bin.
+            </Popup>
+          </Marker>
         </MapContainer>
       </div>
     );
@@ -107,7 +107,7 @@ function App() {
     setFilterPage(false);
   }
 
- 
+
   const Checkbox = ({ label }) => {
     const [isChecked, setIsChecked] = useState(false);
     return (
@@ -167,7 +167,7 @@ function App() {
           <p><input type="radio" id="areaButton" name="kings" value="Kings"/>
           <label for="kings"> Kings Campus</label></p>
         </div>
-      
+
 
         <div>
           <h2>Please select which type of rubbish you want to dispose of:</h2>
@@ -204,12 +204,10 @@ function App() {
   }
 
   return (
-    <div>
+    <div id="map">
       <header className="App-header">
         {Navbar()}
       </header>
-
-
 
       {homePage && (
         <div style={{'width': '100%', 'overflow': 'hidden'}}>
@@ -225,11 +223,9 @@ function App() {
 
       {mapPage && (
         <div style={{'width': '100%', 'overflow': 'hidden'}}>
-
           <div style={{"width": "100vw", 'height': '84.5vh', 'float': 'left'}}>
             {drawMap()}
           </div>
-          
         </div>
       )}
 
@@ -241,5 +237,3 @@ function App() {
 }
 
 export default App;
-
-
