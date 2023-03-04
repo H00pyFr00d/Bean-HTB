@@ -6,7 +6,11 @@ import Footer from './components/Footer';
 import binLogo from "./images/binLogo.png";
 import title from "./images/title.png";
 
-
+import {
+  MapContainer,
+  TileLayer,
+  useMap,
+} from 'https://cdn.esm.sh/react-leaflet'
 
 function App() {
   const [homePage, setHomePage] = useState(true);
@@ -60,7 +64,22 @@ function App() {
   const drawMap = (mapSrc) => {
     return(
       <div>
-        <iframe id="Map-Iframe" title="Map" src={mapSrc}/><br/>
+        <MapContainer center={position} zoom={13} scrollWheelZoom={true}>
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <Marker position={position}>
+              <Popup>
+                Current Location.
+              </Popup>
+            </Marker>
+            <Marker position={destination}>
+              <Popup>
+                Nearest bin.
+              </Popup>
+            </Marker>
+        </MapContainer>
       </div>
     );
   }
