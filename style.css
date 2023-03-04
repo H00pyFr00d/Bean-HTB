@@ -1,0 +1,36 @@
+*,
+*:before,
+*:after
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: serif;
+}
+
+/* Navbar */
+
+.navbar 
+{
+    background-color: #48beda;
+    height: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar_container 
+{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1; 
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
