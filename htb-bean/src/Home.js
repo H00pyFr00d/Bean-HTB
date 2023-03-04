@@ -14,9 +14,7 @@ export default function Home() {
                 web page to show everyone what local recycling facilities are available to them. This web page will show the closest recycling bins to their 
                 current location depending on what they intend to recycle. 
             </p>
-
-        </div>
-        
+        </div>   
     )
 }
 

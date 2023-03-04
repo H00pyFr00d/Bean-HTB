@@ -11,6 +11,8 @@ import {
   MapContainer,
   TileLayer,
   useMap,
+  Marker,
+  Popup
 } from 'https://cdn.esm.sh/react-leaflet'
 
 function App() {
@@ -63,19 +65,21 @@ function App() {
   }, [coords]);
 
   const drawMap = (mapSrc) => {
+    const cPosition = [55.9447956,-3.1875313]
+    const cDestination = [55.944433, -3.187893]
     return(
       <div>
-        <MapContainer center={position} zoom={13} scrollWheelZoom={true}>
+        <MapContainer center={cPosition} zoom={13} scrollWheelZoom={true}>
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <Marker position={position}>
+            <Marker position={cPosition}>
               <Popup>
                 Current Location.
               </Popup>
             </Marker>
-            <Marker position={destination}>
+            <Marker position={cDestination}>
               <Popup>
                 Nearest bin.
               </Popup>
@@ -115,11 +119,7 @@ function App() {
       </div>
     );
   };
-  //export default Checkbox;
-  const Footer = () => {
-    return ( <p> Data sourced from <a href = "https://data.edinburghcouncilmaps.info/datasets/ddb5fcb791634729b4b4d3d1e5b8aa05/explore"> Edinburgh City Council </a> , May 2021. </p>
-    )
-  }
+  
 
   const Navbar = () => {
     return (
@@ -237,3 +237,13 @@ function App() {
 }
 
 export default App;
+
+//menu
+ const menu = document.querySelector('#mobile-menu');
+ const menuLinks = document.querySelector('.navbar_menu');
+
+ menu.addEventListener('click', function()
+ {
+    menu.classList.toggle('is-active');
+    menuLinks.classList.toggle('active');
+ });
