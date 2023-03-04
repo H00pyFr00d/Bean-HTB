@@ -60,7 +60,10 @@
     align-items: center;
     font-size: 1.7rem;
     position: sticky;
-    width: 100%;
+<<<<<<< HEAD
+    min-width: 100%;
+=======
+>>>>>>> 88c81e92785c2ed08f96d805211629e2647d63d4
     top: 0;
     z-index: 999;
 }
@@ -81,11 +84,8 @@
 {
     display: flex;
     justify-content: space-between;
-    height: 100px;
+    height: 100%;
     z-index: 1; 
-    width: 100%;
-    max-width: 1300px;
-    margin: 20px auto;
     padding: 0 50px;
 }
 
@@ -100,7 +100,7 @@
 
 .navbar_item
 {
-    height: 100px;
+    height: 100%;
 }
 
 .navbar_links
@@ -156,7 +156,6 @@ width: 100%;
        
         z-index: 1;
         width: 100%;
-        max-width: 1300px;
     }
 
     .navbar_menu
@@ -167,7 +166,7 @@ width: 100%;
         position: absolute;
         opacity: 0;
         transition: all 0.5s ease;
-        height: 50vh;
+        height: 100%;
         z-index: -1;
     }
 
@@ -251,10 +250,9 @@ background-color: rgb(103, 164, 103);
     display: block;
     border-radius: 25px;
     margin: 40px 20px;
-    padding: 20px 20px 20px 20px;
+    padding: 20px 20px 20px 20px;;
     background-color: #282c34;
     height: 100%;
-    width: auto;
     z-index: 1; 
 }
 
@@ -287,6 +285,7 @@ background-color: rgb(103, 164, 103);
     background-color: #282c34;
     height: 100%;
     z-index: 1; 
+    max-width: 1300px;
 }
 
 .filterMainBody h2
