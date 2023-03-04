@@ -1,16 +1,4 @@
 # Bean-HTB
 
-
-lol got u bitch
-
-if (name == chris) {
-  this.neek = True;
-}
-else if (name == lyle) {
-  this.smelly = veryTrue;
-}
-else if (name == adam) {
-  this.underpaidNHSWorker = True;
-  print("Rishi sends his regards");
-}  
+A web app to find the closest bins to the user for recycling, food waste, etc.
   

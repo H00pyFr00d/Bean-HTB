@@ -10,7 +10,8 @@
 <iframe id='theMap' width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src= "https://www.openstreetmap.org/export/embed.html?bbox=-3.2060337066650395%2C55.93855329531538%2C-3.1777095794677734%2C55.94984861420047&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/>
 <p>Click the button to get your coordinates.</p>
 
-<button onclick="getLocation()">Try It</button>
+<button onclick="getLocation()">Get location</button>
+<button onclick="showRoute([[55.944788, -3.1875118],[55.943426, -3.185818]])">Try route</button>
 
 <p id="demo"></p>
 
@@ -37,7 +38,7 @@ function showPosition(position) {
    const new_upper_longitude = currentLongitude + (dx / 6378) * (180 / Math.PI) / cos(latitude * Math.PI)/180;
    const new_lower_latitude = currentLatitude  - (dy / 6378) * (180 / Math.PI);
    const new_lower_longitude = currentLongitude - (dx / 6378) * (180 / Math.PI) / cos(latitude * Math.PI)/180;
-   const link = 'https://www.openstreetmap.org/export/embed.html?bbox='+ new_lower_longitude +'%2C'+ new_lower_latitude + '%2C' + new_upper_longitude + '%2C' + new_upper_latitude+'&amp;layer=mapnik'
+   const link = 'https://www.openstreetmap.org/export/embed.html?bbox='+ new_lower_longitude +'%2C'+ new_lower_latitude + '%2C' + new_upper_longitude + '%2C' + new_upper_latitude+'&amp;layer=mapnik';
    changeIframe(link)
 }
 
@@ -51,7 +52,41 @@ function changeIframe(change) {
 // distance between 2 coords in miles =acos(sin(lat1)*sin(lat2)+cos(lat1)*cos(lat2)*cos(lon2-lon1))*6371
 //-----In km:----------
 
+
+function showRoute() {
+  try {
+    navigator.geolocation.getCurrentPosition(showArray);
+  } catch {
+    x.innerHTML = err;
+  }
+}
+
+function showArray(position) {
+  x.innerHTML = "[" + position.coords.latitude +
+  "],[" + position.coords.longitude + "]";
+}
 </script>
+
+<!--<script src="https://cdn.jsdelivr.net/npm/graphhopper-js-api-client/dist/graphhopper-client.js">-->
+<!--const x = document.getElementById("demo")-->
+
+<!--function showRoute(posArray){-->
+<!--    pos1Array = [55.944788, -3.1875118];-->
+<!--    pos2Array = [55.943426, -3.185818];-->
+
+<!--    let ghRouting = new GraphHopper.Routing(-->
+<!--    { key: "28add460-25f0-49ac-9f54-f332080d6b6b"},-->
+<!--    { profile: "foot", elevation: false });-->
+
+<!--    ghRouting.doRequest({points:[pos1Array, pos2Array]})-->
+<!--    .then(function(json) {-->
+<!--    x.innerHTML = "RAN";-->
+<!--    })-->
+<!--    .catch(function(err) {-->
+<!--        x.innerHTML = "NO RAN";-->
+<!--    });-->
+<!--    };-->
+<!--</script>-->
 
 </body>
 </html>
