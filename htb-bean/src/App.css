@@ -17,6 +17,7 @@
   height: 5vh;
   bottom: 0;
   color: white;
+  font-family:'Verdana','Arial', sans-serif;
 }
 
 .App-link {
@@ -383,7 +384,7 @@ background-color: rgb(103, 164, 103);
 width: 100%;
 }
 
-footer
+footer 
 {
     position: absolute;
     bottom: 0;
