@@ -60,7 +60,6 @@
     align-items: center;
     font-size: 1.7rem;
     position: sticky;
-    min-width: 100%;
     top: 0;
     z-index: 999;
     width: 100vw !important;
@@ -83,6 +82,7 @@
     display: flex;
     justify-content: space-between;
     height: 100%;
+    position: sticky;
     z-index: 1; 
     padding: 0 50px;
 }
@@ -92,12 +92,14 @@
     height: 100%;
     display: flex;
     align-items: center;
+    position: sticky;
     list-style: none;
     text-align: center;
 }
 
 .navbar_item
 {
+    position: sticky;
     height: 100%;
 }
 
@@ -120,27 +122,27 @@
     content: "";
     position: absolute;
     background-color: rgb(107, 181, 102);
-    height: 3px;
-    width: 0;
+    height: 3%;
+    width: 0px;
     transition: 0.4s;
 }
 
 .navbar_links:after 
 {
     left: 0;
-    bottom: 20px;
+    bottom: 20%;
 }
 
 .navbar_links:before
 {
     left: 0;
-    top: 20px;
+    top: 20%;
 }
 
 .navbar_links:hover:after,
 .navbar_links:hover:before
 {
-width: 100%;
+    width: 100%;
 }
 
 /* Mobile navbar */
@@ -160,12 +162,10 @@ width: 100%;
     {
         display: grid;
         grid-template-columns: auto;
-        width: 100%;
         position: absolute;
         opacity: 0;
         transition: all 0.5s ease;
         height: 100%;
-        z-index: -1;
     }
 
     .navbar_menu.active
@@ -175,14 +175,14 @@ width: 100%;
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 99;
-        height: 56vh;
+        height: 100%;
         font-size: 1.6rem;
     }
 
     .navbar_toggle .bar
     {
-        width: 25px;
-        height: 3px;
+        width: 15%;
+        height: 20%;
         margin: 5px auto;
         transition: all 0.3s ease-in-out;
         background: rgb(107, 181, 102);
@@ -196,6 +196,7 @@ width: 100%;
     .navbar_links
     {
         text-align: center;
+        height: 100%;
         padding: 25px;
         width: 100%;
         display: table;
