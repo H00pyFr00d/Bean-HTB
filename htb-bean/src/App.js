@@ -1,6 +1,5 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import { RadioGroup, RadioButton } from 'react-radio-buttons';
 import Home from './Home.js'
 import Footer from './components/Footer';
 import binLogo from "./images/binLogo.png";
