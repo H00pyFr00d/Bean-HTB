@@ -212,7 +212,7 @@
     .navbar_links
     {
         text-align: center;
-        padding: 25px;
+        padding: 10px;
         display: inline-block;
         color: white;
     }
@@ -221,8 +221,8 @@
     {
         display: inline-block;
         background-color: #282c34;
-        top: 100;
         z-index: 999;
+        width: 200px;
     }
 
 }
