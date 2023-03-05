@@ -50,15 +50,14 @@ function App() {
   const [coords, setCoords] = useState({latitude: null, longitude: null});
   const [destCoords, setDestCoords] = useState({latitude: null, longitude: null});
   
-   const getLocation = () => {
-     try {
-       if (navigator.geolocation) {
-         return navigator.geolocation.getCurrentPosition(navigatorHelper);
-       } else {alert("Geolocation is not supported by this browser.");}
-     }
-     catch {
-     }
-   }
+  const getLocation = () => {
+    try {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(navigatorHelper);
+      } else {alert("Geolocation is not supported by this browser.");}
+    }
+    catch {}
+  }
 
    const navigatorHelper = (position) => {
      setCoords({
@@ -95,8 +94,11 @@ function App() {
 
   const searchJSON = () => {
     getLocation();
-    var cPosition = [coords.latitude,coords.longitude];
-    console.log(cPosition)
+    var cPosition = [coords.latitude, coords.longitude];
+    
+    // console.log("Current position")
+    // console.log(cPosition)
+
     const dir = './datasets/' + favorite + '/'+favorite;
     const fileJSON = require(dir+'_'+typeRub+'.json')
     var closest = 0;
@@ -115,10 +117,10 @@ function App() {
     //console.log(getDistanceFromLatLonInKm(cPosition[0], cPosition[1], fileJSON[closest].LAT, fileJSON[closest].LON));
   }
 
-  // useEffect(() => {
-  //   if (coords)
-  //       getSetMapLink();
-  // }, [coords]);
+  useEffect(() => {
+    if (coords)
+        console.log(coords)
+  }, [coords]);
 
 //  componentDidMount() {
 //  this.drawMap();
@@ -129,24 +131,24 @@ function App() {
 const cPosition = [coords.latitude,coords.longitude];
 const cDestination = [destCoords.latitude, destCoords.longitude];
 
-  const drawMap = () => {
-    console.log(distanceBetweenPoints(cPosition,cDestination));
-//    const query = new URLSearchParams({
-//      profile: 'foot',
-//      point: [cPosition,cDestination],
-//      key: '28add460-25f0-49ac-9f54-f332080d6b6b'
-//      }).toString();
-//      const resp = fetch(
-//      'https://graphhopper.com/api/1/route?${query}',
-//      {method: 'GET'}
-//    );
-//    try {
-//        const data = await resp.text();
-//        console.log(data);
-//    }
-//    catch(err) {
-//        alert(err);
-//    }
+const drawMap = () => {
+  // console.log(distanceBetweenPoints(cPosition,cDestination));
+  //    const query = new URLSearchParams({
+  //      profile: 'foot',
+  //      point: [cPosition,cDestination],
+  //      key: '28add460-25f0-49ac-9f54-f332080d6b6b'
+  //      }).toString();
+  //      const resp = fetch(
+  //      'https://graphhopper.com/api/1/route?${query}',
+  //      {method: 'GET'}
+  //    );
+  //    try {
+  //        const data = await resp.text();
+  //        console.log(data);
+  //    }
+  //    catch(err) {
+  //        alert(err);
+  //    }
 
 
     return(
@@ -169,7 +171,7 @@ const cDestination = [destCoords.latitude, destCoords.longitude];
         </MapContainer>
       </div>
     );
-  }
+}
 
   //Kate task help *attempt*
   //------------------------------
@@ -278,7 +280,7 @@ const cDestination = [destCoords.latitude, destCoords.longitude];
     setTypeRub('bookbank');
   }
   const alertLog = () => {
-    console.log(typeRub);
+    // console.log(typeRub);
     searchJSON();
   }
 
