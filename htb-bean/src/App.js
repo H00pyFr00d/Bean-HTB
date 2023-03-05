@@ -222,12 +222,11 @@ const drawMap = () => {
             <img src = {binLogo} alt = "Web Logo" height = "100%" width = "height"/>
 
             <div className="navbar_container">
-                <div className="burger-menu">
-                    <div className={burger_class} onClick={updateMenu}></div>
-                    <div className={burger_class} onClick={updateMenu}></div>
-                    <div className={burger_class} onClick={updateMenu}></div>
-                </div>
-        
+            <div class="navbar_toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
                     <ul className="navbar_menu">
                       <li className="navbar_item">
                           <div onClick={goToHome} className="navbar_links">Home</div>
@@ -241,7 +240,6 @@ const drawMap = () => {
                     </ul>
             </div>
             </nav>
-            <div className='menu_class'></div>
         </div>
         
     )
