@@ -115,11 +115,15 @@ function App() {
    }
 
   const updateVisited = (newI,count) => {
-    updated = JSON.parse(JSON.stringify(visited));
+    var updated = JSON.parse(JSON.stringify(visited));
     updated[count] = newI;
-    setVisited(updated)
+    setVisited(updated);
   }
-
+  const updateNear = (newPos,count) => {
+    var toUpdate = JSON.parse(JSON.stringify(next3Coords));
+    toUpdate[count-1] = newPos;
+    setNext3Coords(toUpdate);
+  }
   const searchJSON = () => {
     var cPosition = [coords.latitude, coords.longitude];
     var count = 0;
@@ -127,14 +131,15 @@ function App() {
     // console.log(cPosition)
     const dir = './datasets/' + favorite + '/'+favorite;
     const fileJSON = require(dir+'_'+typeRub+'.json')
-    while (count == 0){
-
+    while (count <= 3){
+        console.log(count);
         if ((fileJSON.length - count)> 0){
             var closest = 0;
             var newPos = [fileJSON[0].LAT,fileJSON[0].LON];
             var closeDis = distanceBetweenPoints(cPosition,newPos);
             for (let i = 1; i < fileJSON.length; i++) {
                 if (!visited.includes(i)){
+                    updateVisited(i);
                     var newPos = [fileJSON[i].LAT,fileJSON[i].LON];
                     var newDis = distanceBetweenPoints(cPosition,newPos);
                     if (newDis < closeDis){
@@ -146,12 +151,19 @@ function App() {
             var closePos = [fileJSON[closest].LAT,fileJSON[closest].LON];
 
         }
+        if (count == 0){
+            updateDest(closePos);
+            console.log(closePos,count);
+            alert('Distance (km) to closest: '+ calcCrow(cPosition,closePos));
+        } else {
+            updateNear(closePos,count);
+            console.log(closePos,count);
+        }
 
-        updateDest(closePos);
-        alert('Distance (km) to closest: '+calcCrow(cPosition,closePos));
 
         count ++;
     }
+    console.log(next3Coords);
 
     goToMap();
   }
