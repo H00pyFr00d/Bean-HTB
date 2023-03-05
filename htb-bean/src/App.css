@@ -293,7 +293,7 @@ background-color: rgb(103, 164, 103);
 {
     color: rgb(107, 181, 102);
     display: block;
-    text-align: left;
+    text-align: center;
     padding: 30px 20px 10px 20px;
     height: 100%;
     font-family:'Verdana','Arial', sans-serif;
@@ -315,7 +315,7 @@ background-color: rgb(103, 164, 103);
 {
     color: rgb(107, 181, 102);
     display: block;
-    text-align: left;
+    text-align: center;
     padding: 10px 20px 0 20px;
     height: 100%;
     font-family:'Verdana','Arial', sans-serif;
@@ -333,6 +333,7 @@ background-color: rgb(103, 164, 103);
 {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 100%;
     z-index: 1;
     width: 100%;
@@ -352,6 +353,7 @@ background-color: rgb(103, 164, 103);
 .rubbish_item
 {
     height: 100%;
+    align-items: center;
 }
 
 .rubbish_links

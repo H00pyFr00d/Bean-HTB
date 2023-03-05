@@ -64,8 +64,22 @@ function App() {
   }, [coords]);
 
   const drawMap = () => {
-    const cPosition = [55.9447956,-3.1875313]
-    const cDestination = [55.944433, -3.187893]
+    const cPosition = [coords.latitude,coords.longitude];
+    const cDestination = [55.944433, -3.187893];
+    const query = new URLSearchParams({
+      profile: 'foot',
+      point: [cPosition,cDestination],
+      key: '28add460-25f0-49ac-9f54-f332080d6b6b'
+      }).toString();
+
+    const resp = fetch(
+      `https://graphhopper.com/api/1/route?${query}`,
+      {method: 'GET'}
+    );
+
+
+    const data = resp.text();
+    console.log(data);
 
     return(
       <div>
@@ -173,7 +187,7 @@ function App() {
       // <form onSubmit={this.formSubmit}>
       <div className='filterMainBody'>
         <h2>Please select the campus you are closest to:</h2>
-
+        <br/>
         <div className = "areaButtons">
         <label><input type="radio" checked={favorite === 'central'} onChange={handleCentralChange} />Central</label>
         <label><input type="radio" checked={favorite === 'kings'} onChange={handleKingsChange} />Kings</label>
