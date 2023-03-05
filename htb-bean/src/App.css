@@ -360,6 +360,7 @@ background-color: rgb(103, 164, 103);
 .filterMainBody button
 {
  display: inline-block;
+ padding: 10px;
 }
 
 .rubbishButtons
