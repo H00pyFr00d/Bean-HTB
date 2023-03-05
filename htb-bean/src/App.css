@@ -318,7 +318,7 @@ background-color: rgb(103, 164, 103);
     text-align: center;
     padding: 10px 20px 0px 20px;
     height: 100%;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-family:'Verdana','Arial', sans-serif;
 }
 
@@ -367,6 +367,7 @@ background-color: rgb(103, 164, 103);
     padding: 0 20px;
     height: 100%;
     font-family:'Verdana','Arial', sans-serif;
+    font-size: 1.4rem;
     position: relative;
     cursor: pointer;
 }
