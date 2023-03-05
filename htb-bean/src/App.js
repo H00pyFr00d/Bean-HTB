@@ -101,7 +101,7 @@ function App() {
         }
     }
     console.log('Closest bin is at: '+[fileJSON[closest].LAT,fileJSON[closest].LON]);
-    getDistanceFromLatLonInKm(cPosition[0], cPosition[1], fileJSON[closest].LAT, fileJSON[closest].LON);
+    console.log(getDistanceFromLatLonInKm(cPosition[0], cPosition[1], fileJSON[closest].LAT, fileJSON[closest].LON));
   }
 //  const searchClosest = ()
   // This runs on initialisation
