@@ -61,28 +61,35 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (coords) getSetMapLink();
+    if (coords)
+        getSetMapLink();
   }, [coords]);
 
-  const drawMap = async() => {
+//  componentDidMount() {
+//  this.drawMap();
+//  }
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+  const drawMap = () => {
     const cPosition = [coords.latitude,coords.longitude];
     const cDestination = [55.944433, -3.187893];
-    const query = new URLSearchParams({
-      profile: 'foot',
-      point: [cPosition,cDestination],
-      key: '28add460-25f0-49ac-9f54-f332080d6b6b'
-      }).toString();
-    const resp = fetch(
-      `https://graphhopper.com/api/1/route?${query}`,
-      {method: 'GET'}
-    );
-    try {
-        const data = await resp.text();
-        console.log(data);
-    }
-    catch(err) {
-        alert(err);
-  }
+//    const query = new URLSearchParams({
+//      profile: 'foot',
+//      point: [cPosition,cDestination],
+//      key: '28add460-25f0-49ac-9f54-f332080d6b6b'
+//      }).toString();
+//      const resp = fetch(
+//      'https://graphhopper.com/api/1/route?${query}',
+//      {method: 'GET'}
+//    );
+//    try {
+//        const data = await resp.text();
+//        console.log(data);
+//    }
+//    catch(err) {
+//        alert(err);
+//    }
 
 
     return(
