@@ -217,34 +217,34 @@ function App() {
         <label className="container"><input type="radio" checked={favorite === 'kings'} onChange={handleKingsChange} class="customradio" /> Kings</label>
         </div>
 
-        <div className ="allWaste">
+        <div class ="allWaste">
           <br/>
           <h2>Please select which type of rubbish you want to dispose of:</h2>
-          <div className="GeneralWaste" >
+          <div class="GeneralWaste" >
             <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150"/>
             <p>General Waste </p>
          </div>
-         <div className="FoodWaste" style="float:left;">
+         <div class="FoodWaste" >
             <img src= {foodWaste} alt="Food waste logo" height = "150" width = "150" />
             <p>Food Waste </p>
          </div>
-         <div className="TextileRecycling">
+         <div class="TextileRecycling">
             <img src= {textileWaste} alt="Textile Recycling logo" height = "150" width = "150" />
             <p>Textile Recycling </p>
          </div>
-         <div className="PaperRecycling">
+         <div class="PaperRecycling">
             <img src= {paperWaste} alt="Paper Waste logo" height = "150" width = "150" />
             <p>Paper Waste </p>
          </div>
-         <div className="glassWaste">
+         <div class="glassWaste">
             <img src= {glassWaste} alt="Glass Waste logo" height = "150" width = "150" />
             <p>Glass Bottle Recycling </p>
          </div>
-         <div className="PackagingWaste">
+         <div class="PackagingWaste">
             <img src= {packaging} alt="Packaging Waste logo" height = "150" width = "150" />
             <p>Packaging Waste </p>
          </div>
-         <div className="Bookwaste">
+         <div class="Bookwaste">
             <img src= {bookWaste} alt="Book Waste logo" height = "150" width = "150" />
             <p>Book Bank </p>
          </div>
