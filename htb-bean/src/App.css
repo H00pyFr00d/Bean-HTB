@@ -348,12 +348,15 @@ background-color: rgb(103, 164, 103);
     font-family:'Verdana','Arial', sans-serif;
 }
 
-
-#areaButton
+.areaButtons img 
 {
-    color: rgb(107, 181, 102);
-    height: 100%;
-    font-family:'Verdana','Arial', sans-serif;
+    display: inline-block;
+    
+}
+
+.areaButtons button
+{
+ display: inline-block;
 }
 
 .rubbishButtons
