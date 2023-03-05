@@ -126,6 +126,8 @@ function App() {
     );
   }
 
+  
+ 
   const goToHome = () => {
     setHomePage(true);
     setMapPage(false);
@@ -231,6 +233,8 @@ function App() {
          <br></br>
         </div>
         <button>Apply</button>
+
+        
       </div>
       // </form>
     )
