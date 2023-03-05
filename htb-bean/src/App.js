@@ -21,35 +21,14 @@ import {
   Marker,
   Popup
 } from "react-leaflet";
-//function calcCrow(lat1, lon1, lat2, lon2)
-//{
-//  var R = 6371; // km
-//  var dLat = toRad(lat2-lat1);
-//  var dLon = toRad(lon2-lon1);
-//  var lat1 = toRad(lat1);
-//  var lat2 = toRad(lat2);
-//
-//  var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-//    Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
-//  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-//  var d = R * c;
-//  return d;
-//}
-//
-//function toRad(Value)
-//{
-//    return Value * Math.PI / 180;
-//}
 
 function App() {
   const [homePage, setHomePage] = useState(true);
   const [mapPage, setMapPage] = useState(false);
   const [filterPage, setFilterPage] = useState(false);
- // const[mobilePage, setMobilePage] = useState(false);
 
   const [coords, setCoords] = useState({latitude: null, longitude: null});
   const [destCoords, setDestCoords] = useState({latitude: null, longitude: null});
-//  const [centreCoords, setCentreCoords] = useState({latitude:null, longitude:null});
 
   const getLocation = () => {
     try {
@@ -69,22 +48,11 @@ function App() {
      });
    }
 
-  // const getSetMapLink = () => {
-  //   const new_upper_latitude  = coords.latitude  + (1 / 6378) * (180 / Math.PI);
-  //   const new_upper_longitude = coords.longitude + (1 / 6378) * (180 / Math.PI) / Math.cos(coords.latitude * Math.PI)/180;
-  //   const new_lower_latitude = coords.latitude  - (1 / 6378) * (180 / Math.PI);
-  //   const new_lower_longitude = coords.longitude - (1 / 6378) * (180 / Math.PI) / Math.cos(coords.longitude * Math.PI)/180;
-
-  //   const link = 'https://www.openstreetmap.org/export/embed.html?bbox=' + new_lower_longitude +'%2C'+ new_lower_latitude + '%2C' + new_upper_longitude + '%2C' + new_upper_latitude+'&amp;layer=mapnik'
-
-  //   setMap(link)
-  // }
 
   const distanceBetweenPoints = (pos1, pos2) => {
      const latDif = pos1[0] - pos2[0]
      const lonDif = pos1[1] - pos2[1]
      const squareDis = Math.pow(lonDif,2) + Math.pow(latDif,2)
-     //console.log(calcCrow(pos1,pos2));
      return squareDis
   }
   const calcCrow = (pos1, pos2) =>{
@@ -101,7 +69,6 @@ function App() {
       return d;
     }
 
-    // Converts numeric degrees to radians
   const toRad = (Value) => {
         return Value * Math.PI / 180;
     }
@@ -114,9 +81,7 @@ function App() {
 
   const searchJSON = () => {
     var cPosition = [coords.latitude, coords.longitude];
-    
-    // console.log("Current position")
-    // console.log(cPosition)
+
 
     const dir = './datasets/' + favorite + '/'+favorite;
     const fileJSON = require(dir+'_'+typeRub+'.json')
@@ -134,14 +99,8 @@ function App() {
     var closePos = [fileJSON[closest].LAT,fileJSON[closest].LON];
     var recentDis = Number((calcCrow(cPosition,closePos)*1000).toFixed(3));
     updateDest(closePos);
-//    var centreLat = ((parseFloat(cPosition[0])+parseFloat(cDestination[0]))/2);
-//    var centreLon = ((parseFloat(cPosition[1])+parseFloat(cDestination[1]))/2);
-//    updateCentre(centreLat,centreLon);
-//    console.log(centreCoords);
-    //console.log(closest);
-    //alert('Distance (m) to closest: '+recentDis);
+
     goToMap();
-    //console.log(getDistanceFromLatLonInKm(cPosition[0], cPosition[1], fileJSON[closest].LAT, fileJSON[closest].LON));
   }
 
   useEffect(() => {
@@ -153,22 +112,9 @@ function App() {
     getLocation()
   }, []);
 
-//  componentDidMount() {
-//  this.drawMap();
-//  }
-
-/////////////////////////////////////////////////////////////////////////////////////////////
 
 const cPosition = [coords.latitude,coords.longitude];
 const cDestination = [destCoords.latitude, destCoords.longitude];
-
-//    const updateCentre = (newLat,newLon) => {
-//        setCentreCoords({
-//           latitude: newLat,
-//           longitude: newLon
-//         });
-//    }
-
 
 const drawMap = () => {
   const typeConverter = {
