@@ -21,23 +21,25 @@ import {
   Marker,
   Popup
 } from "react-leaflet";
-function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
-  var R = 6371; // Radius of the earth in km
-  var dLat = deg2rad(lat2-lat1);  // deg2rad below
-  var dLon = deg2rad(lon2-lon1);
-  var a =
-    Math.sin(dLat/2) * Math.sin(dLat/2) +
-    Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
-    Math.sin(dLon/2) * Math.sin(dLon/2)
-    ;
-  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-  var d = R * c; // Distance in km
-  return d;
-}
-
-function deg2rad(deg) {
-  return deg * (Math.PI/180)
-}
+//function calcCrow(lat1, lon1, lat2, lon2)
+//{
+//  var R = 6371; // km
+//  var dLat = toRad(lat2-lat1);
+//  var dLon = toRad(lon2-lon1);
+//  var lat1 = toRad(lat1);
+//  var lat2 = toRad(lat2);
+//
+//  var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+//    Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
+//  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+//  var d = R * c;
+//  return d;
+//}
+//
+//function toRad(Value)
+//{
+//    return Value * Math.PI / 180;
+//}
 function Log(x){
     console.log(x)
   }
@@ -49,22 +51,22 @@ function App() {
 
   const [coords, setCoords] = useState({latitude: null, longitude: null});
   
-  // const getLocation = () => {
-  //   try {
-  //     if (navigator.geolocation) {
-  //       return navigator.geolocation.getCurrentPosition(navigatorHelper);
-  //     } else {alert("Geolocation is not supported by this browser.");}
-  //   }
-  //   catch {
-  //   }
-  // }
+   const getLocation = () => {
+     try {
+       if (navigator.geolocation) {
+         return navigator.geolocation.getCurrentPosition(navigatorHelper);
+       } else {alert("Geolocation is not supported by this browser.");}
+     }
+     catch {
+     }
+   }
 
-  // const navigatorHelper = (position) => {
-  //   setCoords({
-  //     latitude: position.coords.latitude,
-  //     longitude: position.coords.longitude
-  //   });
-  // }
+   const navigatorHelper = (position) => {
+     setCoords({
+       latitude: position.coords.latitude,
+       longitude: position.coords.longitude
+     });
+   }
 
   // const getSetMapLink = () => {
   //   const new_upper_latitude  = coords.latitude  + (1 / 6378) * (180 / Math.PI);
@@ -100,7 +102,7 @@ function App() {
             closeDis = newDis;
         }
     }
-    console.log('Closest bin is at: '+[fileJSON[closest].LAT,fileJSON[closest].LON]);
+    alert('Closest '+ typeRub+' bin on '+favorite+' is at: '+[fileJSON[closest].LAT,fileJSON[closest].LON]);
     console.log(getDistanceFromLatLonInKm(cPosition[0], cPosition[1], fileJSON[closest].LAT, fileJSON[closest].LON));
   }
 
