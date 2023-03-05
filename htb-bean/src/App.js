@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-
+import { RadioGroup, RadioButton } from 'react-radio-buttons';
 import Home from './Home.js'
 import Footer from './components/Footer';
 import binLogo from "./images/binLogo.png";
@@ -65,7 +65,7 @@ function App() {
     if (coords) getSetMapLink();
   }, [coords]);
 
-  const drawMap = () => {
+  const drawMap = async() => {
     const cPosition = [coords.latitude,coords.longitude];
     const cDestination = [55.944433, -3.187893];
     const query = new URLSearchParams({
@@ -77,9 +77,14 @@ function App() {
       `https://graphhopper.com/api/1/route?${query}`,
       {method: 'GET'}
     );
-    const data = async() => {
-    const data = await resp.text();
-    console.log(data);}
+    try {
+        const data = await resp.text();
+        console.log(data);
+    }
+    catch(err) {
+        alert(err);
+  }
+
 
     return(
       <div>
@@ -135,7 +140,7 @@ function App() {
   };
   //export default Checkbox;
   const Footer = () => {
-    return ( <p style={{'float': 'right', 'paddingTop': '0.5%', 'fontSize': '2vh', 'fontFamily': 'Verdana'}}> Data sourced from <a href = "https://data.edinburghcouncilmaps.info/datasets/ddb5fcb791634729b4b4d3d1e5b8aa05/explore"> Edinburgh City Council </a> , May 2021. </p>
+    return ( <p style={{'float': 'right', 'paddingTop': '0.5%', 'fontSize': '2vh', 'fontFamily': 'Verdana'}}> Data sourced from <a href = "https://data.edinburghcouncilmaps.info/datasets/ddb5fcb791634729b4b4d3d1e5b8aa05/explore"> Edinburgh City Council</a>, May 2021. </p>
     )
   }
 
@@ -189,8 +194,9 @@ function App() {
         <h2>Please select the campus you are closest to:</h2>
         <br/>
         <div className = "areaButtons">
-        <label><input type="radio" checked={favorite === 'central'} onChange={handleCentralChange} />Central</label>
-        <label><input type="radio" checked={favorite === 'kings'} onChange={handleKingsChange} />Kings</label>
+        <label class="container"><input type="radio" checked={favorite === 'central'} onChange={handleCentralChange} class="customradio"/> Central campus</label>
+        <br></br>
+        <label class="container"><input type="radio" checked={favorite === 'kings'} onChange={handleKingsChange} class="customradio" /> Kings</label>
         </div>
 
         <div>
