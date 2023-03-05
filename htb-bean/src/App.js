@@ -258,22 +258,23 @@ function App() {
         </div>
 
         <div className = "wastePics">
-              <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150"  />
-              <img src= {foodWaste} alt="Food waste logo" height = "150" width = "150" />
-              <img src= {textileWaste} alt="Textile Recycling logo" height = "150" width = "150" />
-              <img src= {paperWaste} alt="Paper Waste logo" height = "150" width = "150" />
-              <img src= {glassWaste} alt="Glass Waste logo" height = "150" width = "150" />
-              <img src= {packaging} alt="Packaging Waste logo" height = "150" width = "150" />
-              <img src= {bookWaste} alt="Book Waste logo" height = "150" width = "150" />
+            <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150"  />
+            <img src= {foodWaste} alt="Food waste logo" height = "150" width = "150" />
+            <img src= {textileWaste} alt="Textile Recycling logo" height = "150" width = "150" />
+            <img src= {paperWaste} alt="Paper Waste logo" height = "150" width = "150" />
+            <img src= {glassWaste} alt="Glass Waste logo" height = "150" width = "150" />
+            <img src= {packaging} alt="Packaging Waste logo" height = "150" width = "150" />
+            <img src= {bookWaste} alt="Book Waste logo" height = "150" width = "150" />
 
-            <button onClick = {genLog}>General Waste </button>
-            <button onClick = {foodLog}>Food Waste </button>
-            <button onClick = {texLog}>Textile Recycling </button>
-            <button onClick = {paperLog}>Paper Waste </button>
-            <button onClick = {glassLog}>Glass Recycling </button>
-            <button onClick = {packLog}>Packaging Waste </button>
-            <button onClick = {bookLog}>Book Bank </button>
-            </div>
+        <div className = "wasteButtons">
+          <button onClick = {genLog}>General Waste </button>
+          <button onClick = {foodLog}>Food Waste </button>
+          <button onClick = {texLog}>Textile Recycling </button>
+          <button onClick = {paperLog}>Paper Waste </button>
+          <button onClick = {glassLog}>Glass Recycling </button>
+          <button onClick = {packLog}>Packaging Waste </button>
+          <button onClick = {bookLog}>Book Bank </button>
+        </div>
 
          <br></br>
         </div>
