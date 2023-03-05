@@ -59,6 +59,8 @@ function App() {
     catch {}
   }
 
+  getLocation();
+
    const navigatorHelper = (position) => {
      setCoords({
        latitude: position.coords.latitude,
@@ -96,7 +98,6 @@ function App() {
 
 
   const searchJSON = () => {
-    getLocation();
     var cPosition = [coords.latitude, coords.longitude];
     
     // console.log("Current position")
@@ -117,6 +118,8 @@ function App() {
     }
     alert('Closest '+ typeRub+' bin on '+favorite+' is at: '+[fileJSON[closest].LAT,fileJSON[closest].LON]);
     updateDest(newPos);
+
+    goToMap();
     //console.log(getDistanceFromLatLonInKm(cPosition[0], cPosition[1], fileJSON[closest].LAT, fileJSON[closest].LON));
   }
 
@@ -242,9 +245,6 @@ const drawMap = () => {
                       <li className="navbar_item">
                           <div onClick={goToFilter} className="navbar_links">Find a Bin</div>
                       </li>
-                      <li className="navbar_item">
-                          <div onClick={goToMap} className="navbar_links">Go to Map</div>
-                      </li>
                     </ul>
             </div>
             </nav>
@@ -289,10 +289,6 @@ const drawMap = () => {
   const bookLog = () => {
     setTypeRub('bookbank');
   }
-  const alertLog = () => {
-    // console.log(typeRub);
-    searchJSON();
-  }
 
   const Filters = () => {
     return (
@@ -334,7 +330,7 @@ const drawMap = () => {
         
         
         <div className = "applyButton">
-          <button onClick = {alertLog}>Apply</button>
+          <button onClick = {searchJSON}>Go to Map</button>
         </div>
         
       </div>
