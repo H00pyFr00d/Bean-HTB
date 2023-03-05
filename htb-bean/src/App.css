@@ -178,8 +178,8 @@
         display: flex;
         justify-content: space-between;
         position: absolute;
-        display: inline-block;
-        height: 80px;
+        display: block;
+        height: 100%;
         z-index: 1;
         width: 100%;
     }
@@ -187,7 +187,7 @@
     .navbar_menu
     {
         display: grid;
-        grid-template-rows: auto;
+        grid-template-rows: auto; 
         margin: 0;
         width: 100%;
         position: absolute;
@@ -222,12 +222,14 @@
         color: white;
     }
 
-    #mobile-menu
+   
+
+    .mobile_menu
     {
-        position: absolute;
-        top: 20%;
-        right: 5%;
-        transform: translate(5%, 20%);
+        display: inline-block;
+        background-color: #282c34;
+        top: 100;
+        z-index: 999;
     }
 
 }

@@ -272,7 +272,8 @@ const drawMap = () => {
                 <span className="bar"></span>
                 <span className="bar"></span>
             </div>
-                    <ul className={isMobile ? "mobile_menu": "navbar_menu"} onClick={() => setIsMobile(false)}>
+            <div className='newButtons'>
+                    <ul className={window.innerWidth <= 960 ? "mobile_menu": "navbar_menu"} onClick={() => setIsMobile(false)}>
                       <li className="navbar_item">
                           <div onClick={goToHome} className="navbar_links">Home</div>
                       </li>
@@ -280,6 +281,7 @@ const drawMap = () => {
                           <div onClick={goToFilter} className="navbar_links">Find a Bin</div>
                       </li>
                     </ul>
+                    </div>
             </div>
             </div>
             </nav>
