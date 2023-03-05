@@ -32,12 +32,6 @@
   position: absolute;
 }
 
-.logo {
-  margin-left: 97.5vw;
-  width: 5vh;
-  height: width;
-}
-
 *,
 *:before,
 *:after
@@ -249,8 +243,8 @@ background-color: rgb(103, 164, 103);
 {
     display: block;
     border-radius: 25px;
-    margin: 20px 20px;
-    padding: 20px 20px 20px 20px;;
+    margin: 40px 20px;
+    padding: 10px 20px 20px 20px;;
     background-color: #282c34;
     height: 100%;
     z-index: 1;
@@ -262,6 +256,7 @@ background-color: rgb(103, 164, 103);
     color: rgb(107, 181, 102);
     display: block;
     text-align: center;
+    font-size: 4vh;
     padding: 30px 20px 10px 20px;
     height: 100%;
     font-family:'Verdana','Arial', sans-serif;
@@ -274,7 +269,7 @@ background-color: rgb(103, 164, 103);
     text-align: center;
     padding: 10px 20px 50px 10px;
     height: 100%;
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     font-family:'Verdana','Arial', sans-serif;
 }
 
@@ -285,6 +280,7 @@ background-color: rgb(103, 164, 103);
     margin: 40px 20px;
     padding: 20px 20px 20px 20px;;
     background-color: #282c34;
+    font-size: 4vh;
     height: 100%;
     z-index: 1;
 }
@@ -316,8 +312,9 @@ background-color: rgb(103, 164, 103);
     color: rgb(107, 181, 102);
     display: block;
     text-align: center;
-    padding: 10px 20px 0 20px;
+    padding: 10px 20px 0px 20px;
     height: 100%;
+    font-size: 1.8rem;
     font-family:'Verdana','Arial', sans-serif;
 }
 
@@ -336,8 +333,9 @@ background-color: rgb(103, 164, 103);
     align-items: center;
     height: 100%;
     z-index: 1;
-    width: 100%;
+    width: 90%;
     padding: 0 0 20px 20px;
+    margin: auto;
 }
 
 .rubbish_menu
@@ -348,6 +346,7 @@ background-color: rgb(103, 164, 103);
     text-align: center;
     padding-top: 30px;
     padding-bottom: 20px;
+    margin: auto;
 }
 
 .rubbish_item
@@ -366,6 +365,7 @@ background-color: rgb(103, 164, 103);
     padding: 0 20px;
     height: 100%;
     font-family:'Verdana','Arial', sans-serif;
+    font-size: 3vh;
     position: relative;
     cursor: pointer;
 }
@@ -384,13 +384,13 @@ background-color: rgb(103, 164, 103);
 .rubbish_links:after
 {
     left: 0;
-    bottom: 30px;
+    bottom: 40px;
 }
 
 .rubbish_links:before
 {
     left: 0;
-    top: 30px;
+    top: 40px;
 }
 
 .rubbish_links:hover:after,

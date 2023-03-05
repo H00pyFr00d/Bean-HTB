@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-
+import { RadioGroup, RadioButton } from 'react-radio-buttons';
 import Home from './Home.js'
 import Footer from './components/Footer';
 import binLogo from "./images/binLogo.png";
@@ -63,7 +63,7 @@ function App() {
     if (coords) getSetMapLink();
   }, [coords]);
 
-  const drawMap = () => {
+  const drawMap = async() => {
     const cPosition = [coords.latitude,coords.longitude];
     const cDestination = [55.944433, -3.187893];
     const query = new URLSearchParams({
@@ -71,15 +71,18 @@ function App() {
       point: [cPosition,cDestination],
       key: '28add460-25f0-49ac-9f54-f332080d6b6b'
       }).toString();
-
     const resp = fetch(
       `https://graphhopper.com/api/1/route?${query}`,
       {method: 'GET'}
     );
+    try {
+        const data = await resp.text();
+        console.log(data);
+    }
+    catch(err) {
+        alert(err);
+  }
 
-
-    const data = resp.text();
-    console.log(data);
 
     return(
       <div>
@@ -135,7 +138,7 @@ function App() {
   };
   //export default Checkbox;
   const Footer = () => {
-    return ( <p style={{'float': 'right', 'paddingTop': '0.5%', 'font-size': '2vh', 'font-family': 'Verdana'}}> Data sourced from <a href = "https://data.edinburghcouncilmaps.info/datasets/ddb5fcb791634729b4b4d3d1e5b8aa05/explore"> Edinburgh City Council </a> , May 2021. </p>
+    return ( <p style={{'float': 'right', 'paddingTop': '0.5%', 'fontSize': '2vh', 'fontFamily': 'Verdana'}}> Data sourced from <a href = "https://data.edinburghcouncilmaps.info/datasets/ddb5fcb791634729b4b4d3d1e5b8aa05/explore"> Edinburgh City Council</a>, May 2021. </p>
     )
   }
 
@@ -144,7 +147,7 @@ function App() {
         <div>
             <nav className="navbar">
 
-            <img src = {title} alt = "Find a Bin" height = "100%" width = "height"/>
+            <img src = {title} style={{'marginLeft': '5%'}} alt = "Find a Bin" height = "100%" width = "height"/>
             <img src = {binLogo} alt = "Web Logo" height = "100%" width = "height"/>
 
             <div className="navbar_container">
@@ -195,6 +198,7 @@ function App() {
         </div>
 
         <div>
+          <br/>
           <h2>Please select which type of rubbish you want to dispose of:</h2>
 
           <div className = "rubbishButtons">
