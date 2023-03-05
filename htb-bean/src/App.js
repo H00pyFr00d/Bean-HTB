@@ -41,7 +41,6 @@ import {
 //    return Value * Math.PI / 180;
 //}
 
-
 function App() {
   const [homePage, setHomePage] = useState(true);
   const [mapPage, setMapPage] = useState(false);
@@ -50,9 +49,7 @@ function App() {
 
   const [coords, setCoords] = useState({latitude: null, longitude: null});
   const [destCoords, setDestCoords] = useState({latitude: null, longitude: null});
-  const [next3Coords, setNext3Coords] = useState([{latitude: null, longitude: null},{latitude: null, longitude: null},{latitude: null, longitude: null}]);
-  const [visited, setVisited] = useState([null,null,null,null]);
-
+  
   const getLocation = () => {
     try {
       if (navigator.geolocation) {
@@ -114,46 +111,35 @@ function App() {
      });
    }
 
-  const updateVisited = (newI,count) => {
-    updated = JSON.parse(JSON.stringify(visited));
-    updated[count] = newI;
-    setVisited(updated)
-  }
 
   const searchJSON = () => {
     var cPosition = [coords.latitude, coords.longitude];
-    var count = 0;
+    
     // console.log("Current position")
     // console.log(cPosition)
+
     const dir = './datasets/' + favorite + '/'+favorite;
     const fileJSON = require(dir+'_'+typeRub+'.json')
-    while (count == 0){
-
-        if ((fileJSON.length - count)> 0){
-            var closest = 0;
-            var newPos = [fileJSON[0].LAT,fileJSON[0].LON];
-            var closeDis = distanceBetweenPoints(cPosition,newPos);
-            for (let i = 1; i < fileJSON.length; i++) {
-                if (!visited.includes(i)){
-                    var newPos = [fileJSON[i].LAT,fileJSON[i].LON];
-                    var newDis = distanceBetweenPoints(cPosition,newPos);
-                    if (newDis < closeDis){
-                        closest = i;
-                        closeDis = newDis;
-                    }
-                }
-            }
-            var closePos = [fileJSON[closest].LAT,fileJSON[closest].LON];
-
+    var closest = 0;
+    var newPos = [fileJSON[0].LAT,fileJSON[0].LON];
+    var closeDis = distanceBetweenPoints(cPosition,newPos);
+    for (let i = 1; i < fileJSON.length; i++) {
+        var newPos = [fileJSON[i].LAT,fileJSON[i].LON];
+        var newDis = distanceBetweenPoints(cPosition,newPos);
+        if (newDis < closeDis){
+            closest = i;
+            closeDis = newDis;
         }
-
-        updateDest(closePos);
-        alert('Distance (km) to closest: '+calcCrow(cPosition,closePos));
-
-        count ++;
     }
+    var closePos = [fileJSON[closest].LAT,fileJSON[closest].LON];
+
+    updateDest(closePos);
+    //console.log(closest);
+    console.log('Distance (km) to closest: '+calcCrow(cPosition,closePos))
+
 
     goToMap();
+    //console.log(getDistanceFromLatLonInKm(cPosition[0], cPosition[1], fileJSON[closest].LAT, fileJSON[closest].LON));
   }
 
   useEffect(() => {
@@ -165,10 +151,34 @@ function App() {
     getLocation()
   }, []);
 
+//  componentDidMount() {
+//  this.drawMap();
+//  }
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
 const cPosition = [coords.latitude,coords.longitude];
 const cDestination = [destCoords.latitude, destCoords.longitude];
-const drawMap = () => {
 
+const drawMap = () => {
+  // console.log(distanceBetweenPoints(cPosition,cDestination));
+  //    const query = new URLSearchParams({
+  //      profile: 'foot',
+  //      point: [cPosition,cDestination],
+  //      key: '28add460-25f0-49ac-9f54-f332080d6b6b'
+  //      }).toString();
+  //      const resp = fetch(
+  //      'https://graphhopper.com/api/1/route?${query}',
+  //      {method: 'GET'}
+  //    );
+  //    try {
+  //        const data = await resp.text();
+  //        console.log(data);
+  //    }
+  //    catch(err) {
+  //        alert(err);
+  //    }
+  
   const typeConverter = {
     generalwaste: "General Waste",
     foodwaste: "Food Waste",
@@ -178,6 +188,8 @@ const drawMap = () => {
     packaging: "Packaging Waste",
     bookbank: "Book Bank"
   }
+
+
   return(
     <div>
       <MapContainer className="map" center={cPosition} zoom={40} scrollWheelZoom={true}>
@@ -226,10 +238,6 @@ const drawMap = () => {
   }
 
   const Navbar = () => {
-   const[isMobile, setIsMobile] = useState(true);
-
-    const [burger_class, setBurgerClass] = useState("burger-bar unclicked")
-    const[menu_class, setMenuClass] = useState("menu hidden")
     const [isMenuClicked, setIsMenuClicked] = useState(false)
 
     const updateMenu = () => {
@@ -249,29 +257,18 @@ const drawMap = () => {
             <img src = {title} style={{'marginLeft': '5%'}} onClick={goToHome} alt = "Find a Bin" height = "100%" width = "height" />
             <img src = {binLogo} alt = "Web Logo" height = "100%" width = "height"/>
 
-            <div className="navbar_container">
-            <div className="navbar_toggle" id="mobile-menu">
-                <span className="bar"></span>
-                <span className="bar"></span>
-                <span className="bar"></span>
-            <div className="navbar_toggle" id="mobile-menu">
-              {isMobile ? <i className='FAS FA-TIMES'></i> : <i className='fas fa-bars'></i>}
-                <span className="bar"></span>
-                <span className="bar"></span>
-                <span className="bar"></span>
-            </div>
-            <div className={window.innerWidth <= 960 ? "mobile_menu": "navbar_menu"} onClick={() => setIsMobile(false)}>
-                    <ul>
-                      <li className="navbar_item">
-                          <div onClick={goToHome} className="navbar_links">Home</div>
-                      </li>
-                      <li className="navbar_item">
-                          <div onClick={goToFilter} className="navbar_links">Find a Bin</div>
-                      </li>
-                    </ul>
-                    </div>
-            </div>
-            </div>
+            {window.innerHeight <= 960 && (<div className="navbar_container">
+              <div className="navbar_menu">
+                <ul>
+                  <li className="navbar_item">
+                      <div onClick={goToHome} className="navbar_links">Home</div>
+                  </li>
+                  <li className="navbar_item">
+                      <div onClick={goToFilter} className="navbar_links">Find a Bin</div>
+                  </li>
+                </ul>
+              </div>
+            </div>)}
             </nav>
         </div>
       
@@ -327,33 +324,31 @@ const drawMap = () => {
         <br/>
         <h2>Please select the rubbish you want to recycle:</h2>
         <br/>
+        <div>
+          <div className = "wastePics">
+            <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150"  />
+            <img src= {foodWaste} alt="Food waste logo" height = "150" width = "150" />
+            <img src= {textileWaste} alt="Textile Recycling logo" height = "150" width = "150" />
+            <img src= {paperWaste} alt="Paper Waste logo" height = "150" width = "150" />
+            <img src= {glassWaste} alt="Glass Waste logo" height = "150" width = "150" />
+            <img src= {packaging} alt="Packaging Waste logo" height = "150" width = "150" />
+            <img src= {bookWaste} alt="Book Waste logo" height = "150" width = "150" />
+          </div>
 
-        <div className = "wastePics">
-          <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150"  />
-          <img src= {foodWaste} alt="Food waste logo" height = "150" width = "150" />
-          <img src= {textileWaste} alt="Textile Recycling logo" height = "150" width = "150" />
-          <img src= {paperWaste} alt="Paper Waste logo" height = "150" width = "150" />
-          <img src= {glassWaste} alt="Glass Waste logo" height = "150" width = "150" />
-          <img src= {packaging} alt="Packaging Waste logo" height = "150" width = "150" />
-          <img src= {bookWaste} alt="Book Waste logo" height = "150" width = "150" />
-        </div>
+          <div className = "wasteButtons">
+            <button onClick = {genLog}>General Waste </button>
+            <button onClick = {foodLog}>Food Waste </button>
+            <button onClick = {texLog}>Textile Recycling </button>
+            <button onClick = {paperLog}>Paper Waste </button>
+            <button onClick = {glassLog}>Glass Recycling </button>
+            <button onClick = {packLog}>Packaging Waste </button>
+            <button onClick = {bookLog}>Book Bank </button>
+          </div>
 
-        <div className = "wasteButtons">
-          <button onClick = {genLog}>General Waste </button>
-          <button onClick = {foodLog}>Food Waste </button>
-          <button onClick = {texLog}>Textile Recycling </button>
-          <button onClick = {paperLog}>Paper Waste </button>
-          <button onClick = {glassLog}>Glass Recycling </button>
-          <button onClick = {packLog}>Packaging Waste </button>
-          <button onClick = {bookLog}>Book Bank </button>
+          <div className = "applyButton">
+            <button onClick = {searchJSON}>Go to Map</button>
+          </div>  
         </div>
-
-        <br/>
-        
-        <div className = "applyButton">
-          <button onClick = {searchJSON}>Go to Map</button>
-        </div>
-        
       </div>
     )
   }
@@ -367,6 +362,9 @@ const drawMap = () => {
       {homePage && (
         <div style={{'width': '100%', 'overflow': 'hidden'}}>
           <Home/>
+          {window.innerHeight <= 960 && (
+            <button onClick={goToFilter} className='mobileButton'>Find a Bin!</button>
+          )}
         </div>
       )}
       
