@@ -157,16 +157,15 @@
 
 .allWaste img{
     display:inline-block;
-    margin: 40px 0px 0px 50px;
+    margin: 40px 5px 10px 50px;
     height: 100px;
     width: 100px;
 }
 
 .allWaste button{
-    display: inline-block;
-    padding: 10px;
-    margin: 10px;
-   
+    display: inline-block !important;
+   width:140px;
+   margin: 10px !important;
 }
 /* Mobile navbar */
 
