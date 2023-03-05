@@ -261,7 +261,7 @@ const drawMap = () => {
               </nav>
             )}
 
-            {window.innerHeight <= 960 && (
+            {window.innerWidth <= 960 && (
               <nav onClick={goToHome}  className="navbar">
 
               <img src = {title} style={{'marginLeft': '5%'}} alt = "Find a Bin" height = "100%" width = "height" />
