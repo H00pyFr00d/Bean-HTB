@@ -232,7 +232,7 @@ const drawMap = () => {
 
 
   const Footer = () => {
-    return ( <p style={{'float': 'right', 'paddingTop': '0.5%', 'fontSize': '2vh', 'fontFamily': 'Verdana'}}> Data sourced from <a href = "https://data.edinburghcouncilmaps.info/datasets/ddb5fcb791634729b4b4d3d1e5b8aa05/explore"> Edinburgh City Council</a>, May 2021. </p>
+    return ( <p style={{'float': 'right', 'paddingTop': '0.5%', 'fontSize': '1.5vh', 'fontFamily': 'Verdana'}}> Data sourced from <a href = "https://data.edinburghcouncilmaps.info/datasets/ddb5fcb791634729b4b4d3d1e5b8aa05/explore"> Edinburgh City Council</a>, May 2021. </p>
     )
   }
 
@@ -372,10 +372,7 @@ const drawMap = () => {
 
       {homePage && (
         <div style={{'width': '100%', 'overflow': 'hidden'}}>
-          <Home/>
-          {window.innerWidth <= 960 && (
-            <button onClick={goToFilter} className='mobileButton'>Find a Bin!</button>
-          )}
+          <Home goToFilter={goToFilter} />
         </div>
       )}
       
