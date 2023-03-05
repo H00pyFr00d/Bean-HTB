@@ -189,8 +189,8 @@ function App() {
         <h2>Please select the campus you are closest to:</h2>
         <br/>
         <div className = "areaButtons">
-        <label><input type="radio" checked={favorite === 'central'} onChange={handleCentralChange} />Central</label>
-        <label><input type="radio" checked={favorite === 'kings'} onChange={handleKingsChange} />Kings</label>
+        <label style={{'fontSize': '4vh'}}><input type="radio" checked={favorite === 'central'} onChange={handleCentralChange} />Central</label>
+        <label style={{'fontSize': '4vh'}}><input type="radio" checked={favorite === 'kings'} onChange={handleKingsChange} />Kings</label>
         </div>
 
         <div>

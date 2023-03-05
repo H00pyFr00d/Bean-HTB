@@ -280,6 +280,7 @@ background-color: rgb(103, 164, 103);
     margin: 40px 20px;
     padding: 20px 20px 20px 20px;;
     background-color: #282c34;
+    font-size: 4vh;
     height: 100%;
     z-index: 1;
 }
@@ -332,8 +333,9 @@ background-color: rgb(103, 164, 103);
     align-items: center;
     height: 100%;
     z-index: 1;
-    width: 100%;
+    width: 90%;
     padding: 0 0 20px 20px;
+    margin: auto;
 }
 
 .rubbish_menu
@@ -344,6 +346,7 @@ background-color: rgb(103, 164, 103);
     text-align: center;
     padding-top: 30px;
     padding-bottom: 20px;
+    margin: auto;
 }
 
 .rubbish_item
@@ -362,7 +365,7 @@ background-color: rgb(103, 164, 103);
     padding: 0 20px;
     height: 100%;
     font-family:'Verdana','Arial', sans-serif;
-    font-size: 1.4rem;
+    font-size: 3vh;
     position: relative;
     cursor: pointer;
 }
