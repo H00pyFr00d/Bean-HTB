@@ -26,6 +26,7 @@ function App() {
   const [homePage, setHomePage] = useState(true);
   const [mapPage, setMapPage] = useState(false);
   const [filterPage, setFilterPage] = useState(false);
+ // const[mobilePage, setMobilePage] = useState(false);
 
   const [coords, setCoords] = useState({latitude: null, longitude: null});
   
@@ -126,8 +127,22 @@ function App() {
     );
   }
 
-  
- 
+  //Kate task help *attempt*
+  //------------------------------
+  const menuMobile = () => {
+    document.querySelector('#mobile-menu');
+  }
+
+  const menuLink = () => {
+    document.querySelector(".navebar_menu");
+  }
+  const menuListener = () => {
+     menu.addEventListener("click", Navbar);
+     menu.classList.toggle('is-active');
+     menuLinks.classList.toggle('active');
+  };
+
+  //-----------------------------------------
   const goToHome = () => {
     setHomePage(true);
     setMapPage(false);
@@ -145,6 +160,7 @@ function App() {
     setMapPage(true);
     setFilterPage(false);
   }
+
 
   const Footer = () => {
     return ( <p style={{'float': 'right', 'paddingTop': '0.5%', 'fontSize': '2vh', 'fontFamily': 'Verdana'}}> Data sourced from <a href = "https://data.edinburghcouncilmaps.info/datasets/ddb5fcb791634729b4b4d3d1e5b8aa05/explore"> Edinburgh City Council</a>, May 2021. </p>
