@@ -376,6 +376,7 @@ background-color: rgb(103, 164, 103);
     padding: 10px;
     height: 140px;
     width: 150px;
+    border-radius: 30px;
 }
 
 .filterMainBody button
