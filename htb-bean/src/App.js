@@ -111,7 +111,6 @@ function App() {
      });
    }
 
-
   const searchJSON = () => {
     var cPosition = [coords.latitude, coords.longitude];
     
@@ -238,10 +237,6 @@ const drawMap = () => {
   }
 
   const Navbar = () => {
-   const[isMobile, setIsMobile] = useState(true);
-
-    const [burger_class, setBurgerClass] = useState("burger-bar unclicked")
-    const[menu_class, setMenuClass] = useState("menu hidden")
     const [isMenuClicked, setIsMenuClicked] = useState(false)
 
     const updateMenu = () => {
@@ -258,32 +253,21 @@ const drawMap = () => {
         <div>
             <nav className="navbar">
 
-            <img src = {title} style={{'marginLeft': '5%'}} onClick={goToHome} alt = "Find a Bin" height = "100%" width = "height" />
+            <img onClick={goToHome} src = {title} style={{'marginLeft': '5%'}} alt = "Find a Bin" height = "100%" width = "height" />
             <img src = {binLogo} alt = "Web Logo" height = "100%" width = "height"/>
 
-            <div className="navbar_container">
-            <div className="navbar_toggle" id="mobile-menu">
-                <span className="bar"></span>
-                <span className="bar"></span>
-                <span className="bar"></span>
-            <div className="navbar_toggle" id="mobile-menu">
-              {isMobile ? <i className='FAS FA-TIMES'></i> : <i className='fas fa-bars'></i>}
-                <span className="bar"></span>
-                <span className="bar"></span>
-                <span className="bar"></span>
-            </div>
-            <div className={window.innerWidth <= 960 ? "mobile_menu": "navbar_menu"} onClick={() => setIsMobile(false)}>
-                    <ul>
-                      <li className="navbar_item">
-                          <div onClick={goToHome} className="navbar_links">Home</div>
-                      </li>
-                      <li className="navbar_item">
-                          <div onClick={goToFilter} className="navbar_links">Find a Bin</div>
-                      </li>
-                    </ul>
-                    </div>
-            </div>
-            </div>
+            {window.innerHeight <= 960 && (<div className="navbar_container">
+              <div className="navbar_menu">
+                <ul>
+                  <li className="navbar_item">
+                      <div onClick={goToHome} className="navbar_links">Home</div>
+                  </li>
+                  <li className="navbar_item">
+                      <div onClick={goToFilter} className="navbar_links">Find a Bin</div>
+                  </li>
+                </ul>
+              </div>
+            </div>)}
             </nav>
         </div>
       
@@ -332,14 +316,14 @@ const drawMap = () => {
         <br/>
 
         <div className = "areaButtons">
-        <label className="container"><input type="radio" checked={favorite === 'central'} onChange={handleCentralChange} className="customradio"/> Central</label>
-        <br></br>
-        <label className="container"><input type="radio" checked={favorite === 'kings'} onChange={handleKingsChange} className="customradio" /> Kings</label>
+          <label className="container"><input type="radio" checked={favorite === 'central'} onChange={handleCentralChange} className="customradio"/> Central</label>
+          <br></br>
+          <label className="container"><input type="radio" checked={favorite === 'kings'} onChange={handleKingsChange} className="customradio" /> Kings</label>
         </div>
         <br/>
         <h2>Please select the rubbish you want to recycle:</h2>
-        <br></br>
-
+        <br/>
+        <div>
           <div className = "wastePics">
             <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150"  />
             <img src= {foodWaste} alt="Food waste logo" height = "150" width = "150" />
@@ -358,15 +342,12 @@ const drawMap = () => {
             <button onClick = {glassLog}>Glass Recycling </button>
             <button onClick = {packLog}>Packaging Waste </button>
             <button onClick = {bookLog}>Book Bank </button>
-            </div>
+          </div>
 
-         <br></br>
-        
-        
-        <div className = "applyButton">
-          <button onClick = {searchJSON}>Go to Map</button>
+          <div className = "applyButton">
+            <button onClick = {searchJSON}>Go to Map</button>
+          </div>  
         </div>
-        
       </div>
     )
   }
@@ -380,6 +361,9 @@ const drawMap = () => {
       {homePage && (
         <div style={{'width': '100%', 'overflow': 'hidden'}}>
           <Home/>
+          {window.innerHeight <= 960 && (
+            <button onClick={goToFilter} className='mobileButton'>Find a Bin!</button>
+          )}
         </div>
       )}
       

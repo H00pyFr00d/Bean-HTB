@@ -282,13 +282,19 @@ ul{
     .filterMainBody button
     {
         display:block;
-        margin-right: 30px;
-        margin-left: 30px;
+        margin-right: 5% !important;
+        margin-left: 5% !important;
+        width: 90% !important;
         padding: 30px;  
         font-family: 'Verdana', 'sans-serif';
         float: center;
     }
 
+    .applyButton {
+        width: 100% !important;
+        float: inline-end;
+        margin: auto;
+    }
 }
 
 /** Home **/
@@ -339,7 +345,7 @@ background-color: rgb(103, 164, 103);
     margin: 40px 20px;
     padding: 20px 20px 20px 20px;
     background-color: #282c34;
-    height: 100%;
+    height: auto;
     z-index: 1;
 }
 
@@ -540,6 +546,17 @@ a {
     width: 30%;
     float: inline-end;
     margin: auto;
+}
+
+.mobileButton {
+    margin: 20px auto;
+    display: block;
+    background-color: rgb(107, 181, 102);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 960px) {
