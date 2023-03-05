@@ -49,6 +49,7 @@ function App() {
 
   const [coords, setCoords] = useState({latitude: null, longitude: null});
   const [destCoords, setDestCoords] = useState({latitude: null, longitude: null});
+//  const [centreCoords, setCentreCoords] = useState({latitude:null, longitude:null});
 
   const getLocation = () => {
     try {
@@ -133,8 +134,12 @@ function App() {
     var closePos = [fileJSON[closest].LAT,fileJSON[closest].LON];
     var recentDis = Number((calcCrow(cPosition,closePos)*1000).toFixed(3));
     updateDest(closePos);
+//    var centreLat = ((parseFloat(cPosition[0])+parseFloat(cDestination[0]))/2);
+//    var centreLon = ((parseFloat(cPosition[1])+parseFloat(cDestination[1]))/2);
+//    updateCentre(centreLat,centreLon);
+//    console.log(centreCoords);
     //console.log(closest);
-    alert('Distance (m) to closest: '+recentDis);
+    //alert('Distance (m) to closest: '+recentDis);
     goToMap();
     //console.log(getDistanceFromLatLonInKm(cPosition[0], cPosition[1], fileJSON[closest].LAT, fileJSON[closest].LON));
   }
@@ -157,25 +162,15 @@ function App() {
 const cPosition = [coords.latitude,coords.longitude];
 const cDestination = [destCoords.latitude, destCoords.longitude];
 
+//    const updateCentre = (newLat,newLon) => {
+//        setCentreCoords({
+//           latitude: newLat,
+//           longitude: newLon
+//         });
+//    }
+
+
 const drawMap = () => {
-  // console.log(distanceBetweenPoints(cPosition,cDestination));
-  //    const query = new URLSearchParams({
-  //      profile: 'foot',
-  //      point: [cPosition,cDestination],
-  //      key: '28add460-25f0-49ac-9f54-f332080d6b6b'
-  //      }).toString();
-  //      const resp = fetch(
-  //      'https://graphhopper.com/api/1/route?${query}',
-  //      {method: 'GET'}
-  //    );
-  //    try {
-  //        const data = await resp.text();
-  //        console.log(data);
-  //    }
-  //    catch(err) {
-  //        alert(err);
-  //    }
-  
   const typeConverter = {
     generalwaste: "General Waste",
     foodwaste: "Food Waste",
@@ -189,7 +184,7 @@ const drawMap = () => {
 
   return(
     <div>
-      <MapContainer className="map" center={cPosition} zoom={40} scrollWheelZoom={true}>
+      <MapContainer className="map" center={cDestination} zoom={35} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
