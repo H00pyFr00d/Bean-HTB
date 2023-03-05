@@ -407,6 +407,12 @@ width: 100%;
   width: 80% !important;
 }
 
+.container {
+  display: block;
+  float:left;
+  font-family: 'Verdana';
+  }
+
 footer {
   position: fixed;
   bottom: 0;
