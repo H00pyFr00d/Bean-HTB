@@ -211,8 +211,10 @@ function App() {
     setFavorite('kings');
   };
 
-  const genLog = () => {
-    setTypeRub('general');
+  const genLog = (x) => {
+    
+    setTypeRub(x);
+  
   }
   const foodLog = () => {
     setTypeRub('food');
@@ -237,6 +239,9 @@ function App() {
   }
   const alertLog = () => {
     console.log(typeRub);
+  }
+
+
   }
 
   const Filters = () => {
@@ -264,13 +269,14 @@ function App() {
             <img src= {bookWaste} alt="Book Waste logo" height = "150" width = "150" />
          </div>
          <div className="Buttons" >
-            <button onClick = {genLog}>General Waste </button>
+           <button onClick = {genLog("general")}>General Waste </button>
             <button onClick = {foodLog}>Food Waste </button>
             <button onClick = {texLog}>Textile Recycling </button>
             <button onClick = {paperLog}>Paper Waste </button>
             <button onClick = {glassLog}>Glass Bottle Recycling </button>
             <button onClick = {packLog}>Packaging Waste </button>
             <button onClick = {bookLog}>Book Bank </button>
+
          </div>
          <br></br>
         </div>
