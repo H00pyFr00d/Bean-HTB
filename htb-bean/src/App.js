@@ -160,7 +160,7 @@ function App() {
     return (
       <div className='filterMainBody'>
         <h2>Please select the campus you are closest to:</h2>
-
+        <br/>
         <div className = "areaButtons">
           <input type="radio" id="areaButton" name="central" value="Central"/>
           <label for="central"> Central Campus</label>

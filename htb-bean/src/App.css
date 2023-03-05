@@ -293,7 +293,7 @@ background-color: rgb(103, 164, 103);
 {
     color: rgb(107, 181, 102);
     display: block;
-    text-align: left;
+    text-align: center;
     padding: 30px 20px 10px 20px;
     height: 100%;
     font-family:'Verdana','Arial', sans-serif;
@@ -315,7 +315,7 @@ background-color: rgb(103, 164, 103);
 {
     color: rgb(107, 181, 102);
     display: block;
-    text-align: left;
+    text-align: center;
     padding: 10px 20px 0 20px;
     height: 100%;
     font-family:'Verdana','Arial', sans-serif;
