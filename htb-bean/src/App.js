@@ -103,11 +103,6 @@ function App() {
     console.log('Closest bin is at: '+[fileJSON[closest].LAT,fileJSON[closest].LON]);
     console.log(getDistanceFromLatLonInKm(cPosition[0], cPosition[1], fileJSON[closest].LAT, fileJSON[closest].LON));
   }
-//  const searchClosest = ()
-  // This runs on initialisation
-  // useEffect(() => {
-  //   getLocation();
-  // }, []);
 
   // useEffect(() => {
   //   if (coords)
@@ -121,10 +116,9 @@ function App() {
 /////////////////////////////////////////////////////////////////////////////////////////////
 
   const drawMap = () => {
-const cPosition = [coords.latitude,coords.longitude];
-const cDestination = [55.944433, -3.187893];
+    const cPosition = [coords.latitude,coords.longitude];
+    const cDestination = [55.944433, -3.187893];
     console.log(distanceBetweenPoints(cPosition,cDestination));
-    console.log('../../datasets/datapoints_by_category/central_bottle.csv[0]');
 //    const query = new URLSearchParams({
 //      profile: 'foot',
 //      point: [cPosition,cDestination],
