@@ -163,11 +163,10 @@
 }
 
 .allWaste button{
-    display:inline-block;
-    text-align: center;
-    margin : 70px 10px 10px 40px;
-    height: 100px;
-    width : 100px
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+   
 }
 /* Mobile navbar */
 
@@ -177,7 +176,6 @@
     {
         display: flex;
         justify-content: space-between;
-
         z-index: 1;
         width: 100%;
     }
