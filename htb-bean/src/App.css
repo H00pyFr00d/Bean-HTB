@@ -351,7 +351,8 @@ background-color: rgb(103, 164, 103);
 .areaButtons img 
 {
     display: inline-block;
-    
+    width: 100px;
+    height: 100px;
 }
 
 .areaButtons button
@@ -402,9 +403,6 @@ background-color: rgb(103, 164, 103);
     position: relative;
     cursor: pointer;
 }
-
-
-
 
 .rubbish_links:before,
 .rubbish_links:after
