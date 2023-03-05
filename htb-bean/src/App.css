@@ -13,8 +13,8 @@
 
 .App-footer {
   background-color: #282c34;
-  height: 3vh;
-  bottom: 2;
+  height: 2.5vh;
+  bottom: 0;
   color: white;
   font-family:'Verdana','Arial', sans-serif;
 }
@@ -292,7 +292,11 @@ ul{
 
     .applyButton {
         width: 100% !important;
+<<<<<<< HEAD
         float: left;
+=======
+        float: inline-end;
+>>>>>>> b79c30f9e2f649715112eb2ff02065b1bca0617d
         margin: auto;
     }
 }
@@ -318,7 +322,7 @@ background-color: rgb(103, 164, 103);
 
 .homeMainBody h1
 {
-    color: rgb(255, 255, 255);
+    color: rgb(107, 181, 102);
     display: block;
     text-align: center;
     font-size: 5vh;
@@ -329,7 +333,7 @@ background-color: rgb(103, 164, 103);
 
 .homeMainBody p
 {
-    color: rgb(255, 255, 255);
+    color: rgb(107, 181, 102);
     display: flex;
     text-align: center;
     padding: 10px 20px 20px 10px;
@@ -368,7 +372,6 @@ background-color: rgb(103, 164, 103);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    font-family:'Verdana','Arial', sans-serif;
     font-size: 20px;
     cursor: pointer;
 }
@@ -546,7 +549,11 @@ a {
 .applyButton {
     width: 30%;
     float: inline-end;
+<<<<<<< HEAD
     margin: 0 auto !important;
+=======
+    margin: auto;
+>>>>>>> b79c30f9e2f649715112eb2ff02065b1bca0617d
     color: rgb(107, 181, 102);
 }
 
