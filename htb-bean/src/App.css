@@ -544,9 +544,12 @@ a {
 }
 
 .applyButton {
-    width: 30%;
+    transform: translateX(25%);
+    width: 100%;
     float: inline-end;
-    margin: auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    /* margin: 0 auto !important; */
     color: rgb(107, 181, 102);
 }
 
