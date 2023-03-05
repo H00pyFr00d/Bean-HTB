@@ -83,6 +83,7 @@ function App() {
      const latDif = pos1[0] - pos2[0]
      const lonDif = pos1[1] - pos2[1]
      const squareDis = Math.pow(lonDif,2) + Math.pow(latDif,2)
+     console.log(squareDis);
      return squareDis
   }
 
@@ -107,6 +108,7 @@ function App() {
     var closeDis = distanceBetweenPoints(cPosition,newPos);
     for (let i = 1; i < fileJSON.length; i++) {
         var newPos = [fileJSON[i].LAT,fileJSON[i].LON];
+        console.log(i);
         var newDis = distanceBetweenPoints(cPosition,newPos);
         if (newDis < closeDis){
             closest = i;
@@ -114,7 +116,7 @@ function App() {
         }
     }
     alert('Closest '+ typeRub+' bin on '+favorite+' is at: '+[fileJSON[closest].LAT,fileJSON[closest].LON]);
-    updateDest(newPos);
+    updateDest([fileJSON[closest].LAT,fileJSON[closest].LON]);
 
     goToMap();
     //console.log(getDistanceFromLatLonInKm(cPosition[0], cPosition[1], fileJSON[closest].LAT, fileJSON[closest].LON));
@@ -128,7 +130,7 @@ function App() {
   useEffect(() => {
     getLocation()
   }, []);
-  
+
 //  componentDidMount() {
 //  this.drawMap();
 //  }
