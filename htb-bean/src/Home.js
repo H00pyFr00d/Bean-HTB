@@ -2,7 +2,7 @@ import './App.css';
 import campus from "./images/campus.jpg";
 
 
-export default function Home(goToFilter) {
+export default function Home({ goToFilter }) {
     return (
         <div className = "homeMainBody">
             <h1>About our Product</h1>
@@ -16,7 +16,7 @@ export default function Home(goToFilter) {
                 current location depending on what they intend to recycle.
             </p>
             {window.innerHeight <= 960 && (
-              <button onClick={goToFilter} className='mobileButton'>Find a Bin!</button>
+              <button onClick={() => goToFilter()} className='mobileButton'>Find a Bin!</button>
             )}
         </div>
     )
