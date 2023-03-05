@@ -246,9 +246,9 @@ function App() {
         <h2>Please select the campus you are closest to:</h2>
         <br/>
         <div className = "areaButtons">
-        <label className="container"><input type="radio" checked={favorite === 'central'} onChange={handleCentralChange} className="customradio"/> Central campus</label>
-        <br></br>
-        <label className="container"><input type="radio" checked={favorite === 'kings'} onChange={handleKingsChange} className="customradio" /> Kings</label>
+          <label className="container"><input type="radio" checked={favorite === 'central'} onChange={handleCentralChange} className="customradio"/> Central campus</label>
+          <br></br>
+          <label className="container"><input type="radio" checked={favorite === 'kings'} onChange={handleKingsChange} className="customradio" /> Kings</label>
         </div>
 
         <div className ="allWaste">

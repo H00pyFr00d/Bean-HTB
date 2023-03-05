@@ -338,6 +338,8 @@ background-color: rgb(103, 164, 103);
 {
     color: rgb(107, 181, 102);
     display: block;
+    justify-content: space-between;
+    align-items: center;
     text-align: center;
     padding: 10px 20px 0px 20px;
     height: 100%;
