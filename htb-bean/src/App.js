@@ -64,9 +64,7 @@ function App() {
      return squareDis
   }
 
-  const searchClosest = ()
-
-
+//  const searchClosest = ()
   // This runs on initialisation
   // useEffect(() => {
   //   getLocation();
@@ -184,7 +182,7 @@ function App() {
 
 
   const [favorite, setFavorite] = React.useState('central');
-
+  const [typeRub, setTypeRub] = React.useState('general')
   const handleCentralChange = () => {
     setFavorite('central');
   };
