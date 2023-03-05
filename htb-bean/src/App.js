@@ -40,9 +40,7 @@ import {
 //{
 //    return Value * Math.PI / 180;
 //}
-function Log(x){
-    console.log(x)
-  }
+
 function App() {
   const [homePage, setHomePage] = useState(true);
   const [mapPage, setMapPage] = useState(false);
@@ -87,13 +85,13 @@ function App() {
   }
 
   const searchJSON = () => {
+    getLocation();
     const cPosition = [coords.latitude,coords.longitude];
+    console.log(cPosition)
     const dir = './datasets/' + favorite + '/'+favorite;
     const fileJSON = require(dir+'_'+typeRub+'.json')
     var closest = 0;
     var closeDis = distanceBetweenPoints(cPosition,[fileJSON[0].LAT,fileJSON[0].LON]);
-    console.log([fileJSON[0].LAT,fileJSON[0].LON]);
-    console.log(closeDis);
     for (let i = 1; i < fileJSON.length; i++) {
         var newPos = [fileJSON[i].LAT,fileJSON[i].LON];
         var newDis = distanceBetweenPoints(cPosition,newPos);
@@ -103,7 +101,7 @@ function App() {
         }
     }
     alert('Closest '+ typeRub+' bin on '+favorite+' is at: '+[fileJSON[closest].LAT,fileJSON[closest].LON]);
-    console.log(getDistanceFromLatLonInKm(cPosition[0], cPosition[1], fileJSON[closest].LAT, fileJSON[closest].LON));
+    //console.log(getDistanceFromLatLonInKm(cPosition[0], cPosition[1], fileJSON[closest].LAT, fileJSON[closest].LON));
   }
 
   // useEffect(() => {
