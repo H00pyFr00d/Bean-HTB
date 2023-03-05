@@ -291,8 +291,8 @@ ul{
     }
 
     .applyButton {
-        width: 100% !important;
-        float: inline-end;
+        width: 80% !important;
+        float: left;
         margin: auto;
     }
 }
