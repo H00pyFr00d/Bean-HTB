@@ -211,8 +211,10 @@ function App() {
     setFavorite('kings');
   };
 
-  const genLog = () => {
-    setTypeRub('general');
+  const genLog = (x) => {
+    
+    setTypeRub(x);
+  
   }
   const foodLog = () => {
     setTypeRub('food');
@@ -237,6 +239,9 @@ function App() {
   }
   const alertLog = () => {
     console.log(typeRub);
+  }
+
+
   }
 
   const Filters = () => {
@@ -278,11 +283,31 @@ function App() {
          
             
          
+          <div className="Photos" >
+            <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150"  />
+            <img src= {foodWaste} alt="Food waste logo" height = "150" width = "150" />
+            <img src= {textileWaste} alt="Textile Recycling logo" height = "150" width = "150" />
+            <img src= {paperWaste} alt="Paper Waste logo" height = "150" width = "150" />
+            <img src= {glassWaste} alt="Glass Waste logo" height = "150" width = "150" />
+            <img src= {packaging} alt="Packaging Waste logo" height = "150" width = "150" />
+            <img src= {bookWaste} alt="Book Waste logo" height = "150" width = "150" />
+         </div>
+         <div className="Buttons" >
+           <button onClick = {genLog("general")}>General Waste </button>
+            <button onClick = {foodLog}>Food Waste </button>
+            <button onClick = {texLog}>Textile Recycling </button>
+            <button onClick = {paperLog}>Paper Waste </button>
+            <button onClick = {glassLog}>Glass Bottle Recycling </button>
+            <button onClick = {packLog}>Packaging Waste </button>
+            <button onClick = {bookLog}>Book Bank </button>
+
+         </div>
          <br></br>
         </div>
         
+        <div className='applyButton'>
         <button onClick = {alertLog}>Apply</button>
-        
+        </div>
         
       </div>
       // </form>
