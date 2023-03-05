@@ -546,6 +546,12 @@ a {
     width: 30%;
     float: inline-end;
     margin: auto;
+    color: rgb(107, 181, 102);
+}
+
+.applyButton button {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 .mobileButton {
