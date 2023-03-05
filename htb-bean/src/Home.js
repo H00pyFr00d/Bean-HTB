@@ -15,7 +15,7 @@ export default function Home({ goToFilter }) {
                 web page to show everyone what local recycling facilities are available to them. This web page will show the closest recycling bins to their
                 current location depending on what they intend to recycle.
             </p>
-            {window.innerHeight <= 960 && (
+            {window.innerWidth <= 960 && (
               <button onClick={() => goToFilter()} className='mobileButton'>Find a Bin!</button>
             )}
         </div>
