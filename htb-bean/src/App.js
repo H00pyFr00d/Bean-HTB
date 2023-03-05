@@ -58,9 +58,13 @@ function App() {
     setMap(link)
   }
 
-  // const distanceBetweenPoints = (lat1, lat2) => {
-  //   distance between 2 coords in miles =acos(sin(lat1)*sin(lat2)+cos(lat1)*cos(lat2)*cos(lon2-lon1))*6371
-  // }
+  const distanceBetweenPoints = (pos1, pos2) => {
+     const latDif = pos1[0] - pos2[0]
+     const lonDif = pos1[1] - pos2[1]
+     const squareDis = Math.pow(lonDif,2) + Math.pow(latDif,2)
+     return squareDis
+  }
+
 
   // This runs on initialisation
   useEffect(() => {
@@ -68,28 +72,36 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (coords) getSetMapLink();
+    if (coords)
+        getSetMapLink();
   }, [coords]);
 
-  const drawMap = async() => {
+//  componentDidMount() {
+//  this.drawMap();
+//  }
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+  const drawMap = () => {
     const cPosition = [coords.latitude,coords.longitude];
     const cDestination = [55.944433, -3.187893];
-    const query = new URLSearchParams({
-      profile: 'foot',
-      point: [cPosition,cDestination],
-      key: '28add460-25f0-49ac-9f54-f332080d6b6b'
-      }).toString();
-    const resp = fetch(
-      `https://graphhopper.com/api/1/route?${query}`,
-      {method: 'GET'}
-    );
-    try {
-        const data = await resp.text();
-        console.log(data);
-    }
-    catch(err) {
-        alert(err);
-  }
+    console.log(distanceBetweenPoints(cPosition,cDestination));
+//    const query = new URLSearchParams({
+//      profile: 'foot',
+//      point: [cPosition,cDestination],
+//      key: '28add460-25f0-49ac-9f54-f332080d6b6b'
+//      }).toString();
+//      const resp = fetch(
+//      'https://graphhopper.com/api/1/route?${query}',
+//      {method: 'GET'}
+//    );
+//    try {
+//        const data = await resp.text();
+//        console.log(data);
+//    }
+//    catch(err) {
+//        alert(err);
+//    }
 
 
     return(
@@ -155,7 +167,7 @@ function App() {
         <div>
             <nav className="navbar">
 
-            <img src = {title} style={{'marginLeft': '5%'}} alt = "Find a Bin" height = "100%" width = "height"/>
+            <img src = {title} style={{'marginLeft': '5%'}} onClick={goToHome} alt = "Find a Bin" height = "100%" width = "height" />
             <img src = {binLogo} alt = "Web Logo" height = "100%" width = "height"/>
 
             <div className="navbar_container">
