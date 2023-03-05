@@ -123,6 +123,8 @@ function App() {
   const drawMap = () => {
 const cPosition = [coords.latitude,coords.longitude];
 const cDestination = [55.944433, -3.187893];
+
+  const drawMap = () => {
     console.log(distanceBetweenPoints(cPosition,cDestination));
     console.log('../../datasets/datapoints_by_category/central_bottle.csv[0]');
 //    const query = new URLSearchParams({
@@ -291,7 +293,7 @@ const cDestination = [55.944433, -3.187893];
 
         <h2>Please select the rubbish you want to recycle:</h2>
 
-          <div className = "wastePics">
+        <div className = "wastePics">
             <img src= {generalWaste} style={{'marginLeft': '5%'}} alt="General Waste logo" height = "150" width = "150"  />
             <img src= {foodWaste} style={{'marginLeft': '5%'}} alt="Food waste logo" height = "150" width = "150" />
             <img src= {textileWaste} style={{'marginLeft': '5%'}} alt="Textile Recycling logo" height = "150" width = "150" />
