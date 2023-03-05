@@ -5,6 +5,8 @@ import Home from './Home.js'
 import Footer from './components/Footer';
 import binLogo from "./images/binLogo.png";
 import title from "./images/title.png";
+import generalWaste from "./images/GeneralWaste.jpg";
+
 
 import {
   MapContainer,
@@ -194,6 +196,13 @@ function App() {
         <div>
           <br/>
           <h2>Please select which type of rubbish you want to dispose of:</h2>
+          <div class="GeneralWaste">
+            <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150" />
+            <p>General Waste </p>
+         </div>
+         <br></br>
+
+
 
           <div className = "rubbishButtons">
               <ul className="rubbish_menu">
