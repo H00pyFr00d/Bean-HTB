@@ -183,6 +183,7 @@
         display: block;
         height: 100%;
         z-index: 1;
+        margin-bottom: 10px;
     }
 
     .navbar_menu
@@ -203,14 +204,13 @@
         padding-left: 25px;
     }
 
-    
     .navbar_item
     {
         display: inline-block;
         position: absolute;
         background-color: #124d2f;
-        padding: 10px;
-        margin-top: 60px;
+        padding: 20px;
+        
     }
 
     .navbar_links
