@@ -279,7 +279,7 @@ function App() {
           </div>
 
          <br></br>
-        </div>
+        
         
         <div className = "applyButton">
           <button onClick = {alertLog}>Apply</button>
