@@ -237,38 +237,50 @@ const drawMap = () => {
   }
 
   const Navbar = () => {
-    const [isMenuClicked, setIsMenuClicked] = useState(false)
-
-    const updateMenu = () => {
-      if(!isMenuClicked) {
-       setMenuLinks("menu-links clicked")
-       setMenu("menu visible")
-      } else {
-        setMenuLinks("menu-links unclicked")
-        setMenu("menu hidden")
-      }
-    }
-
     return (
         <div>
-            <nav className="navbar">
+            {window.innerWidth > 960 && (
+              <nav className="navbar">
 
-            <img onClick={goToHome} src = {title} style={{'marginLeft': '5%'}} alt = "Find a Bin" height = "100%" width = "height" />
-            <img src = {binLogo} alt = "Web Logo" height = "100%" width = "height"/>
+              <img src = {title} style={{'marginLeft': '5%'}} alt = "Find a Bin" height = "100%" width = "height" />
+              <img src = {binLogo} alt = "Web Logo" height = "100%" width = "height"/>
 
-            {window.innerHeight <= 960 && (<div className="navbar_container">
-              <div className="navbar_menu">
-                <ul>
-                  <li className="navbar_item">
-                      <div onClick={goToHome} className="navbar_links">Home</div>
-                  </li>
-                  <li className="navbar_item">
-                      <div onClick={goToFilter} className="navbar_links">Find a Bin</div>
-                  </li>
-                </ul>
+
+              <div className="navbar_container">
+                <div className="navbar_menu">
+                  <ul>
+                    <li className="navbar_item">
+                        <div onClick={goToHome} className="navbar_links">Home</div>
+                    </li>
+                    <li className="navbar_item">
+                        <div onClick={goToFilter} className="navbar_links">Find a Bin</div>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>)}
-            </nav>
+              </nav>
+            )}
+
+            {window.innerHeight <= 960 && (
+              <nav onClick={goToHome}  className="navbar">
+
+              <img src = {title} style={{'marginLeft': '5%'}} alt = "Find a Bin" height = "100%" width = "height" />
+              <img src = {binLogo} alt = "Web Logo" height = "100%" width = "height"/>
+
+              {window.innerHeight <= 960 && (<div className="navbar_container">
+                <div className="navbar_menu">
+                  <ul>
+                    <li className="navbar_item">
+                        <div onClick={goToHome} className="navbar_links">Home</div>
+                    </li>
+                    <li className="navbar_item">
+                        <div onClick={goToFilter} className="navbar_links">Find a Bin</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>)}
+              </nav>
+            )}
         </div>
       
         
@@ -361,7 +373,7 @@ const drawMap = () => {
       {homePage && (
         <div style={{'width': '100%', 'overflow': 'hidden'}}>
           <Home/>
-          {window.innerHeight <= 960 && (
+          {window.innerWidth <= 960 && (
             <button onClick={goToFilter} className='mobileButton'>Find a Bin!</button>
           )}
         </div>
