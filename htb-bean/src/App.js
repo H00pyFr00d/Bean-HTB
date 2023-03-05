@@ -212,15 +212,15 @@ function App() {
         <h2>Please select the campus you are closest to:</h2>
         <br/>
         <div className = "areaButtons">
-        <label class="container"><input type="radio" checked={favorite === 'central'} onChange={handleCentralChange} class="customradio"/> Central campus</label>
+        <label className="container"><input type="radio" checked={favorite === 'central'} onChange={handleCentralChange} class="customradio"/> Central campus</label>
         <br></br>
-        <label class="container"><input type="radio" checked={favorite === 'kings'} onChange={handleKingsChange} class="customradio" /> Kings</label>
+        <label className="container"><input type="radio" checked={favorite === 'kings'} onChange={handleKingsChange} class="customradio" /> Kings</label>
         </div>
 
         <div className ="allWaste">
           <br/>
           <h2>Please select which type of rubbish you want to dispose of:</h2>
-          <div class="GeneralWaste" >
+          <div className="GeneralWaste" >
             <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150"/>
             <p>General Waste </p>
          </div>
@@ -228,7 +228,7 @@ function App() {
             <img src= {foodWaste} alt="Food waste logo" height = "150" width = "150" />
             <p>Food Waste </p>
          </div>
-         <div class="Textile Recycling">
+         <div className="TextileRecycling">
             <img src= {textileWaste} alt="Textile Recycling logo" height = "150" width = "150" />
             <p>Textile Recycling </p>
          </div>
