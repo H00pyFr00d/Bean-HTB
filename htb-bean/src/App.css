@@ -179,36 +179,23 @@
     {
         display: flex;
         justify-content: space-between;
-        height: 80px;
+        position: absolute;
+        display: block;
+        height: 100%;
         z-index: 1;
-        width: 100%;
-        max-width: 1300px;
-        padding: 0;
     }
 
     .navbar_menu
     {
         display: grid;
-        grid-template-columns: auto;
+        grid-template-rows: auto; 
         margin: 0;
-        width: 100%;
         position: absolute;
         top: -1000px;
         opacity: 0;
-        transition: all 0.5s ease;
         height: 50vh;
         z-index: -1;
-    }
-
-    .navbar_menu.active
-    {
-        background-image: linear-gradient(to top, #48beda, #5fccde);
-        top: 100%;
-        opacity: 1;
-        transition: all 0.5s ease;
-        z-index: 99;
-        height: 56vh;
-        font-size: 1.6rem;
+        background-color: #282c34;
     }
 
     #navbar_logo
@@ -216,31 +203,30 @@
         padding-left: 25px;
     }
 
-    .navbar_toggle .bar
-    {
-        width: 25px;
-        height: 3px;
-        margin: 5px auto;
-        transition: all 0.3s ease-in-out;
-        background: white;
-    }
-
+    
     .navbar_item
     {
-        width: 100%;
+        display: inline-block;
+        position: absolute;
+        background-color: #124d2f;
+        padding: 10px;
+        margin-top: 60px;
     }
 
     .navbar_links
     {
         text-align: center;
-        padding: 25px;
-        width: 100%;
-        display: table;
+        padding: 10px 10px;
+        display: inline-block;
+        color: white;
     }
 
-    .navbar_btn
+    .mobile_menu
     {
-        padding-bottom: 2rem;
+        display: inline-block;
+        background-color: #282c34;
+        z-index: 999;
+        width: 200px;
     }
 
     .button
@@ -285,6 +271,11 @@
     .wastePics
     {
         display: none;
+    }
+
+    .wasteButtons
+    {
+        display:block;  
     }
 
 }
@@ -544,18 +535,19 @@ a {
         position: relative;
         cursor: pointer;
     }
+
+    .wasteButtons
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        padding: 0 50px;
+        height: 100%;
+        font-family:'Verdana','Arial', sans-serif;
+        font-size: 3vh;
+        position: relative;
+        cursor: pointer;
+    }
 }
 
-.wasteButtons
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    padding: 0 50px;
-    height: 100%;
-    font-family:'Verdana','Arial', sans-serif;
-    font-size: 3vh;
-    position: relative;
-    cursor: pointer;
-}
