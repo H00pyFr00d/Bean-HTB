@@ -5,6 +5,13 @@ import Footer from './components/Footer';
 import binLogo from "./images/binLogo.png";
 import title from "./images/title.png";
 import generalWaste from "./images/GeneralWaste.jpg";
+import bookWaste from "./images/bookRecycling.jpg";
+import paperWaste from "./images/paperWaste.jpg";
+import foodWaste from "./images/food-waste-only-signs.jpg";
+import glassWaste from "./images/glassBottleWaste.jpg";
+import packaging from "./images/packagingWaste.jpg";
+import textileWaste from "./images/textileWaste.jpg";
+
 
 
 import {
@@ -51,9 +58,13 @@ function App() {
     setMap(link)
   }
 
-  // const distanceBetweenPoints = (lat1, lat2) => {
-  //   distance between 2 coords in miles =acos(sin(lat1)*sin(lat2)+cos(lat1)*cos(lat2)*cos(lon2-lon1))*6371
-  // }
+  const distanceBetweenPoints = (pos1, pos2) => {
+     const latDif = pos1[0] - pos2[0]
+     const lonDif = pos1[1] - pos2[1]
+     const squareDis = Math.pow(lonDif,2) + Math.pow(latDif,2)
+     return squareDis
+  }
+
 
   // This runs on initialisation
   useEffect(() => {
@@ -61,28 +72,36 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (coords) getSetMapLink();
+    if (coords)
+        getSetMapLink();
   }, [coords]);
 
-  const drawMap = async() => {
+//  componentDidMount() {
+//  this.drawMap();
+//  }
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+  const drawMap = () => {
     const cPosition = [coords.latitude,coords.longitude];
     const cDestination = [55.944433, -3.187893];
-    const query = new URLSearchParams({
-      profile: 'foot',
-      point: [cPosition,cDestination],
-      key: '28add460-25f0-49ac-9f54-f332080d6b6b'
-      }).toString();
-    const resp = fetch(
-      `https://graphhopper.com/api/1/route?${query}`,
-      {method: 'GET'}
-    );
-    try {
-        const data = await resp.text();
-        console.log(data);
-    }
-    catch(err) {
-        alert(err);
-  }
+    console.log(distanceBetweenPoints(cPosition,cDestination));
+//    const query = new URLSearchParams({
+//      profile: 'foot',
+//      point: [cPosition,cDestination],
+//      key: '28add460-25f0-49ac-9f54-f332080d6b6b'
+//      }).toString();
+//      const resp = fetch(
+//      'https://graphhopper.com/api/1/route?${query}',
+//      {method: 'GET'}
+//    );
+//    try {
+//        const data = await resp.text();
+//        console.log(data);
+//    }
+//    catch(err) {
+//        alert(err);
+//    }
 
 
     return(
@@ -148,7 +167,7 @@ function App() {
         <div>
             <nav className="navbar">
 
-            <img src = {title} style={{'marginLeft': '5%'}} alt = "Find a Bin" height = "100%" width = "height"/>
+            <img src = {title} style={{'marginLeft': '5%'}} onClick={goToHome} alt = "Find a Bin" height = "100%" width = "height" />
             <img src = {binLogo} alt = "Web Logo" height = "100%" width = "height"/>
 
             <div className="navbar_container">
@@ -198,42 +217,38 @@ function App() {
         <label class="container"><input type="radio" checked={favorite === 'kings'} onChange={handleKingsChange} class="customradio" /> Kings</label>
         </div>
 
-        <div>
+        <div class ="allWaste">
           <br/>
           <h2>Please select which type of rubbish you want to dispose of:</h2>
-          <div class="GeneralWaste">
-            <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150" />
+          <div class="GeneralWaste" >
+            <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150"/>
             <p>General Waste </p>
          </div>
+         <div class="FoodWaste" style="float:left;">
+            <img src= {foodWaste} alt="Food waste logo" height = "150" width = "150" />
+            <p>Food Waste </p>
+         </div>
+         <div class="Textile Recycling">
+            <img src= {textileWaste} alt="Textile Recycling logo" height = "150" width = "150" />
+            <p>Textile Recycling </p>
+         </div>
+         <div class="PaperRecycling">
+            <img src= {paperWaste} alt="Paper Waste logo" height = "150" width = "150" />
+            <p>Paper Waste </p>
+         </div>
+         <div class="glassWaste">
+            <img src= {glassWaste} alt="Glass Waste logo" height = "150" width = "150" />
+            <p>Glass Bottle Recycling </p>
+         </div>
+         <div class="PackagingWaste">
+            <img src= {packaging} alt="Packaging Waste logo" height = "150" width = "150" />
+            <p>Packaging Waste </p>
+         </div>
+         <div class="Bookwaste">
+            <img src= {bookWaste} alt="Book Waste logo" height = "150" width = "150" />
+            <p>Book Bank </p>
+         </div>
          <br></br>
-
-
-
-          <div className = "rubbishButtons">
-              <ul className="rubbish_menu">
-                  <li className="rubbish_item">
-                      <p className="rubbish_links">General Waste</p>
-                  </li>
-                  <li className="rubbish_item">
-                      <p className="rubbish_links">Food Waste</p>
-                  </li>
-                  <li className="rubbish_item">
-                      <p className="rubbish_links">Textile Recycling</p>
-                  </li>
-                  <li className="rubbish_item">
-                      <p className="rubbish_links">Paper Recycling</p>
-                  </li>
-                  <li className="rubbish_item">
-                      <p className="rubbish_links">Bottle Recycling</p>
-                  </li>
-                  <li className="rubbish_item">
-                      <p className="rubbish_links">Packaging Recycling</p>
-                  </li>
-                  <li className="rubbish_item">
-                      <p className="rubbish_links">Book Bank</p>
-                  </li>
-              </ul>
-          </div>
 
         </div>
         <button>Apply</button>
