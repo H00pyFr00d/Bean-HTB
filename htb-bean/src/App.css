@@ -181,7 +181,6 @@
         display: block;
         height: 100%;
         z-index: 1;
-        width: 100%;
     }
 
     .navbar_menu
@@ -189,7 +188,6 @@
         display: grid;
         grid-template-rows: auto; 
         margin: 0;
-        width: 100%;
         position: absolute;
         top: -1000px;
         opacity: 0;
@@ -204,12 +202,10 @@
     }
 
     
-
     .navbar_item
     {
         display: inline-block;
         position: absolute;
-        width: 100%;
         background-color: #282c34;
     }
 
@@ -217,12 +213,9 @@
     {
         text-align: center;
         padding: 25px;
-        width: 100%;
         display: inline-block;
         color: white;
     }
-
-   
 
     .mobile_menu
     {
