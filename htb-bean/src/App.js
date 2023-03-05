@@ -64,9 +64,6 @@ function App() {
        latitude: position.coords.latitude,
        longitude: position.coords.longitude
      });
-     console.log("navigatorHelper")
-     console.log(position.coords.latitude)
-     console.log(position.coords.longitude)
    }
 
   // const getSetMapLink = () => {
@@ -121,13 +118,9 @@ function App() {
   }
 
   useEffect(() => {
-    if (coords.latitude != null && coords.longitude != null)
+    if (coords)
         console.log(coords)
   }, [coords]);
-
-  useEffect(() => {
-    getLocation()
-  }, []);
 
 //  componentDidMount() {
 //  this.drawMap();
