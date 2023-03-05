@@ -1,5 +1,5 @@
 import './App.css';
-import campus from "./images/nya.jpg";
+import campus from "./images/campus.jpg";
 
 
 export default function Home() {
