@@ -21,7 +21,9 @@ import {
   Marker,
   Popup
 } from "react-leaflet";
-
+function Log(x){
+    console.log(x)
+  }
 function App() {
   const [homePage, setHomePage] = useState(true);
   const [mapPage, setMapPage] = useState(false);
@@ -209,8 +211,32 @@ function App() {
     setFavorite('kings');
   };
 
-  const Log = (x) =>{
-    console.log(x)
+  const genLog = () => {
+    setTypeRub('general');
+  }
+  const foodLog = () => {
+    setTypeRub('food');
+  }
+  const texLog = () => {
+    setTypeRub('textile');
+  }
+  const paperLog = () => {
+    setTypeRub('paper');
+  }
+  const glassLog = () => {
+    setTypeRub('glass');
+  }
+  const packLog = () => {
+    setTypeRub('package');
+  }
+  const boxLog = () => {
+    setTypeRub('box');
+  }
+  const bookLog = () => {
+    setTypeRub('book');
+  }
+  const alertLog = () => {
+    console.log(typeRub);
   }
 
   const Filters = () => {
@@ -220,15 +246,15 @@ function App() {
         <h2>Please select the campus you are closest to:</h2>
         <br/>
         <div className = "areaButtons">
-        <label className="container"><input type="radio" checked={favorite === 'central'} onChange={handleCentralChange} class="customradio"/> Central campus</label>
+        <label className="container"><input type="radio" checked={favorite === 'central'} onChange={handleCentralChange} className="customradio"/> Central campus</label>
         <br></br>
-        <label className="container"><input type="radio" checked={favorite === 'kings'} onChange={handleKingsChange} class="customradio" /> Kings</label>
+        <label className="container"><input type="radio" checked={favorite === 'kings'} onChange={handleKingsChange} className="customradio" /> Kings</label>
         </div>
 
         <div className ="allWaste">
           <br/>
           <h2>Please select which type of rubbish you want to dispose of:</h2>
-          <div class="Photos" >
+          <div className="Photos" >
             <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150"  />
             <img src= {foodWaste} alt="Food waste logo" height = "150" width = "150" />
             <img src= {textileWaste} alt="Textile Recycling logo" height = "150" width = "150" />
@@ -237,19 +263,20 @@ function App() {
             <img src= {packaging} alt="Packaging Waste logo" height = "150" width = "150" />
             <img src= {bookWaste} alt="Book Waste logo" height = "150" width = "150" />
          </div>
-         <div class="Buttons" >
-            <button onClick = "Log(0)">General Waste </button>
-            <button onClick = "Log(1)">Food Waste </button>
-            <button onClick = "Log(2)">Textile Recycling </button>
-            <button onClick = "Log(3)">Paper Waste </button>
-            <button onClick = "Log(4)">Glass Bottle Recycling </button>
-            <button onClick = "Log(5)">Packaging Waste </button>
-            <button onClick = "Log(6)">Book Bank </button>
+         <div className="Buttons" >
+            <button onClick = {genLog}>General Waste </button>
+            <button onClick = {foodLog}>Food Waste </button>
+            <button onClick = {texLog}>Textile Recycling </button>
+            <button onClick = {paperLog}>Paper Waste </button>
+            <button onClick = {glassLog}>Glass Bottle Recycling </button>
+            <button onClick = {packLog}>Packaging Waste </button>
+            <button onClick = {bookLog}>Book Bank </button>
          </div>
          <br></br>
         </div>
-        <button>Apply</button>
-
+        <div>
+        <button onClick = {alertLog}>Apply</button>
+        </div>
         
       </div>
       // </form>
