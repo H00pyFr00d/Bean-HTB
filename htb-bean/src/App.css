@@ -158,16 +158,16 @@
 .allWaste img{
     display:inline-block;
     margin: 40px 0px 0px 50px;
+    margin: 40px 10px 10px 50px;
     height: 100px;
     width: 100px;
 }
 
 .allWaste button{
-    display:inline-block;
-    text-align: center;
-    margin : 70px 10px 10px 40px;
-    height: 100px;
-    width : 100px
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+   
 }
 /* Mobile navbar */
 
@@ -177,7 +177,6 @@
     {
         display: flex;
         justify-content: space-between;
-
         z-index: 1;
         width: 100%;
     }
@@ -475,4 +474,32 @@ a {
 
 .map {
   height: 90vh;
+}
+
+.wastePics 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 20px;
+    height: 100%;
+    font-family:'Verdana','Arial', sans-serif;
+    font-size: 3vh;
+    position: relative;
+    cursor: pointer;
+}
+
+.wasteButtons
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 50px;
+    height: 100%;
+    font-family:'Verdana','Arial', sans-serif;
+    font-size: 3vh;
+    position: relative;
+    cursor: pointer;
 }

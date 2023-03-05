@@ -259,6 +259,30 @@ function App() {
         <div className ="allWaste">
           <br/>
           <h2>Please select which type of rubbish you want to dispose of:</h2>
+
+            <div className = "wastePics">
+              <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150"  />
+              <img src= {foodWaste} alt="Food waste logo" height = "150" width = "150" />
+              <img src= {textileWaste} alt="Textile Recycling logo" height = "150" width = "150" />
+              <img src= {paperWaste} alt="Paper Waste logo" height = "150" width = "150" />
+              <img src= {glassWaste} alt="Glass Waste logo" height = "150" width = "150" />
+              <img src= {packaging} alt="Packaging Waste logo" height = "150" width = "150" />
+              <img src= {bookWaste} alt="Book Waste logo" height = "150" width = "150" />
+            </div>
+
+            <div className = "wasteButtons">
+              <button onClick = "Log(0)">General Waste </button>
+              <button onClick = "Log(1)">Food Waste </button>
+              <button onClick = "Log(2)">Textile Recycling </button>
+              <button onClick = "Log(3)">Paper Waste </button>
+              <button onClick = "Log(4)">Glass Recycling </button>
+              <button onClick = "Log(5)">Packaging Waste </button>
+              <button onClick = "Log(6)">Book Bank </button>
+            </div>
+            
+         
+            
+         
           <div className="Photos" >
             <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150"  />
             <img src= {foodWaste} alt="Food waste logo" height = "150" width = "150" />
@@ -280,9 +304,9 @@ function App() {
          </div>
          <br></br>
         </div>
-        <div>
+        
         <button onClick = {alertLog}>Apply</button>
-        </div>
+        
         
       </div>
       // </form>
