@@ -199,6 +199,7 @@ const drawMap = () => {
   }
 
   const Navbar = () => {
+   const[isMobile, setIsMobile] = useState(true);
 
     const [burger_class, setBurgerClass] = useState("burger-bar unclicked")
     const[menu_class, setMenuClass] = useState("menu hidden")
@@ -206,11 +207,11 @@ const drawMap = () => {
 
     const updateMenu = () => {
       if(!isMenuClicked) {
-       setBurgerClass("burger-bar clicked")
-       setMenuClass("menu visible")
+       setMenuLinks("menu-links clicked")
+       setMenu("menu visible")
       } else {
-        setBurgerClass("burger-bar unclicked")
-        setMenuClass("menu hidden")
+        setMenuLinks("menu-links unclicked")
+        setMenu("menu hidden")
       }
     }
 
@@ -222,12 +223,13 @@ const drawMap = () => {
             <img src = {binLogo} alt = "Web Logo" height = "100%" width = "height"/>
 
             <div className="navbar_container">
-            <div class="navbar_toggle" id="mobile-menu">
+            <div className="navbar_toggle" id="mobile-menu">
+              {isMobile ? <i className='FAS FA-TIMES'></i> : <i className='fas fa-bars'></i>}
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
-                    <ul className="navbar_menu">
+                    <ul className={isMobile ? "mobile_menu": "navbar_menu"} onClick={() => setIsMobile(false)}>
                       <li className="navbar_item">
                           <div onClick={goToHome} className="navbar_links">Home</div>
                       </li>
