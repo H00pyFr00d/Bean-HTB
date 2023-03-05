@@ -171,21 +171,6 @@ const cDestination = [destCoords.latitude, destCoords.longitude];
     );
   }
 
-  //Kate task help *attempt*
-  //------------------------------
-  const menuMobile = () => {
-    document.querySelector('#mobile-menu');
-  }
-
-  const menuLink = () => {
-    document.querySelector(".navebar_menu");
-  }
-  const menuListener = () => {
-     menu.addEventListener("click", Navbar);
-     menu.classList.toggle('is-active');
-     menuLinks.classList.toggle('active');
-  };
-
   //-----------------------------------------
   const goToHome = () => {
     setHomePage(true);
@@ -212,6 +197,21 @@ const cDestination = [destCoords.latitude, destCoords.longitude];
   }
 
   const Navbar = () => {
+
+    const [burger_class, setBurgerClass] = useState("burger-bar unclicked")
+    const[menu_class, setMenuClass] = useState("menu hidden")
+    const [isMenuClicked, setIsMenuClicked] = useState(false)
+
+    const updateMenu = () => {
+      if(!isMenuClicked) {
+       setBurgerClass("burger-bar clicked")
+       setMenuClass("menu visible")
+      } else {
+        setBurgerClass("burger-bar unclicked")
+        setMenuClass("menu hidden")
+      }
+    }
+
     return (
         <div>
             <nav className="navbar">
@@ -220,11 +220,12 @@ const cDestination = [destCoords.latitude, destCoords.longitude];
             <img src = {binLogo} alt = "Web Logo" height = "100%" width = "height"/>
 
             <div className="navbar_container">
-                <div className="navbar_toggle" id="mobile-menu">
-                    <span className="bar"></span>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
+                <div className="burger-menu">
+                    <div className={burger_class} onClick={updateMenu}></div>
+                    <div className={burger_class} onClick={updateMenu}></div>
+                    <div className={burger_class} onClick={updateMenu}></div>
                 </div>
+        
                     <ul className="navbar_menu">
                       <li className="navbar_item">
                           <div onClick={goToHome} className="navbar_links">Home</div>
@@ -238,7 +239,9 @@ const cDestination = [destCoords.latitude, destCoords.longitude];
                     </ul>
             </div>
             </nav>
+            <div className='menu_class'></div>
         </div>
+        
     )
   }
 

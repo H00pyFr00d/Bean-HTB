@@ -173,90 +173,20 @@
 
 @media screen and (max-width: 960px)
 {
-    .navbar_container
-    {
+    .burger-menu {
+        height: 100%;
+        width: 4em;
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
-        z-index: 1;
-        width: 100%;
-    }
-
-    .navbar_menu
-    {
-        display: grid;
-        grid-template-columns: auto;
-        position: absolute;
-        opacity: 0;
-        transition: all 0.5s ease;
-        height: 100%;
-    }
-
-    .navbar_menu.active
-    {
-        background-image: linear-gradient(to top, #424345, #282c34);
-        top: 100%;
-        opacity: 1;
-        transition: all 0.5s ease;
-        z-index: 99;
-        height: 100%;
-        font-size: 1.6rem;
-    }
-
-    .navbar_toggle .bar
-    {
-        width: 15%;
-        height: 20%;
-        margin: 5px auto;
-        transition: all 0.3s ease-in-out;
-        background: rgb(107, 181, 102);
-    }
-
-    .navbar_item
-    {
-        width: 100%;
-    }
-
-    .navbar_links
-    {
-        text-align: center;
-        height: 100%;
-        padding: 25px;
-        width: 100%;
-        display: table;
-    }
-
-    .navbar_btn
-    {
-        padding-bottom: 2rem;
-    }
-
-    #mobile-menu
-    {
-        position: absolute;
-        top: 20%;
-        right: 5%;
-        transform: translate(5%, 20%);
-    }
-
-    .navbar_toggle .bar
-    {
-        display: block;
         cursor: pointer;
     }
 
-    #mobile-menu.is-active .bar:nth-child(2)
-    {
-        opacity: 0;
-    }
-
-    #mobile-menu.is-active .bar:nth-child(1)
-    {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    #mobile-menu.is-active .bar:nth-child(3)
-    {
-        transform: translateY(-8px) rotate(-45deg);
+    .burger-bar {
+        width: 4em;
+        height: 0.5em;
+        background-color: white;
+    
     }
 }
 
