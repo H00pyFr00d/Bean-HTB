@@ -194,6 +194,7 @@ function App() {
         </div>
 
         <div>
+          <br/>
           <h2>Please select which type of rubbish you want to dispose of:</h2>
 
           <div className = "rubbishButtons">
