@@ -351,8 +351,9 @@ background-color: rgb(103, 164, 103);
 .areaButtons img 
 {
     display: inline-block;
-    width: 100px;
-    height: 100px;
+    margin: 40px 0px 0px 40px;
+    height: 250px;
+    width: 250px;
 }
 
 .areaButtons button

@@ -284,17 +284,18 @@ const cDestination = [55.944433, -3.187893];
         <br></br>
         <label className="container"><input type="radio" checked={favorite === 'kings'} onChange={handleKingsChange} className="customradio" /> Kings</label>
         </div>
-
+        <br/>
         <h2>Please select the rubbish you want to recycle:</h2>
+        <br></br>
 
-        <div className = "wastePics">
-            <img src= {generalWaste} style={{'marginLeft': '5%'}} alt="General Waste logo" height = "150" width = "150"  />
-            <img src= {foodWaste} style={{'marginLeft': '5%'}} alt="Food waste logo" height = "150" width = "150" />
-            <img src= {textileWaste} style={{'marginLeft': '5%'}} alt="Textile Recycling logo" height = "150" width = "150" />
-            <img src= {paperWaste} style={{'marginLeft': '5%'}} alt="Paper Waste logo" height = "150" width = "150" />
-            <img src= {glassWaste} style={{'marginLeft': '5%'}} alt="Glass Waste logo" height = "150" width = "150" />
-            <img src= {packaging} style={{'marginLeft': '5%'}} alt="Packaging Waste logo" height = "150" width = "150" />
-            <img src= {bookWaste} style={{'marginLeft': '5%'}} alt="Book Waste logo" height = "150" width = "150" />
+          <div className = "wastePics">
+            <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150"  />
+            <img src= {foodWaste} alt="Food waste logo" height = "150" width = "150" />
+            <img src= {textileWaste} alt="Textile Recycling logo" height = "150" width = "150" />
+            <img src= {paperWaste} alt="Paper Waste logo" height = "150" width = "150" />
+            <img src= {glassWaste} alt="Glass Waste logo" height = "150" width = "150" />
+            <img src= {packaging} alt="Packaging Waste logo" height = "150" width = "150" />
+            <img src= {bookWaste} alt="Book Waste logo" height = "150" width = "150" />
           </div>
 
           <div className = "wasteButtons">
