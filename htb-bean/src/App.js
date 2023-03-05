@@ -71,15 +71,13 @@ function App() {
       point: [cPosition,cDestination],
       key: '28add460-25f0-49ac-9f54-f332080d6b6b'
       }).toString();
-
     const resp = fetch(
       `https://graphhopper.com/api/1/route?${query}`,
       {method: 'GET'}
     );
-
-
-    const data = resp.text();
-    console.log(data);
+    const data = async() => {
+    const data = await resp.text();
+    console.log(data);}
 
     return(
       <div>
@@ -194,6 +192,7 @@ function App() {
         </div>
 
         <div>
+          <br/>
           <h2>Please select which type of rubbish you want to dispose of:</h2>
 
           <div className = "rubbishButtons">

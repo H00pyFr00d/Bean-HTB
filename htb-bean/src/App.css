@@ -384,13 +384,13 @@ background-color: rgb(103, 164, 103);
 .rubbish_links:after
 {
     left: 0;
-    bottom: 30px;
+    bottom: 40px;
 }
 
 .rubbish_links:before
 {
     left: 0;
-    top: 30px;
+    top: 40px;
 }
 
 .rubbish_links:hover:after,
