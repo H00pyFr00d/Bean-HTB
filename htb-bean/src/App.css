@@ -413,6 +413,24 @@ width: 100%;
   font-family: 'Verdana';
   }
 
+input[type='radio'] { 
+    transform: scale(1.5); 
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: rgb(107, 181, 102);
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
 footer {
   position: fixed;
   bottom: 0;
