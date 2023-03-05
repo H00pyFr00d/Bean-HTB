@@ -278,9 +278,8 @@ background-color: rgb(103, 164, 103);
     display: block;
     border-radius: 25px;
     margin: 40px 20px;
-    padding: 20px 20px 20px 20px;;
+    padding: 20px 20px 20px 20px;
     background-color: #282c34;
-    font-size: 4vh;
     height: 100%;
     z-index: 1;
 }
@@ -293,6 +292,7 @@ background-color: rgb(103, 164, 103);
     padding: 30px 20px 10px 20px;
     height: 100%;
     font-family:'Verdana','Arial', sans-serif;
+    font-size: 4vh;
 }
 
 .filterMainBody button
