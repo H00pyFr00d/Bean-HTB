@@ -131,8 +131,12 @@ function App() {
             closeDis = newDis;
         }
     }
-    
-    updateDest([fileJSON[closest].LAT,fileJSON[closest].LON]);
+    var closePos = [fileJSON[closest].LAT,fileJSON[closest].LON];
+
+    updateDest(closePos);
+    //console.log(closest);
+    console.log('Distance (km) to closest: '+calcCrow(cPosition,closePos))
+
 
     goToMap();
     //console.log(getDistanceFromLatLonInKm(cPosition[0], cPosition[1], fileJSON[closest].LAT, fileJSON[closest].LON));
@@ -174,28 +178,38 @@ const drawMap = () => {
   //    catch(err) {
   //        alert(err);
   //    }
+  
+  const typeConverter = {
+    generalwaste: "General Waste",
+    foodwaste: "Food Waste",
+    textile: "Textile Recycling",
+    paper: "Paper Waste",
+    bottle: "Glass Recycling",
+    packaging: "Packaging Waste",
+    bookbank: "Book Bank"
+  }
 
 
-    return(
-      <div>
-        <MapContainer className="map" center={cPosition} zoom={30} scrollWheelZoom={true}>
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          <Marker position={cPosition}>
-            <Popup>
-              Current Location.
-            </Popup>
-          </Marker>
-          <Marker position={cDestination}>
-            <Popup>
-              Nearest bin.
-            </Popup>
-          </Marker>
-        </MapContainer>
-      </div>
-    );
+  return(
+    <div>
+      <MapContainer className="map" center={cPosition} zoom={40} scrollWheelZoom={true}>
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Marker position={cPosition}>
+          <Popup>
+            Current Location.
+          </Popup>
+        </Marker>
+        <Marker position={cDestination}>
+          <Popup>
+            Nearest {typeConverter[typeRub]} Bin.
+          </Popup>
+        </Marker>
+      </MapContainer>
+    </div>
+  );
 }
 
   //-----------------------------------------
@@ -254,9 +268,9 @@ const drawMap = () => {
                 <span className="bar"></span>
             <div className="navbar_toggle" id="mobile-menu">
               {isMobile ? <i className='FAS FA-TIMES'></i> : <i className='fas fa-bars'></i>}
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
             </div>
                     <ul className={isMobile ? "mobile_menu": "navbar_menu"} onClick={() => setIsMobile(false)}>
                       <li className="navbar_item">
@@ -303,9 +317,6 @@ const drawMap = () => {
   }
   const packLog = () => {
     setTypeRub('packaging');
-  }
-  const boxLog = () => {
-    setTypeRub('box');
   }
   const bookLog = () => {
     setTypeRub('bookbank');
