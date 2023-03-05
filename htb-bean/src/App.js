@@ -68,9 +68,22 @@ function App() {
   }
 
   const searchJSON = () => {
+    const cPosition = [coords.latitude,coords.longitude];
     const dir = './datasets/' + favorite + '/'+favorite;
     const fileJSON = require(dir+'_'+typeRub+'.json')
-    console.log(fileJSON);
+    var closest = 0;
+    var closeDis = distanceBetweenPoints(cPosition,[fileJSON[0].LAT,fileJSON[0].LON]);
+    console.log([fileJSON[0].LAT,fileJSON[0].LON]);
+    console.log(closeDis);
+    for (let i = 1; i < fileJSON.length; i++) {
+        var newPos = [fileJSON[i].LAT,fileJSON[i].LON];
+        var newDis = distanceBetweenPoints(cPosition,newPos);
+        if (newDis < closeDis){
+            closest = i;
+            closeDis = newDis;
+        }
+    }
+    console.log('Closest bin is at: '+[fileJSON[closest].LAT,fileJSON[closest].LON]);
   }
 //  const searchClosest = ()
   // This runs on initialisation
@@ -267,13 +280,13 @@ function App() {
             <img src= {packaging} alt="Packaging Waste logo" height = "150" width = "150" />
             <img src= {bookWaste} alt="Book Waste logo" height = "150" width = "150" />
           
-            <button onClick = "Log(0)">General Waste </button>
-            <button onClick = "Log(1)">Food Waste </button>
-            <button onClick = "Log(2)">Textile Recycling </button>
-            <button onClick = "Log(3)">Paper Waste </button>
-            <button onClick = "Log(4)">Glass Recycling </button>
-            <button onClick = "Log(5)">Packaging Waste </button>
-            <button onClick = "Log(6)">Book Bank </button>
+            <button onClick = {genLog}>General Waste </button>
+            <button onClick = {foodLog}>Food Waste </button>
+            <button onClick = {texLog}>Textile Recycling </button>
+            <button onClick = {paperLog}>Paper Waste </button>
+            <button onClick = {glassLog}>Glass Recycling </button>
+            <button onClick = {packLog}>Packaging Waste </button>
+            <button onClick = {bookLog}>Book Bank </button>
 
          <br></br>
         
