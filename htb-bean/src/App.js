@@ -5,6 +5,13 @@ import Footer from './components/Footer';
 import binLogo from "./images/binLogo.png";
 import title from "./images/title.png";
 import generalWaste from "./images/GeneralWaste.jpg";
+import bookWaste from "./images/bookRecycling.jpg";
+import paperWaste from "./images/paperWaste.jpg";
+import foodWaste from "./images/food-waste-only-signs.jpg";
+import glassWaste from "./images/glassBottleWaste.jpg";
+import packaging from "./images/packagingWaste.jpg";
+import textileWaste from "./images/textileWaste.jpg";
+
 
 
 import {
@@ -198,42 +205,38 @@ function App() {
         <label class="container"><input type="radio" checked={favorite === 'kings'} onChange={handleKingsChange} class="customradio" /> Kings</label>
         </div>
 
-        <div>
+        <div class ="allWaste">
           <br/>
           <h2>Please select which type of rubbish you want to dispose of:</h2>
-          <div class="GeneralWaste">
-            <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150" />
+          <div class="GeneralWaste" >
+            <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150"/>
             <p>General Waste </p>
          </div>
+         <div class="FoodWaste" style="float:left;">
+            <img src= {foodWaste} alt="Food waste logo" height = "150" width = "150" />
+            <p>Food Waste </p>
+         </div>
+         <div class="Textile Recycling">
+            <img src= {textileWaste} alt="Textile Recycling logo" height = "150" width = "150" />
+            <p>Textile Recycling </p>
+         </div>
+         <div class="PaperRecycling">
+            <img src= {paperWaste} alt="Paper Waste logo" height = "150" width = "150" />
+            <p>Paper Waste </p>
+         </div>
+         <div class="glassWaste">
+            <img src= {glassWaste} alt="Glass Waste logo" height = "150" width = "150" />
+            <p>Glass Bottle Recycling </p>
+         </div>
+         <div class="PackagingWaste">
+            <img src= {packaging} alt="Packaging Waste logo" height = "150" width = "150" />
+            <p>Packaging Waste </p>
+         </div>
+         <div class="Bookwaste">
+            <img src= {bookWaste} alt="Book Waste logo" height = "150" width = "150" />
+            <p>Book Bank </p>
+         </div>
          <br></br>
-
-
-
-          <div className = "rubbishButtons">
-              <ul className="rubbish_menu">
-                  <li className="rubbish_item">
-                      <p className="rubbish_links">General Waste</p>
-                  </li>
-                  <li className="rubbish_item">
-                      <p className="rubbish_links">Food Waste</p>
-                  </li>
-                  <li className="rubbish_item">
-                      <p className="rubbish_links">Textile Recycling</p>
-                  </li>
-                  <li className="rubbish_item">
-                      <p className="rubbish_links">Paper Recycling</p>
-                  </li>
-                  <li className="rubbish_item">
-                      <p className="rubbish_links">Bottle Recycling</p>
-                  </li>
-                  <li className="rubbish_item">
-                      <p className="rubbish_links">Packaging Recycling</p>
-                  </li>
-                  <li className="rubbish_item">
-                      <p className="rubbish_links">Book Bank</p>
-                  </li>
-              </ul>
-          </div>
 
         </div>
         <button>Apply</button>
