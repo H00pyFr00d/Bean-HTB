@@ -272,9 +272,9 @@ function App() {
          
          <br></br>
         </div>
-        <div>
+        
         <button onClick = {alertLog}>Apply</button>
-        </div>
+        
         
       </div>
       // </form>
