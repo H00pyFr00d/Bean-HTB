@@ -269,7 +269,7 @@ background-color: rgb(103, 164, 103);
     text-align: center;
     padding: 10px 20px 50px 10px;
     height: 100%;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-family:'Verdana','Arial', sans-serif;
 }
 
@@ -406,6 +406,12 @@ width: 100%;
   margin-right: auto;
   width: 80% !important;
 }
+
+.container {
+  display: block;
+  float:left;
+  font-family: 'Verdana';
+  }
 
 footer {
   position: fixed;
