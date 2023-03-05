@@ -394,6 +394,15 @@ background-color: rgb(103, 164, 103);
  background-color: rgb(51, 109, 66);
 }
 
+.filterMainBody button:focus
+{
+ display: inline-block;
+ padding: 10px;
+ border-radius: 8px;
+ background-color: rgb(177, 230, 190);
+}
+
+
 .rubbishButtons
 {
     display: flex;
