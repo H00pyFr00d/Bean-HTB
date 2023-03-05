@@ -257,17 +257,15 @@ function App() {
         <label className="container"><input type="radio" checked={favorite === 'kings'} onChange={handleKingsChange} className="customradio" /> Kings</label>
         </div>
 
-        <div className ="allWaste">
-          <br/>
-          <h2>Please select which type of rubbish you want to dispose of:</h2>
-            <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150"  />
-            <img src= {foodWaste} alt="Food waste logo" height = "150" width = "150" />
-            <img src= {textileWaste} alt="Textile Recycling logo" height = "150" width = "150" />
-            <img src= {paperWaste} alt="Paper Waste logo" height = "150" width = "150" />
-            <img src= {glassWaste} alt="Glass Waste logo" height = "150" width = "150" />
-            <img src= {packaging} alt="Packaging Waste logo" height = "150" width = "150" />
-            <img src= {bookWaste} alt="Book Waste logo" height = "150" width = "150" />
-         
+        <div className = "wastePics">
+              <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150"  />
+              <img src= {foodWaste} alt="Food waste logo" height = "150" width = "150" />
+              <img src= {textileWaste} alt="Textile Recycling logo" height = "150" width = "150" />
+              <img src= {paperWaste} alt="Paper Waste logo" height = "150" width = "150" />
+              <img src= {glassWaste} alt="Glass Waste logo" height = "150" width = "150" />
+              <img src= {packaging} alt="Packaging Waste logo" height = "150" width = "150" />
+              <img src= {bookWaste} alt="Book Waste logo" height = "150" width = "150" />
+
             <button onClick = {genLog}>General Waste </button>
             <button onClick = {foodLog}>Food Waste </button>
             <button onClick = {texLog}>Textile Recycling </button>
@@ -275,7 +273,8 @@ function App() {
             <button onClick = {glassLog}>Glass Recycling </button>
             <button onClick = {packLog}>Packaging Waste </button>
             <button onClick = {bookLog}>Book Bank </button>
-         
+            </div>
+
          <br></br>
         </div>
         <div>
