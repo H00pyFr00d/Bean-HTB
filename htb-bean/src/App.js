@@ -156,21 +156,30 @@ function App() {
     )
   }
 
+
+  const [favorite, setFavorite] = React.useState('central');
+
+  const handleCentralChange = () => {
+    setFavorite('central');
+  };
+
+  const handleKingsChange = () => {
+    setFavorite('kings');
+  };
+
+
   const Filters = () => {
     return (
+      // <form onSubmit={this.formSubmit}>
       <div className='filterMainBody'>
         <h2>Please select the campus you are closest to:</h2>
 
         <div className = "areaButtons">
-          <input type="radio" id="areaButton" name="central" value="Central"/>
-          <label for="central"> Central Campus</label>
-          <p><input type="radio" id="areaButton" name="kings" value="Kings"/>
-          <label for="kings"> Kings Campus</label></p>
+        <label><input type="radio" checked={favorite === 'central'} onChange={handleCentralChange} />Central</label>
+        <label><input type="radio" checked={favorite === 'kings'} onChange={handleKingsChange} />Kings</label>
         </div>
 
-
         <div>
-          <br/>
           <h2>Please select which type of rubbish you want to dispose of:</h2>
 
           <div className = "rubbishButtons">
@@ -200,11 +209,9 @@ function App() {
           </div>
 
         </div>
-
-        
         <button>Apply</button>
-
       </div>
+      // </form>
     )
   }
 
