@@ -64,7 +64,7 @@ function App() {
      return squareDis
   }
 
-
+//  const searchClosest = ()
   // This runs on initialisation
   // useEffect(() => {
   //   getLocation();
@@ -85,6 +85,7 @@ function App() {
     const cPosition = [coords.latitude,coords.longitude];
     const cDestination = [55.944433, -3.187893];
     console.log(distanceBetweenPoints(cPosition,cDestination));
+    console.log('../../datasets/datapoints_by_category/central_bottle.csv[0]');
 //    const query = new URLSearchParams({
 //      profile: 'foot',
 //      point: [cPosition,cDestination],
@@ -183,7 +184,7 @@ function App() {
 
 
   const [favorite, setFavorite] = React.useState('central');
-
+  const [typeRub, setTypeRub] = React.useState('general')
   const handleCentralChange = () => {
     setFavorite('central');
   };
@@ -192,6 +193,9 @@ function App() {
     setFavorite('kings');
   };
 
+  const Log = (x) =>{
+    console.log(x)
+  }
 
   const Filters = () => {
     return (
@@ -208,36 +212,25 @@ function App() {
         <div className ="allWaste">
           <br/>
           <h2>Please select which type of rubbish you want to dispose of:</h2>
-          <div class="GeneralWaste" >
+          <div class="Photos" >
             <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150"  />
-            <p>General Waste </p>
-         </div>
-         <div class="FoodWaste" >
             <img src= {foodWaste} alt="Food waste logo" height = "150" width = "150" />
-            <p>Food Waste </p>
-         </div>
-         <div class="TextileRecycling">
             <img src= {textileWaste} alt="Textile Recycling logo" height = "150" width = "150" />
-            <p>Textile Recycling </p>
-         </div>
-         <div class="PaperRecycling">
             <img src= {paperWaste} alt="Paper Waste logo" height = "150" width = "150" />
-            <p>Paper Waste </p>
-         </div>
-         <div class="glassWaste">
             <img src= {glassWaste} alt="Glass Waste logo" height = "150" width = "150" />
-            <p>Glass Bottle Recycling </p>
-         </div>
-         <div class="PackagingWaste">
             <img src= {packaging} alt="Packaging Waste logo" height = "150" width = "150" />
-            <p>Packaging Waste </p>
-         </div>
-         <div class="Bookwaste">
             <img src= {bookWaste} alt="Book Waste logo" height = "150" width = "150" />
-            <p>Book Bank </p>
+         </div>
+         <div class="Buttons" >
+            <button onClick = "Log(0)">General Waste </button>
+            <button onClick = "Log(1)">Food Waste </button>
+            <button onClick = "Log(2)">Textile Recycling </button>
+            <button onClick = "Log(3)">Paper Waste </button>
+            <button onClick = "Log(4)">Glass Bottle Recycling </button>
+            <button onClick = "Log(5)">Packaging Waste </button>
+            <button onClick = "Log(6)">Book Bank </button>
          </div>
          <br></br>
-
         </div>
         <button>Apply</button>
 
