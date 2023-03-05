@@ -348,7 +348,9 @@ const cDestination = [55.944433, -3.187893];
         {Footer()}
       </footer>
     </div>
-  );
+    
+     );
+  }
 }
 
 export default App;
