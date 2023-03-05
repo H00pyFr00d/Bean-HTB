@@ -251,8 +251,10 @@ const drawMap = () => {
                       </li>
                     </ul>
             </div>
+            </div>
             </nav>
         </div>
+      
         
     )
   }
