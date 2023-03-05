@@ -32,12 +32,6 @@
   position: absolute;
 }
 
-.logo {
-  margin-left: 97.5vw;
-  width: 5vh;
-  height: width;
-}
-
 *,
 *:before,
 *:after
@@ -262,6 +256,7 @@ background-color: rgb(103, 164, 103);
     color: rgb(107, 181, 102);
     display: block;
     text-align: center;
+    font-size: 4vh;
     padding: 30px 20px 10px 20px;
     height: 100%;
     font-family:'Verdana','Arial', sans-serif;

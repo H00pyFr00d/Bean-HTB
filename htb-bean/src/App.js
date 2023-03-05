@@ -144,7 +144,7 @@ function App() {
         <div>
             <nav className="navbar">
 
-            <img src = {title} alt = "Find a Bin" height = "100%" width = "height"/>
+            <img src = {title} style={{'marginLeft': '5%'}} alt = "Find a Bin" height = "100%" width = "height"/>
             <img src = {binLogo} alt = "Web Logo" height = "100%" width = "height"/>
 
             <div className="navbar_container">
