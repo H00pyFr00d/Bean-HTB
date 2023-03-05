@@ -247,12 +247,13 @@ function App() {
 
   const Filters = () => {
     return (
-      // <form onSubmit={this.formSubmit}>
       <div className='filterMainBody'>
         <h2>Please select the campus you are closest to:</h2>
+
         <br/>
+
         <div className = "areaButtons">
-        <label className="container"><input type="radio" checked={favorite === 'central'} onChange={handleCentralChange} className="customradio"/> Central campus</label>
+        <label className="container"><input type="radio" checked={favorite === 'central'} onChange={handleCentralChange} className="customradio"/> Central</label>
         <br></br>
         <label className="container"><input type="radio" checked={favorite === 'kings'} onChange={handleKingsChange} className="customradio" /> Kings</label>
         </div>
@@ -265,25 +266,26 @@ function App() {
             <img src= {glassWaste} alt="Glass Waste logo" height = "150" width = "150" />
             <img src= {packaging} alt="Packaging Waste logo" height = "150" width = "150" />
             <img src= {bookWaste} alt="Book Waste logo" height = "150" width = "150" />
+          </div>
 
-        <div className = "wasteButtons">
-          <button onClick = {genLog}>General Waste </button>
-          <button onClick = {foodLog}>Food Waste </button>
-          <button onClick = {texLog}>Textile Recycling </button>
-          <button onClick = {paperLog}>Paper Waste </button>
-          <button onClick = {glassLog}>Glass Recycling </button>
-          <button onClick = {packLog}>Packaging Waste </button>
-          <button onClick = {bookLog}>Book Bank </button>
-        </div>
+          <div className = "wasteButtons">
+            <button onClick = "Log(0)">General Waste </button>
+            <button onClick = "Log(1)">Food Waste </button>
+            <button onClick = "Log(2)">Textile Recycling </button>
+            <button onClick = "Log(3)">Paper Waste </button>
+            <button onClick = "Log(4)">Glass Recycling </button>
+            <button onClick = "Log(5)">Packaging Waste </button>
+            <button onClick = "Log(6)">Book Bank </button>
+          </div>
 
          <br></br>
         </div>
-        <div>
-        <button onClick = {alertLog}>Apply</button>
+        
+        <div className = "applyButton">
+          <button onClick = {alertLog}>Apply</button>
         </div>
         
       </div>
-      // </form>
     )
   }
 
