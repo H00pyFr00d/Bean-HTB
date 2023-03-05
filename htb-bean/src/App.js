@@ -83,10 +83,27 @@ function App() {
      const latDif = pos1[0] - pos2[0]
      const lonDif = pos1[1] - pos2[1]
      const squareDis = Math.pow(lonDif,2) + Math.pow(latDif,2)
-     console.log(squareDis);
+     //console.log(calcCrow(pos1,pos2));
      return squareDis
   }
+  const calcCrow = (pos1, pos2) =>{
+      const R = 6371;
+      var dLat = toRad(pos2[0]-pos1[0]);
+      var dLon = toRad(pos2[0]-pos1[0]);
+      var lat1 = toRad(pos1[0]);
+      var lat2 = toRad(pos2[0]);
 
+      var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(pos1[0]) * Math.cos(pos2[0]);
+      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+      var d = R * c;
+      return d;
+    }
+
+    // Converts numeric degrees to radians
+  const toRad = (Value) => {
+        return Value * Math.PI / 180;
+    }
   const updateDest = (newPos) => {
      setDestCoords({
        latitude: newPos[0],
@@ -108,15 +125,18 @@ function App() {
     var closeDis = distanceBetweenPoints(cPosition,newPos);
     for (let i = 1; i < fileJSON.length; i++) {
         var newPos = [fileJSON[i].LAT,fileJSON[i].LON];
-        console.log(i);
         var newDis = distanceBetweenPoints(cPosition,newPos);
         if (newDis < closeDis){
             closest = i;
             closeDis = newDis;
         }
     }
+    var closePos = [fileJSON[closest].LAT,fileJSON[closest].LON];
 
-    updateDest([fileJSON[closest].LAT,fileJSON[closest].LON]);
+    updateDest(closePos);
+    //console.log(closest);
+    console.log('Distance (km) to closest: '+calcCrow(cPosition,closePos))
+
 
     goToMap();
     //console.log(getDistanceFromLatLonInKm(cPosition[0], cPosition[1], fileJSON[closest].LAT, fileJSON[closest].LON));
