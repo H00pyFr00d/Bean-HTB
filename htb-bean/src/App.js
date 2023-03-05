@@ -273,6 +273,7 @@ function App() {
 
         <h2>Please select the rubbish you want to recycle:</h2>
 
+          <div className = "wastePics">
             <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150"  />
             <img src= {foodWaste} alt="Food waste logo" height = "150" width = "150" />
             <img src= {textileWaste} alt="Textile Recycling logo" height = "150" width = "150" />
@@ -280,7 +281,9 @@ function App() {
             <img src= {glassWaste} alt="Glass Waste logo" height = "150" width = "150" />
             <img src= {packaging} alt="Packaging Waste logo" height = "150" width = "150" />
             <img src= {bookWaste} alt="Book Waste logo" height = "150" width = "150" />
+          </div>
           
+          <div className = "wasteButtons">
             <button onClick = {genLog}>General Waste </button>
             <button onClick = {foodLog}>Food Waste </button>
             <button onClick = {texLog}>Textile Recycling </button>
@@ -288,6 +291,7 @@ function App() {
             <button onClick = {glassLog}>Glass Recycling </button>
             <button onClick = {packLog}>Packaging Waste </button>
             <button onClick = {bookLog}>Book Bank </button>
+          </div>
 
          <br></br>
         
