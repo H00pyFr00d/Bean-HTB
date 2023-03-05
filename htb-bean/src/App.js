@@ -115,7 +115,7 @@ function App() {
             closeDis = newDis;
         }
     }
-    alert('Closest '+ typeRub+' bin on '+favorite+' is at: '+[fileJSON[closest].LAT,fileJSON[closest].LON]);
+    
     updateDest([fileJSON[closest].LAT,fileJSON[closest].LON]);
 
     goToMap();
@@ -162,7 +162,7 @@ const drawMap = () => {
 
     return(
       <div>
-        <MapContainer className="map" center={cPosition} zoom={13} scrollWheelZoom={true}>
+        <MapContainer className="map" center={cPosition} zoom={30} scrollWheelZoom={true}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
