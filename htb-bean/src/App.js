@@ -240,7 +240,7 @@ const drawMap = () => {
     return (
         <div>
             {window.innerWidth > 960 && (
-              <nav className="navbar">
+            <nav className="navbar">
 
               <img src = {title} style={{'marginLeft': '5%'}} alt = "Find a Bin" height = "100%" width = "height" />
               <img src = {binLogo} alt = "Web Logo" height = "100%" width = "height"/>
@@ -265,21 +265,21 @@ const drawMap = () => {
               <nav onClick={goToHome}  className="navbar">
 
               <img src = {title} style={{'marginLeft': '5%'}} alt = "Find a Bin" height = "100%" width = "height" />
-              <img src = {binLogo} alt = "Web Logo" height = "100%" width = "height"/>
+            <img src = {binLogo} alt = "Web Logo" height = "100%" width = "height"/>
 
-              {window.innerHeight <= 960 && (<div className="navbar_container">
-                <div className="navbar_menu">
-                  <ul>
-                    <li className="navbar_item">
-                        <div onClick={goToHome} className="navbar_links">Home</div>
-                    </li>
-                    <li className="navbar_item">
-                        <div onClick={goToFilter} className="navbar_links">Find a Bin</div>
-                    </li>
-                  </ul>
-                </div>
-              </div>)}
-              </nav>
+            {window.innerHeight <= 960 && (<div className="navbar_container">
+              <div className="navbar_menu">
+                <ul>
+                  <li className="navbar_item">
+                      <div onClick={goToHome} className="navbar_links">Home</div>
+                  </li>
+                  <li className="navbar_item">
+                      <div onClick={goToFilter} className="navbar_links">Find a Bin</div>
+                  </li>
+                </ul>
+              </div>
+            </div>)}
+            </nav>
             )}
         </div>
       
