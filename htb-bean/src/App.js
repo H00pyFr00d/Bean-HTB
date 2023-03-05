@@ -85,6 +85,7 @@ function App() {
     const cPosition = [coords.latitude,coords.longitude];
     const cDestination = [55.944433, -3.187893];
     console.log(distanceBetweenPoints(cPosition,cDestination));
+    console.log('../../datasets/datapoints_by_category/central_bottle.csv[0]');
 //    const query = new URLSearchParams({
 //      profile: 'foot',
 //      point: [cPosition,cDestination],
