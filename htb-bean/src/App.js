@@ -51,9 +51,13 @@ function App() {
     setMap(link)
   }
 
-  // const distanceBetweenPoints = (lat1, lat2) => {
-  //   distance between 2 coords in miles =acos(sin(lat1)*sin(lat2)+cos(lat1)*cos(lat2)*cos(lon2-lon1))*6371
-  // }
+  const distanceBetweenPoints = (pos1, pos2) => {
+     const latDif = pos1[0] - pos2[0]
+     const lonDif = pos1[1] - pos2[1]
+     const squareDis = Math.pow(lonDif,2) + Math.pow(latDif,2)
+     return squareDis
+  }
+
 
   // This runs on initialisation
   useEffect(() => {
@@ -74,6 +78,7 @@ function App() {
   const drawMap = () => {
     const cPosition = [coords.latitude,coords.longitude];
     const cDestination = [55.944433, -3.187893];
+    console.log(distanceBetweenPoints(cPosition,cDestination));
 //    const query = new URLSearchParams({
 //      profile: 'foot',
 //      point: [cPosition,cDestination],
