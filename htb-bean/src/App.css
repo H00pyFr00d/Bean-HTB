@@ -70,6 +70,11 @@
     cursor: default;
 }
 
+ul{
+    list-style-type: none;
+    height: 100%;
+}
+
 .navbar_container
 {
     display: flex;
@@ -94,6 +99,8 @@
 {
     position: sticky;
     height: 100%;
+    float:left;
+    display: inline;
 }
 
 .navbar_links
