@@ -131,17 +131,8 @@ function App() {
             closeDis = newDis;
         }
     }
-<<<<<<< HEAD
     
     updateDest([fileJSON[closest].LAT,fileJSON[closest].LON]);
-=======
-    var closePos = [fileJSON[closest].LAT,fileJSON[closest].LON];
-
-    updateDest(closePos);
-    //console.log(closest);
-    console.log('Distance (km) to closest: '+calcCrow(cPosition,closePos))
-
->>>>>>> b670c4bef224f100e2508093b3780a4229b62580
 
     goToMap();
     //console.log(getDistanceFromLatLonInKm(cPosition[0], cPosition[1], fileJSON[closest].LAT, fileJSON[closest].LON));
