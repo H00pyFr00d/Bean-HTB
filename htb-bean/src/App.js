@@ -1,7 +1,8 @@
+/* eslint-disable */ 
+
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import Home from './Home.js'
-import Footer from './components/Footer';
 import binLogo from "./images/binLogo.png";
 import title from "./images/title.png";
 import generalWaste from "./images/GeneralWaste.jpg";
@@ -17,7 +18,6 @@ import textileWaste from "./images/textileWaste.jpg";
 import {
   MapContainer,
   TileLayer,
-  useMap,
   Marker,
   Popup
 } from "react-leaflet";
@@ -28,35 +28,34 @@ function App() {
   const [filterPage, setFilterPage] = useState(false);
 
   const [coords, setCoords] = useState({latitude: null, longitude: null});
-  const [map, setMap] = useState("https://www.openstreetmap.org/export/embed.html?bbox=-3.2060337066650395%2C55.93855329531538%2C-3.1777095794677734%2C55.94984861420047&amp;layer=mapnik");
+  
+  // const getLocation = () => {
+  //   try {
+  //     if (navigator.geolocation) {
+  //       return navigator.geolocation.getCurrentPosition(navigatorHelper);
+  //     } else {alert("Geolocation is not supported by this browser.");}
+  //   }
+  //   catch {
+  //   }
+  // }
 
-  const getLocation = () => {
-    try {
-      if (navigator.geolocation) {
-        return navigator.geolocation.getCurrentPosition(navigatorHelper);
-      } else {alert("Geolocation is not supported by this browser.");}
-    }
-    catch {
-    }
-  }
+  // const navigatorHelper = (position) => {
+  //   setCoords({
+  //     latitude: position.coords.latitude,
+  //     longitude: position.coords.longitude
+  //   });
+  // }
 
-  const navigatorHelper = (position) => {
-    setCoords({
-      latitude: position.coords.latitude,
-      longitude: position.coords.longitude
-    });
-  }
+  // const getSetMapLink = () => {
+  //   const new_upper_latitude  = coords.latitude  + (1 / 6378) * (180 / Math.PI);
+  //   const new_upper_longitude = coords.longitude + (1 / 6378) * (180 / Math.PI) / Math.cos(coords.latitude * Math.PI)/180;
+  //   const new_lower_latitude = coords.latitude  - (1 / 6378) * (180 / Math.PI);
+  //   const new_lower_longitude = coords.longitude - (1 / 6378) * (180 / Math.PI) / Math.cos(coords.longitude * Math.PI)/180;
 
-  const getSetMapLink = () => {
-    const new_upper_latitude  = coords.latitude  + (1 / 6378) * (180 / Math.PI);
-    const new_upper_longitude = coords.longitude + (1 / 6378) * (180 / Math.PI) / Math.cos(coords.latitude * Math.PI)/180;
-    const new_lower_latitude = coords.latitude  - (1 / 6378) * (180 / Math.PI);
-    const new_lower_longitude = coords.longitude - (1 / 6378) * (180 / Math.PI) / Math.cos(coords.longitude * Math.PI)/180;
+  //   const link = 'https://www.openstreetmap.org/export/embed.html?bbox=' + new_lower_longitude +'%2C'+ new_lower_latitude + '%2C' + new_upper_longitude + '%2C' + new_upper_latitude+'&amp;layer=mapnik'
 
-    const link = 'https://www.openstreetmap.org/export/embed.html?bbox=' + new_lower_longitude +'%2C'+ new_lower_latitude + '%2C' + new_upper_longitude + '%2C' + new_upper_latitude+'&amp;layer=mapnik'
-
-    setMap(link)
-  }
+  //   setMap(link)
+  // }
 
   const distanceBetweenPoints = (pos1, pos2) => {
      const latDif = pos1[0] - pos2[0]
@@ -67,14 +66,14 @@ function App() {
 
 
   // This runs on initialisation
-  useEffect(() => {
-    getLocation();
-  }, []);
+  // useEffect(() => {
+  //   getLocation();
+  // }, []);
 
-  useEffect(() => {
-    if (coords)
-        getSetMapLink();
-  }, [coords]);
+  // useEffect(() => {
+  //   if (coords)
+  //       getSetMapLink();
+  // }, [coords]);
 
 //  componentDidMount() {
 //  this.drawMap();
@@ -144,19 +143,6 @@ function App() {
     setFilterPage(false);
   }
 
-
-  const Checkbox = ({ label }) => {
-    const [isChecked, setIsChecked] = useState(false);
-    return (
-      <div className="checkbox-wrapper">
-        <label>
-          <input type="checkbox" checked={isChecked} />
-          <span>{label}</span>
-        </label>
-      </div>
-    );
-  };
-  //export default Checkbox;
   const Footer = () => {
     return ( <p style={{'float': 'right', 'paddingTop': '0.5%', 'fontSize': '2vh', 'fontFamily': 'Verdana'}}> Data sourced from <a href = "https://data.edinburghcouncilmaps.info/datasets/ddb5fcb791634729b4b4d3d1e5b8aa05/explore"> Edinburgh City Council</a>, May 2021. </p>
     )
