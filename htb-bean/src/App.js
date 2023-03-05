@@ -131,12 +131,8 @@ function App() {
             closeDis = newDis;
         }
     }
-    var closePos = [fileJSON[closest].LAT,fileJSON[closest].LON];
-
-    updateDest(closePos);
-    //console.log(closest);
-    console.log('Distance (km) to closest: '+calcCrow(cPosition,closePos))
-
+    
+    updateDest([fileJSON[closest].LAT,fileJSON[closest].LON]);
 
     goToMap();
     //console.log(getDistanceFromLatLonInKm(cPosition[0], cPosition[1], fileJSON[closest].LAT, fileJSON[closest].LON));
@@ -182,7 +178,7 @@ const drawMap = () => {
 
     return(
       <div>
-        <MapContainer className="map" center={cPosition} zoom={40} scrollWheelZoom={true}>
+        <MapContainer className="map" center={cPosition} zoom={30} scrollWheelZoom={true}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -258,9 +254,9 @@ const drawMap = () => {
                 <span className="bar"></span>
             <div className="navbar_toggle" id="mobile-menu">
               {isMobile ? <i className='FAS FA-TIMES'></i> : <i className='fas fa-bars'></i>}
-                <span className="bar"></span>
-                <span className="bar"></span>
-                <span className="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
                     <ul className={isMobile ? "mobile_menu": "navbar_menu"} onClick={() => setIsMobile(false)}>
                       <li className="navbar_item">
@@ -274,8 +270,8 @@ const drawMap = () => {
             </div>
             </nav>
         </div>
-
-
+      
+        
     )
   }
 
