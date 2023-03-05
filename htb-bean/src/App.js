@@ -111,7 +111,6 @@ function App() {
      });
    }
 
-
   const searchJSON = () => {
     var cPosition = [coords.latitude, coords.longitude];
     
