@@ -258,6 +258,7 @@ function App() {
         <label className="container"><input type="radio" checked={favorite === 'kings'} onChange={handleKingsChange} className="customradio" /> Kings</label>
         </div>
 
+        <h2>Please select the rubbish you want to recycle:</h2>
 
             <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150"  />
             <img src= {foodWaste} alt="Food waste logo" height = "150" width = "150" />
