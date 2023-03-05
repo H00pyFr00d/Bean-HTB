@@ -203,11 +203,11 @@ function App() {
         <label className="container"><input type="radio" checked={favorite === 'kings'} onChange={handleKingsChange} class="customradio" /> Kings</label>
         </div>
 
-        <div class ="allWaste">
+        <div className ="allWaste">
           <br/>
           <h2>Please select which type of rubbish you want to dispose of:</h2>
           <div class="GeneralWaste" >
-            <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150"/>
+            <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150" />
             <p>General Waste </p>
          </div>
          <div class="FoodWaste" >
