@@ -49,7 +49,6 @@ function App() {
 
   const [coords, setCoords] = useState({latitude: null, longitude: null});
   const [destCoords, setDestCoords] = useState({latitude: null, longitude: null});
-  var recentDistance = null;
 
   const getLocation = () => {
     try {
@@ -132,11 +131,10 @@ function App() {
         }
     }
     var closePos = [fileJSON[closest].LAT,fileJSON[closest].LON];
-    recentDistance = calcCrow(cPosition,closePos);
+    var recentDis = Number((calcCrow(cPosition,closePos)*1000).toFixed(3));
     updateDest(closePos);
     //console.log(closest);
-
-    alert('Distance (km) to closest: '+recentDistance);
+    alert('Distance (m) to closest: '+recentDis);
     goToMap();
     //console.log(getDistanceFromLatLonInKm(cPosition[0], cPosition[1], fileJSON[closest].LAT, fileJSON[closest].LON));
   }
