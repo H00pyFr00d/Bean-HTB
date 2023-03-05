@@ -48,6 +48,7 @@ function App() {
  // const[mobilePage, setMobilePage] = useState(false);
 
   const [coords, setCoords] = useState({latitude: null, longitude: null});
+  const [destCoords, setDestCoords] = useState({latitude: null, longitude: null});
   
    const getLocation = () => {
      try {
@@ -84,14 +85,23 @@ function App() {
      return squareDis
   }
 
+  const updateDest = (newPos) => {
+     setDestCoords({
+       latitude: newPos[0],
+       longitude: newPos[1]
+     });
+   }
+
+
   const searchJSON = () => {
     getLocation();
-    const cPosition = [coords.latitude,coords.longitude];
+    var cPosition = [coords.latitude,coords.longitude];
     console.log(cPosition)
     const dir = './datasets/' + favorite + '/'+favorite;
     const fileJSON = require(dir+'_'+typeRub+'.json')
     var closest = 0;
-    var closeDis = distanceBetweenPoints(cPosition,[fileJSON[0].LAT,fileJSON[0].LON]);
+    var newPos = [fileJSON[0].LAT,fileJSON[0].LON];
+    var closeDis = distanceBetweenPoints(cPosition,newPos);
     for (let i = 1; i < fileJSON.length; i++) {
         var newPos = [fileJSON[i].LAT,fileJSON[i].LON];
         var newDis = distanceBetweenPoints(cPosition,newPos);
@@ -101,6 +111,7 @@ function App() {
         }
     }
     alert('Closest '+ typeRub+' bin on '+favorite+' is at: '+[fileJSON[closest].LAT,fileJSON[closest].LON]);
+    updateDest(newPos);
     //console.log(getDistanceFromLatLonInKm(cPosition[0], cPosition[1], fileJSON[closest].LAT, fileJSON[closest].LON));
   }
 
@@ -116,7 +127,7 @@ function App() {
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 const cPosition = [coords.latitude,coords.longitude];
-const cDestination = [55.944433, -3.187893];
+const cDestination = [destCoords.latitude, destCoords.longitude];
 
   const drawMap = () => {
     console.log(distanceBetweenPoints(cPosition,cDestination));
