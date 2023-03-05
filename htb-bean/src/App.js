@@ -210,36 +210,25 @@ function App() {
         <div className ="allWaste">
           <br/>
           <h2>Please select which type of rubbish you want to dispose of:</h2>
-          <div class="GeneralWaste" >
+          <div class="Photos" >
             <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150"  />
-            <button onClick = "Log(0)">General Waste </button>
-         </div>
-         <div class="FoodWaste" >
             <img src= {foodWaste} alt="Food waste logo" height = "150" width = "150" />
-            <button onClick = "Log(1)">Food Waste </button>
-         </div>
-         <div class="TextileRecycling">
             <img src= {textileWaste} alt="Textile Recycling logo" height = "150" width = "150" />
-            <button onClick = "Log(2)">Textile Recycling </button>
-         </div>
-         <div class="PaperRecycling">
             <img src= {paperWaste} alt="Paper Waste logo" height = "150" width = "150" />
-            <button onClick = "Log(3)">Paper Waste </button>
-         </div>
-         <div class="glassWaste">
             <img src= {glassWaste} alt="Glass Waste logo" height = "150" width = "150" />
-            <button onClick = "Log(4)">Glass Bottle Recycling </button>
-         </div>
-         <div class="PackagingWaste">
             <img src= {packaging} alt="Packaging Waste logo" height = "150" width = "150" />
-            <button onClick = "Log(5)">Packaging Waste </button>
-         </div>
-         <div class="Bookwaste">
             <img src= {bookWaste} alt="Book Waste logo" height = "150" width = "150" />
+         </div>
+         <div class="Buttons" >
+            <button onClick = "Log(0)">General Waste </button>
+            <button onClick = "Log(1)">Food Waste </button>
+            <button onClick = "Log(2)">Textile Recycling </button>
+            <button onClick = "Log(3)">Paper Waste </button>
+            <button onClick = "Log(4)">Glass Bottle Recycling </button>
+            <button onClick = "Log(5)">Packaging Waste </button>
             <button onClick = "Log(6)">Book Bank </button>
          </div>
          <br></br>
-
         </div>
         <button>Apply</button>
       </div>

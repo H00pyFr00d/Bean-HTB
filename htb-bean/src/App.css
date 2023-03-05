@@ -154,6 +154,20 @@
     cursor: pointer;
     display: inline-block
 }
+
+.allWaste img{
+    display:inline-block;
+    margin: 40px 0px 0px 50px;
+    height: 100px;
+    width: 100px;
+}
+
+.allWaste button{
+    display:inline-block;
+    margin : 60px 0px 0px 40px;
+    height: 100px;
+    width : 100px
+}
 /* Mobile navbar */
 
 @media screen and (max-width: 960px)
