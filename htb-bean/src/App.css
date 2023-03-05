@@ -364,6 +364,14 @@ background-color: rgb(103, 164, 103);
  border-radius: 8px;
 }
 
+.filterMainBody button:hover
+{
+ display: inline-block;
+ padding: 10px;
+ border-radius: 8px;
+ background-color: rgb(35, 84, 48);
+}
+
 .rubbishButtons
 {
     display: flex;
