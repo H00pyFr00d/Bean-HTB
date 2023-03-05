@@ -115,7 +115,6 @@ function App() {
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-  const drawMap = () => {
 const cPosition = [coords.latitude,coords.longitude];
 const cDestination = [55.944433, -3.187893];
 
