@@ -361,6 +361,7 @@ background-color: rgb(103, 164, 103);
 {
  display: inline-block;
  padding: 10px;
+ border-radius: 8px;
 }
 
 .rubbishButtons
