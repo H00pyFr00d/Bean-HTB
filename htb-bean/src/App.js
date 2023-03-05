@@ -191,6 +191,9 @@ function App() {
     setFavorite('kings');
   };
 
+  const Log = (x) =>{
+    console.log(x)
+  }
 
   const Filters = () => {
     return (
@@ -209,7 +212,7 @@ function App() {
           <h2>Please select which type of rubbish you want to dispose of:</h2>
           <div class="GeneralWaste" >
             <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150"  />
-            <p>General Waste </p>
+            <button onclick = "Log(7)">General Waste </button>
          </div>
          <div class="FoodWaste" >
             <img src= {foodWaste} alt="Food waste logo" height = "150" width = "150" />
