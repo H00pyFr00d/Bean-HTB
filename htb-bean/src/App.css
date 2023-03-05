@@ -177,11 +177,11 @@
     {
         display: flex;
         justify-content: space-between;
+        position: absolute;
+        display: inline-block;
         height: 80px;
         z-index: 1;
         width: 100%;
-        max-width: 1300px;
-        padding: 0;
     }
 
     .navbar_menu
@@ -210,7 +210,7 @@
         display: inline-block;
         position: absolute;
         width: 100%;
-        color: white;
+        background-color: #282c34;
     }
 
     .navbar_links
