@@ -212,15 +212,15 @@ function App() {
           <h2>Please select which type of rubbish you want to dispose of:</h2>
           <div class="GeneralWaste" >
             <img src= {generalWaste} alt="General Waste logo" height = "150" width = "150"  />
-            <button onclick = "Log(7)">General Waste </button>
+            <button onClick = "Log(0)">General Waste </button>
          </div>
          <div class="FoodWaste" >
             <img src= {foodWaste} alt="Food waste logo" height = "150" width = "150" />
-            <p>Food Waste </p>
+            <button onClick = "Log(1)">Food Waste </button>
          </div>
          <div class="TextileRecycling">
             <img src= {textileWaste} alt="Textile Recycling logo" height = "150" width = "150" />
-            <p>Textile Recycling </p>
+            <button onClick = "Log(2)">Textile Recycling </button>
          </div>
          <div class="PaperRecycling">
             <img src= {paperWaste} alt="Paper Waste logo" height = "150" width = "150" />
