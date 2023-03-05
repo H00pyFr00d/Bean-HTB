@@ -224,19 +224,19 @@ function App() {
          </div>
          <div class="PaperRecycling">
             <img src= {paperWaste} alt="Paper Waste logo" height = "150" width = "150" />
-            <p>Paper Waste </p>
+            <button onClick = "Log(3)">Paper Waste </button>
          </div>
          <div class="glassWaste">
             <img src= {glassWaste} alt="Glass Waste logo" height = "150" width = "150" />
-            <p>Glass Bottle Recycling </p>
+            <button onClick = "Log(4)">Glass Bottle Recycling </button>
          </div>
          <div class="PackagingWaste">
             <img src= {packaging} alt="Packaging Waste logo" height = "150" width = "150" />
-            <p>Packaging Waste </p>
+            <button onClick = "Log(5)">Packaging Waste </button>
          </div>
          <div class="Bookwaste">
             <img src= {bookWaste} alt="Book Waste logo" height = "150" width = "150" />
-            <p>Book Bank </p>
+            <button onClick = "Log(6)">Book Bank </button>
          </div>
          <br></br>
 
