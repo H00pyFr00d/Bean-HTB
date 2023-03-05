@@ -41,6 +41,7 @@ import {
 //    return Value * Math.PI / 180;
 //}
 
+
 function App() {
   const [homePage, setHomePage] = useState(true);
   const [mapPage, setMapPage] = useState(false);
@@ -49,7 +50,9 @@ function App() {
 
   const [coords, setCoords] = useState({latitude: null, longitude: null});
   const [destCoords, setDestCoords] = useState({latitude: null, longitude: null});
-  
+  const [next3Coords, setNext3Coords] = useState([{latitude: null, longitude: null},{latitude: null, longitude: null},{latitude: null, longitude: null}]);
+  const [visited, setVisited] = useState([null,null,null,null]);
+
   const getLocation = () => {
     try {
       if (navigator.geolocation) {
@@ -111,35 +114,46 @@ function App() {
      });
    }
 
+  const updateVisited = (newI,count) => {
+    updated = JSON.parse(JSON.stringify(visited));
+    updated[count] = newI;
+    setVisited(updated)
+  }
 
   const searchJSON = () => {
     var cPosition = [coords.latitude, coords.longitude];
-    
+    var count = 0;
     // console.log("Current position")
     // console.log(cPosition)
-
     const dir = './datasets/' + favorite + '/'+favorite;
     const fileJSON = require(dir+'_'+typeRub+'.json')
-    var closest = 0;
-    var newPos = [fileJSON[0].LAT,fileJSON[0].LON];
-    var closeDis = distanceBetweenPoints(cPosition,newPos);
-    for (let i = 1; i < fileJSON.length; i++) {
-        var newPos = [fileJSON[i].LAT,fileJSON[i].LON];
-        var newDis = distanceBetweenPoints(cPosition,newPos);
-        if (newDis < closeDis){
-            closest = i;
-            closeDis = newDis;
+    while (count == 0){
+
+        if ((fileJSON.length - count)> 0){
+            var closest = 0;
+            var newPos = [fileJSON[0].LAT,fileJSON[0].LON];
+            var closeDis = distanceBetweenPoints(cPosition,newPos);
+            for (let i = 1; i < fileJSON.length; i++) {
+                if (!visited.includes(i)){
+                    var newPos = [fileJSON[i].LAT,fileJSON[i].LON];
+                    var newDis = distanceBetweenPoints(cPosition,newPos);
+                    if (newDis < closeDis){
+                        closest = i;
+                        closeDis = newDis;
+                    }
+                }
+            }
+            var closePos = [fileJSON[closest].LAT,fileJSON[closest].LON];
+
         }
+
+        updateDest(closePos);
+        alert('Distance (km) to closest: '+calcCrow(cPosition,closePos));
+
+        count ++;
     }
-    var closePos = [fileJSON[closest].LAT,fileJSON[closest].LON];
-
-    updateDest(closePos);
-    //console.log(closest);
-    console.log('Distance (km) to closest: '+calcCrow(cPosition,closePos))
-
 
     goToMap();
-    //console.log(getDistanceFromLatLonInKm(cPosition[0], cPosition[1], fileJSON[closest].LAT, fileJSON[closest].LON));
   }
 
   useEffect(() => {
@@ -151,34 +165,10 @@ function App() {
     getLocation()
   }, []);
 
-//  componentDidMount() {
-//  this.drawMap();
-//  }
-
-/////////////////////////////////////////////////////////////////////////////////////////////
-
 const cPosition = [coords.latitude,coords.longitude];
 const cDestination = [destCoords.latitude, destCoords.longitude];
-
 const drawMap = () => {
-  // console.log(distanceBetweenPoints(cPosition,cDestination));
-  //    const query = new URLSearchParams({
-  //      profile: 'foot',
-  //      point: [cPosition,cDestination],
-  //      key: '28add460-25f0-49ac-9f54-f332080d6b6b'
-  //      }).toString();
-  //      const resp = fetch(
-  //      'https://graphhopper.com/api/1/route?${query}',
-  //      {method: 'GET'}
-  //    );
-  //    try {
-  //        const data = await resp.text();
-  //        console.log(data);
-  //    }
-  //    catch(err) {
-  //        alert(err);
-  //    }
-  
+
   const typeConverter = {
     generalwaste: "General Waste",
     foodwaste: "Food Waste",
@@ -188,8 +178,6 @@ const drawMap = () => {
     packaging: "Packaging Waste",
     bookbank: "Book Bank"
   }
-
-
   return(
     <div>
       <MapContainer className="map" center={cPosition} zoom={40} scrollWheelZoom={true}>
