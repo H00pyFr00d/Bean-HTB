@@ -249,8 +249,8 @@ background-color: rgb(103, 164, 103);
 {
     display: block;
     border-radius: 25px;
-    margin: 20px 20px;
-    padding: 20px 20px 20px 20px;;
+    margin: 40px 20px;
+    padding: 10px 20px 20px 20px;;
     background-color: #282c34;
     height: 100%;
     z-index: 1;
@@ -274,7 +274,7 @@ background-color: rgb(103, 164, 103);
     text-align: center;
     padding: 10px 20px 50px 10px;
     height: 100%;
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     font-family:'Verdana','Arial', sans-serif;
 }
 
