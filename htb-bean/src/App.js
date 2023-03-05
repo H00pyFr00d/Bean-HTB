@@ -76,7 +76,7 @@ function App() {
       `https://graphhopper.com/api/1/route?${query}`,
       {method: 'GET'}
     );
-    }
+
 
     const data = resp.text();
     console.log(data);
