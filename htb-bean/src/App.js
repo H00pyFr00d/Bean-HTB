@@ -59,6 +59,8 @@ function App() {
     catch {}
   }
 
+  getLocation();
+
    const navigatorHelper = (position) => {
      setCoords({
        latitude: position.coords.latitude,
@@ -81,6 +83,7 @@ function App() {
      const latDif = pos1[0] - pos2[0]
      const lonDif = pos1[1] - pos2[1]
      const squareDis = Math.pow(lonDif,2) + Math.pow(latDif,2)
+     console.log(squareDis);
      return squareDis
   }
 
@@ -93,7 +96,6 @@ function App() {
 
 
   const searchJSON = () => {
-    getLocation();
     var cPosition = [coords.latitude, coords.longitude];
     
     // console.log("Current position")
@@ -106,6 +108,7 @@ function App() {
     var closeDis = distanceBetweenPoints(cPosition,newPos);
     for (let i = 1; i < fileJSON.length; i++) {
         var newPos = [fileJSON[i].LAT,fileJSON[i].LON];
+        console.log(i);
         var newDis = distanceBetweenPoints(cPosition,newPos);
         if (newDis < closeDis){
             closest = i;
@@ -113,14 +116,20 @@ function App() {
         }
     }
     alert('Closest '+ typeRub+' bin on '+favorite+' is at: '+[fileJSON[closest].LAT,fileJSON[closest].LON]);
-    updateDest(newPos);
+    updateDest([fileJSON[closest].LAT,fileJSON[closest].LON]);
+
+    goToMap();
     //console.log(getDistanceFromLatLonInKm(cPosition[0], cPosition[1], fileJSON[closest].LAT, fileJSON[closest].LON));
   }
 
   useEffect(() => {
-    if (coords)
+    if (coords.latitude != null && coords.longitude != null)
         console.log(coords)
   }, [coords]);
+
+  useEffect(() => {
+    getLocation()
+  }, []);
 
 //  componentDidMount() {
 //  this.drawMap();
@@ -224,6 +233,10 @@ const drawMap = () => {
 
             <div className="navbar_container">
             <div className="navbar_toggle" id="mobile-menu">
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
+            <div className="navbar_toggle" id="mobile-menu">
               {isMobile ? <i className='FAS FA-TIMES'></i> : <i className='fas fa-bars'></i>}
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -235,9 +248,6 @@ const drawMap = () => {
                       </li>
                       <li className="navbar_item">
                           <div onClick={goToFilter} className="navbar_links">Find a Bin</div>
-                      </li>
-                      <li className="navbar_item">
-                          <div onClick={goToMap} className="navbar_links">Go to Map</div>
                       </li>
                     </ul>
             </div>
@@ -282,10 +292,6 @@ const drawMap = () => {
   const bookLog = () => {
     setTypeRub('bookbank');
   }
-  const alertLog = () => {
-    // console.log(typeRub);
-    searchJSON();
-  }
 
   const Filters = () => {
     return (
@@ -327,7 +333,7 @@ const drawMap = () => {
         
         
         <div className = "applyButton">
-          <button onClick = {alertLog}>Apply</button>
+          <button onClick = {searchJSON}>Go to Map</button>
         </div>
         
       </div>
