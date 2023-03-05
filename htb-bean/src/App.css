@@ -13,7 +13,7 @@
 
 .App-footer {
   background-color: #282c34;
-  height: 5vh;
+  height: 2.5vh;
   bottom: 0;
   color: white;
   font-family:'Verdana','Arial', sans-serif;
@@ -309,7 +309,7 @@ background-color: rgb(103, 164, 103);
     display: block;
     border-radius: 25px;
     margin: 10px;
-    padding: 0px;
+    padding: 1%;
     background-color: #282c34;
     height: 100%;
     z-index: 1;
@@ -555,10 +555,10 @@ a {
 }
 
 .mobileButton {
-    margin: 20px auto;
+    margin: 0 auto 10%;
     display: block;
     background-color: rgb(107, 181, 102);
-    padding: 15px 32px;
+    padding: 2%;
     text-align: center;
     text-decoration: none;
     font-size: 20px;
