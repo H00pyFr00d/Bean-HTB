@@ -121,10 +121,14 @@ function App() {
   }
 
   useEffect(() => {
-    if (coords)
+    if (coords.latitude != null && coords.longitude != null)
         console.log(coords)
   }, [coords]);
 
+  useEffect(() => {
+    getLocation()
+  }, []);
+  
 //  componentDidMount() {
 //  this.drawMap();
 //  }
@@ -225,10 +229,10 @@ const drawMap = () => {
             <img src = {binLogo} alt = "Web Logo" height = "100%" width = "height"/>
 
             <div className="navbar_container">
-            <div class="navbar_toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div className="navbar_toggle" id="mobile-menu">
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
             </div>
                     <ul className="navbar_menu">
                       <li className="navbar_item">
