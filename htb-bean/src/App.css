@@ -318,7 +318,7 @@ background-color: rgb(103, 164, 103);
 
 .homeMainBody h1
 {
-    color: rgb(107, 181, 102);
+    color: rgb(255, 255, 255);
     display: block;
     text-align: center;
     font-size: 5vh;
@@ -329,7 +329,7 @@ background-color: rgb(103, 164, 103);
 
 .homeMainBody p
 {
-    color: rgb(107, 181, 102);
+    color: rgb(255, 255, 255);
     display: flex;
     text-align: center;
     padding: 10px 20px 20px 10px;
@@ -364,10 +364,11 @@ background-color: rgb(103, 164, 103);
 {
     margin: 20px auto;
     display: block;
-    background-color: rgb(107, 181, 102);
+    background-color: rgb(255, 255, 255);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
+    font-family:'Verdana','Arial', sans-serif;
     font-size: 20px;
     cursor: pointer;
 }
