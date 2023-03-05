@@ -351,7 +351,8 @@ background-color: rgb(103, 164, 103);
 .filterMainBody img 
 {
     display: inline-block;
-    margin: 40px 0px 0px 40px;
+    margin: auto;
+    padding: 10px;
     height: 130px;
     width: 150px;
 }
